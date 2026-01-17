@@ -1,0 +1,49 @@
+.flex {
+  display: flex;
+}
+.h-9 {
+  height: calc(var(--spacing) * 9);
+}
+.w-9 {
+  width: calc(var(--spacing) * 9);
+}
+.rotate-90 {
+  rotate: 90deg;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.self-start {
+  align-self: flex-start;
+}
+.opacity-50 {
+  opacity: 50%;
+}
+.md\:col-span-1 {
+  @media (width >= 48rem) {
+    grid-column: span 1 / span 1;
+  }
+}
+.md\:h-20 {
+  @media (width >= 48rem) {
+    height: calc(var(--spacing) * 20);
+  }
+}
+.md\:rotate-0 {
+  @media (width >= 48rem) {
+    rotate: 0deg;
+  }
+}
+.md\:rotate-180 {
+  @media (width >= 48rem) {
+    rotate: 180deg;
+  }
+}
+.md\:self-auto {
+  @media (width >= 48rem) {
+    align-self: auto;
+  }
+}

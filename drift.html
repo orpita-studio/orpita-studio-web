@@ -1,0 +1,3320 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orpita Game Studio | Indie game development studio</title>
+    <meta name="description" content="Orpita Game Studio | Independent game studio bringing fresh ideas to life. At Orpita, we design games with heart, creativity, and a passion for unique player experiences.">
+    <meta name="author" content="Orpita Studio">
+    <meta name="theme-color" content="#7c3aed">
+    <link rel="canonical" href="https://orpita-studio.web.app/en/">
+    <link rel="icon" href="/assets/imgs/sm-small-logo.webp">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://orpita-studio.web.app/en/">
+    <meta property="og:title" content="Orpita Game Studio">
+    <meta property="og:description" content="Orpita Game Studio | Independent game studio bringing fresh ideas to life.">
+    <meta property="og:image" content="https://orpita-studio.web.app/assets/imgs/og-cover.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orpita Game Studio">
+    <meta name="twitter:description" content="Orpita Game Studio | Independent game studio bringing fresh ideas to life.">
+    <meta name="twitter:image" content="https://orpita-studio.web.app/assets/imgs/og-cover.webp">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Orpita Studio",
+        "url": "https://orpita-studio.web.app/en/",
+        "logo": "https://orpita-studio.web.app/assets/imgs/og-cover.webp",
+        "email": "orpitastudios@gmail.com",
+        "description": "Orpita Game Studio | Independent game studio bringing fresh ideas to life.",
+        "address": { "@type": "PostalAddress", "addressCountry": "EG", "addressLocality": "Alexandria" },
+        "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "email": "orpitastudios@gmail.com" },
+        "sameAs": ["https://www.linkedin.com/company/orpita-game-studio/", "https://www.youtube.com/@OrpitaStudio", "https://www.facebook.com/OrpitaStudio", "https://www.instagram.com/orpitastudio"]
+    }
+    </script>
+
+    <link rel="preload" as="image" href="/assets/imgs/lg-full-logo-trans.webp">
+    <link rel="preload" href="/assets/fonts/orbitron/Orbitron-Bold.woff2" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter/Inter_18pt-Regular.woff2" as="font" type="font/ttf" crossorigin>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <div id="tsparticles" class="fixed inset-0 -z-10"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="flex-1">
+
+        <section id="home" class="relative flex items-center pt-24 pb-20 md:pt-40 md:pb-40 overflow-hidden">
+            <div class="container mx-auto px-12 w-full relative">
+                <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 md:gap-16">
+                    
+                    <div class="w-full lg:w-1/2 text-left relative order-2 lg:order-1 lg:flex-shrink-0">
+                        <h1 class="hero-title text-[clamp(1.5rem,5vw,3rem)] font-extrabold text-white leading-tight mb-6">
+                            <span id="extendable-text" class="block">
+                                <span class="hero-line-container" style="animation-delay: 0.2s;">
+                                    <span class="static-hero-text">We </span>
+                                    <span class="dynamic-text-container"><span id="dynamic-line1" class="dynamic-text">Lead The Vision</span></span>
+                                </span>
+                                <span class="hero-line-container" style="animation-delay: 0.3s;">
+                                    <span class="static-hero-text">We </span>
+                                    <span class="dynamic-text-container"><span id="dynamic-line2" class="dynamic-text gradient-text-js">Own The Orbit</span></span>
+                                </span>
+                            </span>
+                        </h1>
+                        <p class="text-base md:text-xl text-gray-400 mt-6 max-w-2xl animate-fade-in-up" style="animation-delay: 0.4s;">
+                            Hi, Welcome to Orpita game studio !!<br>Take a tour, check out our games, and let us know what you think.
+                        </p>
+                        <div class="mt-10 flex flex-wrap items-center justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.5s;">
+                            <a id="hero-btn-discover" href="./games/" class="btn-primary animate-pulse-glow">Discover Our Games</a>
+                            <a id="hero-btn-join" href="./about/join-us/" class="btn-secondary">Join our team</a>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-[45%] flex justify-center lg:justify-start items-center relative order-1 lg:order-2 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <img src="/assets/imgs/lg-full-logo-trans.webp" alt="Orpita Game Studio Logo" class="w-full max-w-sm md:max-w-md lg:max-w-full object-contain" style="max-height: 50vh; lg:max-height: 80vh;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="SectionContentWrapper">
+            
+            <section class="relative py-6 px-4">
+                <div class="animate-on-scroll opacity-0 SectionTheme">
+                    <div class="text-center mb-12 animate-on-scroll opacity-0" style="animation-delay: 0.1s;">
+                        <h2 class="text-3xl md:text-5xl font-black text-white">About <span class='gradient-text-js'>Orpita Studio</span></h2>
+                        <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">Forging new realities, one story at a time.</p>
+                    </div>
+                    <div class="text-center max-w-2xl mx-auto text-lg text-gray-300 opacity-0 animate-on-scroll" style="animation-delay: 0.2s;">
+                        <p>Orpita is an indie game studio based in Egypt. Founded in May 2025, it started as a small team making games we enjoy ourselves. Each game reflects what excites us and what we love to create.</p>
+                    </div>
+
+                    <div class="mt-16 pt-12 border-t border-slate-800 opacity-0 animate-on-scroll" style="animation-delay: 0.3s;">
+                        <h3 class="text-center text-3xl font-bold text-white mb-8">A Word From Our <span class='gradient-text-js'>Founder</span></h3>
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <img loading="lazy" src="/assets/imgs/members/amr-elmahdy.webp" alt="Founder" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-slate-700 shadow-lg animate-on-scroll opacity-0">
+                            <div class="text-lg text-gray-300 text-center md:text-left flex-1 animate-on-scroll opacity-0" style="animation-delay: 0.4s;">
+                                <p class="italic">"Many games recently have started relying on tricks to make players come back, rather than focusing on solid game mechanics or good design. That’s what we wanted to change with Orpita, a studio where a team of designers, artists, and of course programmers work together to create fun games without mind tricks or manipulating players."</p>
+                                <p class="text-violet-400 font-bold mt-4">- Amr Elmahdy</p>
+                                <p class="text-gray-500 text-base">Founder & CEO</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-16 pt-12 border-t border-slate-800">
+                        <a id="main-btn-about" href="./about/" class="btn-primary animate-pulse-glow">Meet our team</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="relative py-6 px-4">
+                <div class="animate-on-scroll opacity-0 SectionTheme">
+                    <div class="text-center mb-16 animate-on-scroll opacity-0" style="animation-delay: 0.1s;">
+                        <h2 class="text-3xl md:text-5xl font-black text-white">Our <span class='gradient-text-js'>Games</span></h2>
+                        <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">A glimpse into the worlds we are creating.</p>
+                    </div>
+                    <div class="swiper game-carousel opacity-0 animate-on-scroll" style="animation-delay: 0.2s;">
+                        <div class="swiper-wrapper py-4"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <footer class="text-center mt-12 pt-8 border-t border-slate-800/50">
+                        <a id="main-btn-games" href="./games/" id="hero-btn-explore-all" class="btn-primary animate-pulse-glow">Explore All Games</a>
+                    </footer>
+                </div>
+            </section>
+
+            <section class="relative py-6 px-4">
+                <div class="animate-on-scroll opacity-0 SectionTheme">
+                    <div class="text-center mb-16 animate-on-scroll opacity-0" style="animation-delay: 0.1s;">
+                        <h2 class="text-3xl md:text-5xl font-black text-white">Our <span class='gradient-text-js'>Story</span></h2>
+                        <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">The foundations upon which the world of Orpita was built.</p>
+                    </div>
+                    <div id="news-grid" class="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 pb-6 no-scrollbar items-stretch"></div>
+                    <div class="text-center mt-16 pt-12 border-t border-slate-800">
+                        <a ud="main-btn-news" href="./news/" class="btn-primary animate-pulse-glow">See all news</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="relative py-6 px-4">
+                <div class="animate-on-scroll opacity-0 SectionTheme">
+                    <div class="text-center mb-12 animate-on-scroll opacity-0" style="animation-delay: 0.1s;">
+                        <h2 class="text-3xl md:text-5xl font-black text-white">Get In <span class='gradient-text-js'>Touch</span></h2>
+                        <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">Whether you're a player, creator, or a future partner, we'd love to connect.</p>
+                    </div>
+                    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+                        <div class="flex flex-col items-left text-center p-6 bg-slate-800/50 rounded-2xl border border-slate-700 h-full justify-between animate-on-scroll opacity-0" style="animation-delay: 0.2s;">
+                            <div class="mb-8 w-full">
+                                <h3 class="text-2xl font-bold text-white mb-4">Follow Our Journey</h3>
+                                <p class="text-gray-400">Get the latest updates and behind-the-scenes news.</p>
+                            </div>
+                            <div class="social-links-container flex flex-wrap justify-center items-center gap-6"></div>
+                            <div class="mt-10 border-t border-slate-700 w-full pt-6">
+                                <p class="text-gray-400">General inquiries:</p>
+                                <a id="main-btn-mail" href="mailto:orpitastudios@gmail.com" class="text-violet-400 hover:text-violet-300 text-lg font-medium transition-all">orpitastudios@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-6 bg-slate-800/50 rounded-2xl border border-slate-700 h-full justify-between animate-on-scroll opacity-0" style="animation-delay: 0.3s;">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-bold text-white mb-4">Want To Join Us?</h3>
+                                <p class="text-gray-400">We're always looking for passionate artists, developers, and storytellers.</p>
+                            </div>
+                            <a id="main-btn-join" href="./about/join-us/" class="btn-primary animate-pulse-glow">See Open Positions</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="footer-placeholder"></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    
+    <script src="/assets/js/ts-particles.js" defer></script>
+    <script src="/assets/js/dynamic-text.js" defer></script>
+    <script src="/assets/js/load.js" defer></script>
+    <script src="/assets/js/header.js" defer></script>
+    <script src="/assets/js/footer.js" defer></script>
+    <script src="/assets/js/swiper.js" defer></script>
+    <script src="/assets/js/games-swiper.js" defer></script>
+    <script src="/assets/js/news-cards.js" defer></script>
+    <script src="/assets/js/social-links.js" defer></script>
+    <script src="/assets/js/animate-on-scroll.js" defer></script>
+    
+    <script src="/assets/js/cookie/cookie-core.js"></script>
+    <script src="/assets/js/cookie/cookie-banner.js" defer></script>
+    <script src="/assets/js/cookie/survey-manager.js" defer></script>
+    
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our games | Orpita game studio</title>
+    <meta name="description" content="Latest news from Orpita Game Studio. Stay updated on our game development journey, team announcements, and behind-the-scenes insights.">
+    <meta name="author" content="Orpita Studio">
+    <link rel="icon" href="/assets/imgs/sm-small-logo.webp" type="image/png">
+    <link rel="canonical" href="https://orpita-studio.web.app/en/news/">
+
+    <meta property="og:title" content="Orpita Game Studio">
+    <meta property="og:description" content="Follow our journey. Get the latest updates on game development, studio news, and what's happening behind the scenes at Orpita Game Studio.">
+    <meta property="og:image" content="https://orpita-studio.web.app/assets/imgs/og-cover.webp">
+    <meta property="og:url" content="https://orpita-studio.web.app/en/news/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orpita Game Studio">
+    <meta name="twitter:description" content="Orpita Game Studio | Independent game studio bringing fresh ideas to life. At Orpita, we design games with heart, creativity, and a passion for unique player experiences.">
+    <meta name="twitter:image" content="https://orpita-studio.web.app/assets/imgs/og-cover.webp">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"Orpita Studio","url":"https://orpita-studio.web.app/en/news/","logo":"https://orpita-studio.web.app/assets/imgs/sm-small-logo.webp","email":"orpitastudios@gmail.com","description":"Stay informed about the latest developments at Orpita Game Studio. Read about our game jam participation, studio milestones, team updates, and insights into our creative process.","address":{"@type":"PostalAddress","addressCountry":"EG","addressLocality":"Alexandria"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","email":"orpitastudios@gmail.com"},"sameAs":["https://www.linkedin.com/company/orpita-game-studio/","https://www.youtube.com/@OrpitaStudio","https://www.facebook.com/OrpitaStudio","https://www.instagram.com/orpitastudio"]}
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <div id="tsparticles" class="fixed inset-0 -z-10"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="flex-1">
+        <section id="page-header" class="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
+            <div class="container mx-auto px-4 z-10">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight animate-fade-in-up">
+                        Our news & <span class="animate-gradient-text bg-gradient-to-r from-violet-400 to-purple-500">stories</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 mt-6 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.3s;">
+                        Updates, dev logs, events, and behind-the-scenes from Orpita..
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-game" class="relative py-4 px-4">
+            <div class="container mx-auto max-w-6xl w-full p-8 md:p-12 opacity-0 animate-on-scroll SectionTheme">
+                
+                <div class="text-center mb-12 animate-on-scroll opacity-0" style="animation-delay: 0.6s;">
+                    <h2 class="text-3xl md:text-5xl font-black">
+                        <span class='gradient-text-js'>Highlights</span>.
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-on-scroll opacity-0" style="animation-delay: 0.2s;">
+                    <div class="relative aspect-square overflow-hidden rounded-3xl border-2 border-slate-700 shadow-2xl group">
+                        <img src="/assets/imgs/ourstory/call-for-new-members.webp" alt="join orpita team" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <span class="text-sm text-yellow-400 font-bold uppercase tracking-widest">Studio update</span>
+                            <h2 class="text-4xl md:text-6xl font-black text-white mt-2">Join our team!!</h2>
+                        </div>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            We are looking for passionate individuals in the gaming industry to join us..
+                        </p>
+                        <div class="pt-4">
+                            <a href="../about/join-us" class="inline-block bg-violet-600 text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-violet-700 transition-all transform hover:scale-105 shadow-glow">
+                                be part of our team
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="all-games" class="relative py-4 px-4">
+            <div class="container mx-auto max-w-6xl w-full p-8 md:p-12 opacity-0 animate-on-scroll SectionTheme">
+                
+                <div class="text-center mb-12 animate-on-scroll opacity-0" style="animation-delay: 0.6s;">
+                    <h2 class="text-3xl md:text-5xl font-black">
+                        All <span class='gradient-text-js'>updates</span>.
+                    </h2>
+                </div>
+
+                <div id="news-grid" class="flex md:grid grid-cols-1 md:grid-cols-3 gap-6 pb-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    
+    <script src="/assets/js/ts-particles.js" defer></script>
+    <script src="/assets/js/load.js" defer></script>
+    <script src="/assets/js/header.js" defer></script>
+    <script src="/assets/js/news-cards-all.js" defer></script>
+    <script src="/assets/js/footer.js" defer></script>
+    <script src="/assets/js/social-links.js" defer></script>
+    <script src="/assets/js/animate-on-scroll.js" defer></script>
+    
+    <script src="/assets/js/cookie/cookie-core.js"></script>
+    <script src="/assets/js/cookie/cookie-banner.js" defer></script>
+    <script src="/assets/js/cookie/survey-manager.js" defer></script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Orpita joined GMTK 2025 | The Journey of One More Day</title>
+  <meta name="description" content="Orpita joins GMTK Game Jam 2025! Follow our 96-hour challenge to create a complete game. Read about our first major game jam experience.">
+  <meta name="author" content="Orpita Studio">
+  <link rel="icon" href="/assets/imgs/sm-small-logo.webp" type="image/png">
+  <link rel="canonical" href="https://orpita-studio.web.app/en/news/orpita-joined-gmtk2025/">
+  
+  <meta property="og:title" content="Orpita Game Studio">
+  <meta property="og:description" content="We're taking on GMTK 2025! Watch as we create a complete game in just 96 hours. Our first major game jam challenge begins now.">
+  <meta property="og:image" content="https://orpita-studio.web.app//assets/imgs/og-cover.webp">
+  <meta property="og:url" content="https://orpita-studio.web.app/en/news/orpita-joined-gmtk2025/">
+  <meta property="og:type" content="website">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orpita Game Studio">
+  <meta name="twitter:description" content="Orpita Game Studio | Independent game studio bringing fresh ideas to life. At Orpita, we design games with heart, creativity, and a passion for unique player experiences.">
+  <meta name="twitter:image" content="https://orpita-studio.web.app//assets/imgs/og-cover.webp">
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Orpita Studio",
+      "url": "https://orpita-studio.web.app/en/news/orpita-joined-gmtk2025/",
+      "logo": "https://orpita-studio.web.app/assets/imgs/sm-small-logo.webp",
+      "email": "orpitastudios@gmail.com",
+      "description": "Orpita Game Studio announces its participation in GMTK Game Jam 2025, one of the world's largest game development competitions. Follow along as our team attempts to create a complete, playable game within a 96-hour timeframe, documenting our creative process, challenges, and lessons learned.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "EG",
+        "addressLocality": "Alexandria"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "orpitastudios@gmail.com"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/orpita-game-studio/",
+        "https://www.youtube.com/@OrpitaStudio",
+        "https://www.facebook.com/OrpitaStudio",
+        "https://www.instagram.com/orpitastudio"
+      ]
+    }
+  </script>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen">
+  
+  <div id="tsparticles" class="fixed inset-0 -z-10"></div>
+  
+  <div id="header-placeholder"></div>
+  
+  <main class="flex-1">
+    <!-- ====== Page Header Section Start ====== -->
+    <!-- Reduced padding -->
+<section id="page-header" class="relative w-full overflow-hidden">
+  <div class="absolute inset-0 z-10 overflow-hidden">
+    <img 
+      src="/assets/imgs/ourstory/orpita-joined-gmtk2025/orpita-joined-gmtk2025.webp" 
+      alt="Background" 
+      class="w-full h-full object-cover object-center brightness-[0.5]"
+      style="
+        /* المسح هنا بيبدأ من النص (أسود) ويتحول لشفاف تماماً عند الأطراف */
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+      
+      "
+    >
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="flex flex-col items-center justify-center min-h-[50vh] pt-20 pb-10">
+      <h1 class="text-center text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
+        Orpita joined <span class="gradient-text-js">GMTK 2025</span>
+      </h1>
+      
+      <p class="text-slate-400 mt-4 text-lg md:text-xl max-w-2xl text-left">
+        Behind the scenes of One More Day game development
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="relative" relative py-4 px-4>
+  
+  <div class="container mx-auto max-w-6xl w-full p-8 md:p-12 ">
+    
+    
+    <div class="max-w-4xl mx-auto text-left mb-24 space-y-12">
+      <div class="space-y-4">
+        <h2 class="text-2xl md:text-4xl font-black text-white tracking-tight text-center">
+          How It <span class="text-violet-500">Started</span>
+        </h2>
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed font-light px-4">
+          We weren't ready. Like, really weren't ready.<br>
+          Half our team was still in training when GMTK 2025 was announced. But we looked at each other and thought, "Let's just try it." That's how One More Day happened.
+        </p>
+      </div>
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl md:text-4xl font-black text-white tracking-tight text-center">
+          The <span class="text-violet-500">Team</span>
+        </h2>
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed font-light px-4">
+          Our core team was all based in Egypt—designers, developers, and artists who'd been working together at Orpita. Then GMTK's volunteer platform connected us with people we'd never met: <strong>Kino</strong> (Vietnam) and <strong>Chase</strong> (USA) joined as artists, while <strong>Amr Elkhelawy</strong> (Egypt), <strong>Josif Ali</strong>, and <strong>Alex</strong> (Greece) helped with music and sound effects.
+          <br><br>
+          Suddenly we had a team spread across three continents, with some people 12 hours apart. Discord meetings became our routine, with someone always having to stay up way too late.
+        </p>
+      </div>
+      
+      <div class="relative group rounded-3xl overflow-hidden border border-slate-700/50 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent z-10"></div>
+        <img src="/assets/imgs/ourstory/orpita-joined-gmtk2025/meeting.webp" alt="Orpita Strategic Planning" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+      </div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto text-left mb-24 space-y-12">
+      <div class="space-y-4">
+        <h2 class="text-2xl md:text-4xl font-black text-white tracking-tight text-center">
+          The Theme: <span class="text-violet-500">Loop</span>
+        </h2>
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed font-light px-4">
+          When they announced "Loop" as the theme, our design team spent hours throwing ideas around. A lot of disagreement, a lot of "this won't work," and honestly, some frustration. Eventually we landed on the story of <strong>Dr. Zain</strong>, a young doctor trying to save someone he cares about, trapped in a loop where he keeps failing and has to try again.
+          <br><br>
+          It wasn't the most groundbreaking take on the theme, but it felt right for what we could actually build in four days.
+        </p>
+      </div>
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl md:text-4xl font-black text-white tracking-tight text-center">
+          <span class="text-violet-500">96 Hours</span> of Work
+        </h2>
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed font-light px-4">
+          Everyone just... worked. <strong>Esraa</strong> led the art team, creating pixel art for the hospital scenes. <strong>Mark, Mahmoud, Fares, and Sherifa</strong> handled development while dealing with the usual bugs and broken code at 3 AM. The design team—<strong>Youssef, Nourhan, Mariam, Amira, and Fatima</strong>—kept refining the story and gameplay.
+          <br><br>
+          The volunteers jumped in like they'd been with us from day one. There were moments when assets needed last-minute changes, or code wasn't cooperating, but we figured it out.
+        </p>
+      </div>
+      
+      <div class="relative group rounded-3xl overflow-hidden border border-slate-700/50 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent z-10"></div>
+        <img src="/assets/imgs/ourstory/orpita-joined-gmtk2025/gake-assets.webp" alt="Game Development Phase" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+      </div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto text-left space-y-12">
+      <div class="space-y-4">
+        <h2 class="text-2xl md:text-4xl font-black text-white tracking-tight text-center">
+          The <span class="text-violet-500">Result</span>
+        </h2>
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed font-light px-4">
+          We submitted the game and honestly didn't know what to expect. This was our first jam, and we were competing against over <strong>9,600 games</strong> from around the world.
+          <br><br>
+          When results came out, we were shocked. We ranked really high in Artwork and Narrative. Someone even commented that our pixel art was so nice they forgot about the emergency and just wandered around outside the hospital.
+        </p>
+      </div>
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl md:text-4xl font-black text-white tracking-tight text-center">
+          What We <span class="text-violet-500">Learned</span>
+        </h2>
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed font-light px-4">
+          Mostly that you don't need to be ready to start. You figure things out as you go. Working with people across different time zones and backgrounds taught us a lot about collaboration and trust.
+        </p>
+      </div>
+      
+      <div class="relative group rounded-3xl overflow-hidden border border-slate-700/50 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent z-10"></div>
+        <img src="/assets/imgs/ourstory/orpita-joined-gmtk2025/gmtk2025-result.webp" alt="Final Submission Result" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+      </div>
+      
+      <div class="pt-10">
+        <h2 class="text-2xl md:text-4xl font-black text-white tracking-tight mb-4 text-center">
+          Looking to <span class="text-violet-500">2026</span>
+        </h2>
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed font-light px-4">
+          We're already thinking about GMTK 2026. Now that we know what a game jam actually feels like, we want to see what we can do when we're actually prepared.
+        </p>
+      </div>
+      
+<div class="pt-20 mt-20 border-t border-slate-800">
+  
+  <div class="text-center mb-20">
+    <h3 class="text-2xl font-bold text-white mb-6">Experience the Loop</h3>
+    <p class="text-slate-400 mb-8 max-w-xl mx-auto">
+      Curious to see what we built in 96 hours? Take the role of Dr. Zain and try to break the cycle.
+    </p>
+    <a href="https://orpita-studio.itch.io/onemoreday" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-violet-600 hover:bg-violet-500 text-white font-bold rounded-full transition-all transform hover:scale-105 shadow-[0_10px_30px_rgba(124,58,237,0.3)]">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+      </svg>
+      Play on Itch.io
+    </a>
+  </div>
+  
+  <div class="max-w-5xl mx-auto px-4">
+    <h4 class="text-center text-slate-500 uppercase tracking-[0.2em] text-sm font-bold mb-12">The Creative Minds Behind the Project</h4>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-left">
+      
+      <div class="space-y-4">
+        <h5 class="text-violet-400 font-bold border-l-2 border-violet-400 pl-3">Game Design</h5>
+        <ul class="text-slate-400 space-y-2 text-sm leading-relaxed">
+          <li>Youssef Soliman</li>
+          <li>Nourhan Amr</li>
+          <li>Mariam Motaz</li>
+          <li>Amira Emad</li>
+          <li>Fatima Nadder</li>
+        </ul>
+      </div>
+      
+      <div class="space-y-4">
+        <h5 class="text-violet-400 font-bold border-l-2 border-violet-400 pl-3">Development</h5>
+        <ul class="text-slate-400 space-y-2 text-sm">
+          <li>Mark Asaad</li>
+          <li>Mahmoud</li>
+          <li>Fares Khaled</li>
+          <li>Sherifa Sayed</li>
+        </ul>
+      </div>
+      
+      <div class="space-y-4">
+        <h5 class="text-violet-400 font-bold border-l-2 border-violet-400 pl-3">Art</h5>
+        <ul class="text-slate-400 space-y-2 text-sm">
+          <li>Esraa <span class="text-[10px] bg-slate-800 px-1 rounded text-slate-300">Head</span></li>
+          <li>Chase (Gobstopper)</li>
+          <li>Kino</li>
+        </ul>
+      </div>
+      
+      <div class="space-y-4">
+        <h5 class="text-violet-400 font-bold border-l-2 border-violet-400 pl-3">Audio</h5>
+        <ul class="text-slate-400 space-y-2 text-sm">
+          <li>Amr Elkhelawy</li>
+          <li>Josif Ali (Jomoa)</li>
+          <li>Alex</li>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+  <!-- ====== Main Content End ====== -->
+  
+  <div id="footer-placeholder"></div>
+  </main>
+  
+      <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    
+    <script src="/assets/js/ts-particles.js" defer></script>
+    <script src="/assets/js/load.js" defer></script>
+    <script src="/assets/js/header.js" defer></script>
+    <script src="/assets/js/games.js" defer></script>
+    <script src="/assets/js/footer.js" defer></script>
+    <script src="/assets/js/social-links.js" defer></script>
+    <script src="/assets/js/animate-on-scroll.js" defer></script>
+    
+    <script src="/assets/js/cookie/cookie-core.js"></script>
+    <script src="/assets/js/cookie/cookie-banner.js" defer></script>
+    <script src="/assets/js/cookie/survey-manager.js" defer></script>
+    </body>
+  
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our games | Orpita game studio</title>
+    <meta name="description" content="Orpita Game Studio | Independent game studio bringing fresh ideas to life. At Orpita, we design games with heart, creativity, and a passion for unique player experiences.">
+    <meta name="author" content="Orpita Studio">
+    <link rel="icon" href="/assets/imgs/sm-small-logo.webp" type="image/webp">
+    <link rel="canonical" href="https://orpita-studio.web.app/en/games/">
+
+    <meta property="og:title" content="Orpita Game Studio">
+    <meta property="og:description" content="A glimpse into the worlds we're creating. Explore our games: One More Day, Minesetter, and more coming soon. Each with its own unique story.">
+    <meta property="og:image" content="https://orpita-studio.web.app//assets/imgs/og-cover.webp">
+    <meta property="og:url" content="https://orpita-studio.web.app/en/games/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orpita Game Studio">
+    <meta name="twitter:description" content="Orpita Game Studio | Independent game studio bringing fresh ideas to life.">
+    <meta name="twitter:image" content="https://orpita-studio.web.app//assets/imgs/og-cover.webp">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Orpita Studio",
+            "url": "https://orpita-studio.web.app/en/games/",
+            "logo": "https://orpita-studio.web.app/assets/imgs/sm-small-logo.webp",
+            "email": "orpitastudios@gmail.com",
+            "description": "Browse Orpita Game Studio's portfolio of indie games. Our catalog includes narrative-focused experiences like One More Day and innovative puzzle games like Minesetter.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "EG",
+                "addressLocality": "Alexandria"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "email": "orpitastudios@gmail.com"
+            },
+            "sameAs": [
+                "https://www.linkedin.com/company/orpita-game-studio/",
+                "https://www.youtube.com/@OrpitaStudio",
+                "https://www.facebook.com/OrpitaStudio",
+                "https://www.instagram.com/orpitastudio"
+            ]
+        }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <div id="tsparticles" class="fixed inset-0 -z-10"></div>
+    
+    <div id="header-placeholder"></div>
+
+    <main class="flex-1">
+        
+        <section id="page-header" class="relative pt-32 pb-4 md:pt-40 md:pb-20 overflow-hidden">
+            <div class="container mx-auto px-4 z-10">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight animate-fade-in-up">
+                        Our <span class="animate-gradient-text bg-gradient-to-r from-violet-400 to-purple-500">Games</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 mt-6 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.3s;">
+                        A glimpse into the worlds we are creating.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-game" class="relative py-12 sm:py-16 px-4">
+            <div class="container mx-auto max-w-6xl w-full p-8 md:p-12 opacity-0 animate-on-scroll SectionTheme">
+                
+                <div class="text-center mb-12 animate-on-scroll opacity-0" style="animation-delay: 0.6s;">
+                    <h2 class="text-3xl md:text-5xl font-black">
+                        <span class='gradient-text-js'>Highlights</span>.
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-on-scroll opacity-0" style="animation-delay: 0.2s;">
+                    <div class="relative aspect-square overflow-hidden rounded-3xl border-2 border-slate-700 shadow-2xl group">
+                        <img src="/assets/imgs/games/minesetter/minesetter-comming-soon.webp" alt="Minesetter" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors"></div>
+                        <div class="absolute inset-0 flex items-center justify-center p-4">
+                            <h3 class="text-3xl md:text-4xl font-black text-white uppercase tracking-widest text-center drop-shadow-lg transform duration-700 transition group-hover:scale-110">
+                                Coming soon ...
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div>
+                            <span class="text-sm text-yellow-400 font-bold uppercase tracking-widest">Puzzle Game</span>
+                            <h2 class="text-4xl md:text-6xl font-black text-white mt-2">Minesetter</h2>
+                        </div>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            Game details are secret until the announcement. Stay tuned for the ultimate logic challenge.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="all-games" class="relative py-12 sm:py-16 px-4">
+            <div class="container mx-auto max-w-6xl w-full p-8 md:p-12 opacity-0 animate-on-scroll SectionTheme">
+                
+                <div class="text-center mb-12 animate-on-scroll opacity-0" style="animation-delay: 0.6s;">
+                    <h2 class="text-3xl md:text-5xl font-black">
+                        All our <span class='gradient-text-js'>games</span>.
+                    </h2>
+                </div>
+
+                <div id="games-grid" class="flex md:grid grid-cols-1 md:grid-cols-3 gap-6 pb-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar">
+                    </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+
+    <script src="/assets/js/ts-particles.js" defer></script>
+    <script src="/assets/js/load.js" defer></script>
+    <script src="/assets/js/header.js" defer></script>
+    <script src="/assets/js/games-cards-all.js" defer></script>
+    <script src="/assets/js/footer.js" defer></script>
+    <script src="/assets/js/social-links.js" defer></script>
+    <script src="/assets/js/animate-on-scroll.js" defer></script>
+
+    <script src="/assets/js/cookie/cookie-core.js"></script>
+    <script src="/assets/js/cookie/cookie-banner.js" defer></script>
+    <script src="/assets/js/cookie/survey-manager.js" defer></script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One more day | Orpita game studio</title>
+    <meta name="description" content="One More Day - A narrative game by Orpita Studio. Step into Dr. Zain's shoes and face tense hospital situations where every decision matters.">
+    <meta name="author" content="Orpita Studio">
+    <meta name="theme-color" content="#7c3aed">
+    <link rel="icon" href="/assets/imgs/sm-small-logo.webp">
+    <link rel="canonical" href="https://orpita-studio.web.app/en/game/one-more-day/">
+
+    <meta property="og:title" content="Orpita Game Studio">
+    <meta property="og:description" content="Play as Dr. Zain in this emotional narrative experience. Navigate difficult hospital situations and make choices that truly matter. A story about humanity, pressure, and hope.">
+    <meta property="og:image" content="https://orpita-studio.web.app/assets/imgs/og-cover.webp">
+    <meta property="og:url" content="https://orpita-studio.web.app/en/game/one-more-day/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orpita Game Studio">
+    <meta name="twitter:description" content="Orpita Game Studio | Independent game studio bringing fresh ideas to life. At Orpita, we design games with heart, creativity, and a passion for unique player experiences.">
+    <meta name="twitter:image" content="https://orpita-studio.web.app/assets/imgs/og-cover.webp">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"Orpita Studio","url":"https://orpita-studio.web.app/en/game/one-more-day/","logo":"https://orpita-studio.web.app/assets/imgs/og-cover.webp","email":"orpitastudios@gmail.com","description":"One More Day is a narrative-focused game developed by Orpita Game Studio where players take on the role of Dr. Zain, a physician facing challenging ethical decisions and tense hospital situations.","address":{"@type":"PostalAddress","addressCountry":"EG","addressLocality":"Alexandria"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","email":"orpitastudios@gmail.com"},"sameAs":["https://www.linkedin.com/company/orpita-game-studio/","https://www.youtube.com/@OrpitaStudio","https://www.facebook.com/OrpitaStudio","https://www.instagram.com/orpitastudio"]}
+    </script>
+
+    <link rel="preload" as="image" href="/assets/imgs/lg-full-logo-trans.webp">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <div id="tsparticles" class="fixed inset-0 -z-10"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="flex-1">
+
+        <section id="game-header" class="relative w-full overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="/assets/imgs/games/one-more-day/one-more-day-cover.webp" alt="Cover" class="w-full h-full object-cover brightness-75" style="mask-image: linear-gradient(to bottom, black 40%, transparent 80%); -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 80%);">
+            </div>
+
+            <div class="container mx-auto px-4 md:px-8 relative z-10">
+                <div class="flex flex-col md:flex-row items-center justify-between pt-24 pb-8 md:pt-40 md:pb-12 gap-6">
+                    
+                    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-center md:text-left">
+                        <div class="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 aspect-square rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl transition-transform hover:scale-105">
+                            <img src="/assets/imgs/games/one-more-day/one-more-day-icon.webp" alt="Icon" class="w-full h-full object-cover">
+                        </div>
+                        <h1 class="text-3xl md:text-4xl lg:text-6xl font-black text-white tracking-tighter leading-none">
+                            One More <span class="text-violet-500">Day</span>
+                        </h1>
+                    </div>
+
+                    <a href="https://orpita-studio.itch.io/onemoreday" target="_blank" class="px-5 py-2 bg-white/10 hover:bg-violet-600 border border-white/20 hover:border-violet-500 text-white text-sm md:text-base font-medium rounded-lg transition-all whitespace-nowrap">
+                        Play on itch.io
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-game" class="mb-20 px-4 md:px-12">
+            <div class="SectionGlow p-6 md:p-8 rounded-2xl border border-white/5 bg-slate-900/40">
+                <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                    <span class="w-1 h-6 bg-violet-500 rounded-full"></span>
+                    About the game
+                </h2>
+
+                <div class="text-slate-400 leading-relaxed text-sm md:text-base">
+                    <p>
+                        One More Day is an emotional narrative experience created by <span class="text-white font-medium">Orpita Game Studio</span> for GMTK Jam 2025. 
+                        You play as Dr. Zain, a young doctor reliving a critical day where every choice carries a heavy moral weight.
+                    </p>
+
+                    <div id="extra-content" class="hidden opacity-0 transition-all duration-500 overflow-hidden">
+                        <p class="mt-4 pt-4 border-t border-white/5">
+                            The game blends story-driven exploration with tense medical decision-making. 
+                            Each loop offers a chance to face new dilemmas and explore the boundaries between duty, exhaustion, and compassion. 
+                            A heartfelt project built with passion by Orpita’s team and global volunteers.
+                        </p>
+                    </div>
+
+                    <button id="read-more-btn" class="mt-4 text-violet-400 hover:text-violet-300 text-sm font-bold uppercase tracking-widest transition-colors flex items-center gap-1">
+                        <span>Read Full Story</span>
+                        <svg id="arrow-icon" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="mb-20 px-4 md:px-12">
+            <div class="SectionGlow p-4 md:p-8 rounded-2xl border border-white/5 bg-slate-900/40">
+                
+                <div class="text-center mb-6">
+                    <h2 class="text-xl md:text-2xl font-bold text-white">Screenshots</h2>
+                    <p class="text-slate-500 text-xs md:text-sm mt-1">Experience the atmosphere of One More Day</p>
+                </div>
+
+                <div class="md:px-20 lg:px-18">
+                    <div class="relative group aspect-video overflow-hidden rounded-xl border border-white/10 shadow-2xl mb-6">
+                        <img id="main-gallery-image" src="/assets/imgs/games/one-more-day/one-more-day-screen1.webp" alt="Screenshot 1" class="w-full h-full object-cover transition-opacity duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="overflow-x-auto no-scrollbar pb-2">
+                        <div class="flex gap-4 min-w-max px-2">
+                            <img src="/assets/imgs/games/one-more-day/one-more-day-screen1.webp" class="gallery-thumb w-32 md:w-44 aspect-video rounded-lg transition-all cursor-pointer opacity-60 hover:opacity-100" data-image="/assets/imgs/games/one-more-day/one-more-day-screen1.webp" alt="Thumb 1">
+                            <img src="/assets/imgs/games/one-more-day/one-more-day-screen2.webp" class="gallery-thumb w-32 md:w-44 aspect-video rounded-lg transition-all cursor-pointer opacity-60 hover:opacity-100" data-image="/assets/imgs/games/one-more-day/one-more-day-screen2.webp" alt="Thumb 2">
+                            <img src="/assets/imgs/games/one-more-day/one-more-day-screen3.webp" class="gallery-thumb w-32 md:w-44 aspect-video rounded-lg transition-all cursor-pointer opacity-60 hover:opacity-100" data-image="/assets/imgs/games/one-more-day/one-more-day-screen3.webp" alt="Thumb 3">
+                            <img src="/assets/imgs/games/one-more-day/one-more-day-screen4.webp" class="gallery-thumb w-32 md:w-44 aspect-video rounded-lg transition-all cursor-pointer opacity-60 hover:opacity-100" data-image="/assets/imgs/games/one-more-day/one-more-day-screen4.webp" alt="Thumb 4">
+                            <img src="/assets/imgs/games/one-more-day/one-more-day-screen5.webp" class="gallery-thumb w-32 md:w-44 aspect-video rounded-lg transition-all cursor-pointer opacity-60 hover:opacity-100" data-image="/assets/imgs/games/one-more-day/one-more-day-screen5.webp" alt="Thumb 5">
+                            <img src="/assets/imgs/games/one-more-day/one-more-day-screen6.webp" class="gallery-thumb w-32 md:w-44 aspect-video rounded-lg transition-all cursor-pointer opacity-60 hover:opacity-100" data-image="/assets/imgs/games/one-more-day/one-more-day-screen6.webp" alt="Thumb 6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="game-news" class="mb-20 px-4 md:px-12">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-xl md:text-3xl font-bold text-white flex items-center gap-3">
+                    <span class="w-1 h-8 bg-violet-500 rounded-full"></span>
+                    Latest Events & News
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article class="SectionGlow group flex flex-col h-full bg-slate-900/40 border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:border-violet-500/50 hover:-translate-y-2">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assets/imgs/ourstory/orpita-joined-gmtk2025/orpita-joined-gmtk2025.webp" alt="GMTK Jam 2025" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <span class="absolute top-4 left-4 bg-violet-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Event</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <time class="text-xs text-slate-500 mb-2">August 15, 2025</time>
+                        <h3 class="text-lg font-bold text-white group-hover:text-violet-400 transition-colors mb-3">
+                            Orpita joined GMTK Game Jam 2025
+                        </h3>
+                        <p class="text-slate-400 text-sm line-clamp-2 mb-6">
+                            Discover our journey in creating "One More Day" in just 48 hours and how we handled the "Loop" theme.
+                        </p>
+                        <a href="../../news/orpita-joined-gmtk2025" class="mt-auto inline-flex items-center gap-2 text-violet-400 text-sm font-bold hover:gap-3 transition-all">
+                            Read Devlog 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div id="footer-placeholder"></div>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+
+    <script src="/assets/js/ts-particles.js" defer></script>
+    <script src="/assets/js/load.js" defer></script>
+    <script src="/assets/js/header.js" defer></script>
+    <script src="/assets/js/games.js" defer></script>
+    <script src="/assets/js/footer.js" defer></script>
+    <script src="/assets/js/social-links.js" defer></script>
+    <script src="/assets/js/animate-on-scroll.js" defer></script>
+
+    <script src="/assets/js/cookie/cookie-core.js"></script>
+    <script src="/assets/js/cookie/cookie-banner.js" defer></script>
+    <script src="/assets/js/cookie/survey-manager.js" defer></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One more day | Orpita game studio</title>
+    <meta name="description" content="One More Day - A narrative game by Orpita Studio. Step into Dr. Zain's shoes and face tense hospital situations where every decision matters.">
+    <meta name="author" content="Orpita Studio">
+    <meta name="theme-color" content="#7c3aed">
+    <link rel="icon" href="/assets/imgs/sm-small-logo.webp">
+    <link rel="canonical" href="https://orpita-studio.web.app/en/game/one-more-day/">
+
+    <meta property="og:title" content="Orpita Game Studio">
+    <meta property="og:description" content="Play as Dr. Zain in this emotional narrative experience. Navigate difficult hospital situations and make choices that truly matter. A story about humanity, pressure, and hope.">
+    <meta property="og:image" content="https://orpita-studio.web.app/assets/imgs/og-cover.webp">
+    <meta property="og:url" content="https://orpita-studio.web.app/en/game/one-more-day/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orpita Game Studio">
+    <meta name="twitter:description" content="Orpita Game Studio | Independent game studio bringing fresh ideas to life. At Orpita, we design games with heart, creativity, and a passion for unique player experiences.">
+    <meta name="twitter:image" content="https://orpita-studio.web.app/assets/imgs/og-cover.webp">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"Orpita Studio","url":"https://orpita-studio.web.app/en/game/one-more-day/","logo":"https://orpita-studio.web.app/assets/imgs/og-cover.webp","email":"orpitastudios@gmail.com","description":"One More Day is a narrative-focused game developed by Orpita Game Studio where players take on the role of Dr. Zain, a physician facing challenging ethical decisions and tense hospital situations.","address":{"@type":"PostalAddress","addressCountry":"EG","addressLocality":"Alexandria"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","email":"orpitastudios@gmail.com"},"sameAs":["https://www.linkedin.com/company/orpita-game-studio/","https://www.youtube.com/@OrpitaStudio","https://www.facebook.com/OrpitaStudio","https://www.instagram.com/orpitastudio"]}
+    </script>
+
+    <link rel="preload" as="image" href="/assets/imgs/lg-full-logo-trans.webp">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <div id="tsparticles" class="fixed inset-0 -z-10"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="flex-1">
+
+        <section id="game-header" class="relative w-full overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="/assets/imgs/games/one-more-day/one-more-day-cover.webp" alt="Cover" class="w-full h-full object-cover brightness-75" style="mask-image: linear-gradient(to bottom, black 40%, transparent 80%); -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 80%);">
+            </div>
+
+            <div class="container mx-auto px-4 md:px-8 relative z-10">
+                <div class="flex flex-col md:flex-row items-center justify-between pt-24 pb-8 md:pt-40 md:pb-12 gap-6">
+                    
+                    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-center md:text-left">
+                        <div class="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 aspect-square rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl transition-transform hover:scale-105">
+                            <img src="/assets/imgs/games/one-more-day/one-more-day-icon.webp" alt="Icon" class="w-full h-full object-cover">
+                        </div>
+                        <h1 class="text-3xl md:text-4xl lg:text-6xl font-black text-white tracking-tighter leading-none">
+                            One More <span class="text-violet-500">Day</span>
+                        </h1>
+                    </div>
+
+                    <a href="https://orpita-studio.itch.io/onemoreday" target="_blank" class="px-5 py-2 bg-white/10 hover:bg-violet-600 border border-white/20 hover:border-violet-500 text-white text-sm md:text-base font-medium rounded-lg transition-all whitespace-nowrap">
+                        Play on itch.io
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-game" class="mb-20 px-4 md:px-12">
+            <div class="SectionGlow p-6 md:p-8 rounded-2xl border border-white/5 bg-slate-900/40">
+                <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                    <span class="w-1 h-6 bg-violet-500 rounded-full"></span>
+                    About the game
+                </h2>
+
+                <div class="text-slate-400 leading-relaxed text-sm md:text-base">
+                    <p>
+                        One More Day is an emotional narrative experience created by <span class="text-white font-medium">Orpita Game Studio</span> for GMTK Jam 2025. 
+                        You play as Dr. Zain, a young doctor reliving a critical day where every choice carries a heavy moral weight.
+                    </p>
+
+                    <div id="extra-content" class="hidden opacity-0 transition-all duration-500 overflow-hidden">
+                        <p class="mt-4 pt-4 border-t border-white/5">
+                            The game blends story-driven exploration with tense medical decision-making. 
+                            Each loop offers a chance to face new dilemmas and explore the boundaries between duty, exhaustion, and compassion. 
+                            A heartfelt project built with passion by Orpita’s team and global volunteers.
+                        </p>
+                    </div>
+
+                    <button id="read-more-btn" class="mt-4 text-violet-400 hover:text-violet-300 text-sm font-bold uppercase tracking-widest transition-colors flex items-center gap-1">
+                        <span>Read Full Story</span>
+                        <svg id="arrow-icon" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="mb-20 px-4 md:px-12">
+            <div class="SectionGlow p-4 md:p-8 rounded-2xl border border-white/5 bg-slate-900/40">
+                
+                <div class="text-center mb-6">
+                    <h2 class="text-xl md:text-2xl font-bold text-white">Screenshots</h2>
+                    <p class="text-slate-500 text-xs md:text-sm mt-1">Experience the atmosphere of One More Day</p>
+                </div>
+
+                <div class="md:px-20 lg:px-18">
+                    <div class="relative group aspect-video overflow-hidden rounded-xl border border-white/10 shadow-2xl mb-6">
+                        <img id="main-gallery-image" src="/assets/imgs/games/one-more-day/one-more-day-screen1.webp" alt="Screenshot 1" class="w-full h-full object-cover transition-opacity duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="overflow-x-auto no-scrollbar pb-2">
+                        <div class="flex gap-4 min-w-max px-2">
+                            <img src="/assets/imgs/games/one-more-day/one-more-day-screen1.webp" class="gallery-thumb w-32 md:w-44 aspect-video rounded-lg transition-all cursor-pointer opacity-60 hover:opacity-100" data-image="/assets/imgs/games/one-more-day/one-more-day-screen1.webp" alt="Thumb 1">
+                            <img src="/assets/imgs/games/one-more-day/one-more-day-screen2.webp" class="gallery-thumb w-32 md:w-44 aspect-video rounded-lg transition-all cursor-pointer opacity-60 hover:opacity-100" data-image="/assets/imgs/games/one-more-day/one-more-day-screen2.webp" alt="Thumb 2">
+                            <img src="/assets/imgs/games/one-more-day/one-more-day-screen3.webp" class="gallery-thumb w-32 md:w-44 aspect-video rounded-lg transition-all cursor-pointer opacity-60 hover:opacity-100" data-image="/assets/imgs/games/one-more-day/one-more-day-screen3.webp" alt="Thumb 3">
+                            <img src="/assets/imgs/games/one-more-day/one-more-day-screen4.webp" class="gallery-thumb w-32 md:w-44 aspect-video rounded-lg transition-all cursor-pointer opacity-60 hover:opacity-100" data-image="/assets/imgs/games/one-more-day/one-more-day-screen4.webp" alt="Thumb 4">
+                            <img src="/assets/imgs/games/one-more-day/one-more-day-screen5.webp" class="gallery-thumb w-32 md:w-44 aspect-video rounded-lg transition-all cursor-pointer opacity-60 hover:opacity-100" data-image="/assets/imgs/games/one-more-day/one-more-day-screen5.webp" alt="Thumb 5">
+                            <img src="/assets/imgs/games/one-more-day/one-more-day-screen6.webp" class="gallery-thumb w-32 md:w-44 aspect-video rounded-lg transition-all cursor-pointer opacity-60 hover:opacity-100" data-image="/assets/imgs/games/one-more-day/one-more-day-screen6.webp" alt="Thumb 6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="game-news" class="mb-20 px-4 md:px-12">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-xl md:text-3xl font-bold text-white flex items-center gap-3">
+                    <span class="w-1 h-8 bg-violet-500 rounded-full"></span>
+                    Latest Events & News
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article class="SectionGlow group flex flex-col h-full bg-slate-900/40 border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:border-violet-500/50 hover:-translate-y-2">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assets/imgs/ourstory/orpita-joined-gmtk2025/orpita-joined-gmtk2025.webp" alt="GMTK Jam 2025" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <span class="absolute top-4 left-4 bg-violet-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Event</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <time class="text-xs text-slate-500 mb-2">August 15, 2025</time>
+                        <h3 class="text-lg font-bold text-white group-hover:text-violet-400 transition-colors mb-3">
+                            Orpita joined GMTK Game Jam 2025
+                        </h3>
+                        <p class="text-slate-400 text-sm line-clamp-2 mb-6">
+                            Discover our journey in creating "One More Day" in just 48 hours and how we handled the "Loop" theme.
+                        </p>
+                        <a href="../../news/orpita-joined-gmtk2025" class="mt-auto inline-flex items-center gap-2 text-violet-400 text-sm font-bold hover:gap-3 transition-all">
+                            Read Devlog 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div id="footer-placeholder"></div>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+
+    <script src="/assets/js/ts-particles.js" defer></script>
+    <script src="/assets/js/load.js" defer></script>
+    <script src="/assets/js/header.js" defer></script>
+    <script src="/assets/js/games.js" defer></script>
+    <script src="/assets/js/footer.js" defer></script>
+    <script src="/assets/js/social-links.js" defer></script>
+    <script src="/assets/js/animate-on-scroll.js" defer></script>
+
+    <script src="/assets/js/cookie/cookie-core.js"></script>
+    <script src="/assets/js/cookie/cookie-banner.js" defer></script>
+    <script src="/assets/js/cookie/survey-manager.js" defer></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join us | Orpita game studio</title>
+    <meta name="description" content="Join Orpita Game Studio! We're looking for passionate artists, developers, and storytellers to help shape the future of indie gaming. View open positions.">
+    <meta name="author" content="Orpita Studio">
+    <link rel="icon" href="/assets/imgs/sm-small-logo.webp" type="image/png">
+    <link rel="canonical" href="https://orpita-studio.web.app/en/about/join-us/">
+    
+    <meta property="og:title" content="About Orpita studio">
+    <meta property="og:description" content="Ready to build something meaningful? Join our growing team of creators and help us craft games that players will love. Check out our open positions.">
+    <meta property="og:image" content="https://orpita-studio.web.app//assets/imgs/og-cover.webp">
+    <meta property="og:url" content="https://orpita-studio.web.app/en/about/join-us/">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orpita Game Studio">
+    <meta name="twitter:description" content="Orpita Game Studio | Independent game studio bringing fresh ideas to life. At Orpita, we design games with heart, creativity, and a passion for unique player experiences.">
+    <meta name="twitter:image" content="https://orpita-studio.web.app//assets/imgs/og-cover.webp">
+    
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Orpita Studio",
+            "url": "https://orpita-studio.web.app/en/about/join-us/",
+            "logo": "https://orpita-studio.web.app/assets/imgs/sm-small-logo.webp",
+            "email": "orpitastudios@gmail.com",
+            "description": "Orpita Game Studio is hiring! We're seeking talented game developers, 2D artists, and creative minds to join our remote-first team. Be part of building unique gaming experiences from the ground up.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "EG",
+                "addressLocality": "Alexandria"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "email": "orpitastudios@gmail.com"
+            },
+            "sameAs": [
+                "https://www.linkedin.com/company/orpita-game-studio/",
+                "https://www.youtube.com/@OrpitaStudio",
+                "https://www.facebook.com/OrpitaStudio",
+                "https://www.instagram.com/orpitastudio"
+            ]
+        }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen">
+    
+    <div id="tsparticles" class="fixed inset-0 -z-10"></div>
+    <div id="header-placeholder"></div>
+    
+    <main class="flex-1">
+        <section id="page-hero" class="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
+            <div class="container mx-auto px-4 z-10">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight opacity-0 animate-on-scroll" style="animation-delay: 0.0s;">
+                        Join <span class="gradient-text-js">Orpita Studio</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 mt-6 max-w-2xl mx-auto opacity-0 animate-on-scroll" style="animation-delay: 0.2s;">
+                        Ready for new journey with our team?
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="SectionContentWrapper">
+            
+            <section id="hiring-process" class="relative py-4 px-4">
+                <div class="container mx-auto max-w-6xl">
+                    <div class="w-full p-8 md:p-12 opacity-0 animate-on-scroll SectionTheme" style="animation-delay: 0.4s;">
+                        
+                        <div class="text-center mb-12 animate-on-scroll opacity-0" style="animation-delay: 0.6s;">
+                            <h2 class="text-3xl md:text-5xl font-black text-white">
+                                Apply <span class='gradient-text-js'>steps</span>.
+                            </h2>
+                        </div>
+                        <div id="hiring-steps-container" class="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-4 relative">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <section id="open-position" class="relative py-4 px-4">
+                <div class="container mx-auto max-w-6xl">
+                    <div class="w-full p-8 md:p-12 opacity-0 animate-on-scroll SectionTheme" style="animation-delay: 0.4s;">
+                        
+                        <div class="text-center mb-12 animate-on-scroll opacity-0" style="animation-delay: 0.6s;">
+                            <h2 class="text-3xl md:text-5xl font-black text-white">
+                                Open <span class='gradient-text-js'>positions</span>.
+                            </h2>
+                        </div>
+                        <div id="positions-container" class="flex flex-col gap-6"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <div id="jobModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        
+        <div class="absolute inset-0 bg-slate-950/60" onclick="toggleModal()"></div>
+        
+        <div id="modalContent" class="relative bg-slate-900/80 border border-purple-500/20 w-full max-w-lg rounded-3xl p-7 md:p-10 overflow-y-auto max-h-[90vh] ring-1 ring-white/10">
+            
+            <h3 class="text-2xl font-extrabold text-white mb-2 tracking-tight">Before You Apply...</h3>
+            <p class="text-slate-400 text-sm mb-8">Let's be transparent about where we are and what we're looking for.</p>
+            
+            <div class="space-y-6">
+                <div class="flex items-start gap-3 group">
+                    <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
+                    <p class="text-slate-200 text-sm md:text-base leading-relaxed">
+                        <span class="text-purple-400 font-semibold">Early-stage startup:</span> We're building something from the ground up. Currently, positions are <span class="text-purple-400">unpaid/voluntary</span> until we reach stable revenue. If you're looking for immediate income, we completely understand—this might not be the right timing.
+                    </p>
+                </div>
+                
+                <div class="flex items-start gap-3 group">
+                    <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
+                    <p class="text-slate-200 text-sm md:text-base leading-relaxed">
+                        <span class="text-purple-400 font-semibold">Respect everyone's time:</span> Interviews are scheduled individually. Please <span class="text-purple-400">be punctual</span> and confirm your attendance. Repeated no-shows may affect future opportunities with us.
+                    </p>
+                </div>
+                
+                <div class="flex items-start gap-3 group">
+                    <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
+                    <p class="text-slate-200 text-sm md:text-base leading-relaxed">
+                        <span class="text-purple-400 font-semibold">Remote-first culture:</span> No physical office yet—work is <span class="text-purple-400">100% remote</span>. If you're based in <span class="text-purple-400">Alexandria</span>, we occasionally organize in-person meetups.
+                    </p>
+                </div>
+                
+                <div class="flex items-start gap-3 group mt-8 pt-6 border-t border-purple-500/10">
+                    <p class="text-slate-200 text-base md:text-lg leading-relaxed">
+                        If you're passionate about building something meaningful from scratch and this aligns with your current goals, <span class="text-purple-400 font-semibold">we'd love to connect</span>.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                <a href="#tally-open=Ekd5V2&tally-layout=modal&tally-auto-close=1000" onclick="toggleModal()" class="flex-[2] bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 rounded-2xl text-center transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/50">
+                    I'm Ready to Apply
+                </a>
+                <button onclick="toggleModal()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3 rounded-2xl text-center transition-all duration-200">
+                    Not Right Now
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer-placeholder"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    
+    <script src="/assets/js/application.js" defer></script>
+    
+    <script src="/assets/js/ts-particles.js" defer></script>
+    <script src="/assets/js/load.js" defer></script>
+    <script src="/assets/js/header.js" defer></script>
+    <script src="/assets/js/footer.js" defer></script>
+    <script src="/assets/js/social-links.js" defer></script>
+    <script src="/assets/js/animate-on-scroll.js" defer></script>
+    
+    <script src="/assets/js/cookie/cookie-core.js"></script>
+    <script src="/assets/js/cookie/cookie-banner.js" defer></script>
+    <script src="/assets/js/cookie/survey-manager.js" defer></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us | Orpita game studio</title>
+    <meta name="description" content="Meet the team behind Orpita Game Studio. A startup born in Alexandria, Egypt, driven by passion to create games that matter and stories worth telling.">
+    <meta name="author" content="Orpita Studio">
+    <link rel="icon" href="/assets/imgs/sm-small-logo.webp" type="image/webp">
+    <link rel="canonical" href="https://orpita-studio.web.app/en/about/">
+
+    <meta property="og:title" content="About Orpita studio">
+    <meta property="og:description" content="From Alexandria with a dream: building indie games that players will love. Meet the passionate team shaping the future of Orpita Game Studio.">
+    <meta property="og:image" content="https://orpita-studio.web.app/assets/imgs/og-cover.webp">
+    <meta property="og:url" content="https://orpita-studio.web.app/en/about/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orpita Game Studio">
+    <meta name="twitter:description" content="Orpita Game Studio | Independent game studio bringing fresh ideas to life.">
+    <meta name="twitter:image" content="https://orpita-studio.web.app/assets/imgs/og-cover.webp">
+    <meta name="theme-color" content="#7c3aed">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Orpita Studio",
+            "url": "https://orpita-studio.web.app/en/about",
+            "logo": "https://orpita-studio.web.app/assets/imgs/sm-small-logo.webp",
+            "email": "orpitastudios@gmail.com",
+            "description": "Orpita Game Studio was founded in May 2025 in Alexandria, Egypt. Creating fun games without dark patterns.",
+            "address": { "@type": "PostalAddress", "addressCountry": "EG", "addressLocality": "Alexandria" },
+            "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "email": "orpitastudios@gmail.com" },
+            "sameAs": [
+                "https://www.linkedin.com/company/orpita-game-studio/",
+                "https://www.youtube.com/@OrpitaStudio",
+                "https://www.facebook.com/OrpitaStudio",
+                "https://www.instagram.com/orpitastudio"
+            ]
+        }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <div id="tsparticles" class="fixed inset-0 -z-10"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="flex-1">
+        <section id="page-hero" class="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
+            <div class="container mx-auto px-4 z-10 relative text-center">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight opacity-0 animate-on-scroll">
+                    About <span class="gradient-text-js">Orpita Studio</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 mt-6 max-w-2xl mx-auto opacity-0 animate-on-scroll" style="animation-delay: 0.2s;">
+                    We build new worlds, one story at a time.
+                </p>
+            </div>
+        </section>
+
+        <div class="SectionContentWrapper">
+            <section id="who-we-are" class="relative py-4 px-4">
+                <div class="container mx-auto max-w-6xl">
+                    <div class="w-full p-8 md:p-16 opacity-0 animate-on-scroll SectionTheme">
+                        <div class="text-center mb-12 animate-on-scroll opacity-0" style="animation-delay: 0.6s;">
+                            <h2 class="text-3xl md:text-5xl font-black text-white">Who <span class='gradient-text-js'>We Are</span></h2>
+                        </div>
+                        <div class="text-center max-w-4xl mx-auto opacity-0 animate-on-scroll" style="animation-delay: 0.8s;">
+                            <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                                <span class="text-white font-bold">Orpita</span> is an independent game studio based in Alexandria, Egypt. Founded in May 2025, we specialize in creating high-concept interactive experiences that push the boundaries of indie gaming. Our team is driven by a singular goal: to build immersive, logic-defying worlds that empower players to explore the extraordinary.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="our-philosophy" class="relative py-4 px-4">
+                <div class="container mx-auto max-w-6xl">
+                    <div class="w-full p-8 md:p-16 opacity-0 animate-on-scroll SectionTheme">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl md:text-5xl font-black text-white opacity-0 animate-on-scroll" style="animation-delay: 0.2s;">Our <span class='gradient-text-js'>Philosophy</span></h2>
+                            <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto opacity-0 animate-on-scroll" style="animation-delay: 0.4s;">Our values guide every world we build and every story we tell.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12 text-center">
+                            <div class="p-6 bg-slate-800/50 rounded-2xl border border-slate-700 opacity-0 animate-on-scroll" style="animation-delay: 0.6s;">
+                                <h3 class="text-2xl font-bold text-white mb-3">Focus your mind</h3>
+                                <p class="text-gray-400">In an era of brain-rot distractions, Orpita crafts experiences that reclaim your attention and reward your intellectual curiosity.</p>
+                            </div>
+                            <div class="p-6 bg-slate-800/50 rounded-2xl border border-slate-700 opacity-0 animate-on-scroll" style="animation-delay: 0.7s;">
+                                <h3 class="text-2xl font-bold text-white mb-3">Imagine your world</h3>
+                                <p class="text-gray-400">Explore realms where beauty meets purpose, crafted by dreamers who believe that every game should be a breathtaking piece of living art.</p>
+                            </div>
+                            <div class="p-6 bg-slate-800/50 rounded-2xl border border-slate-700 opacity-0 animate-on-scroll" style="animation-delay: 0.8s;">
+                                <h3 class="text-2xl font-bold text-white mb-3">Raise your limits</h3>
+                                <p class="text-gray-400">Driven by an insatiable hunger for excellence, we break through every ceiling to deliver experiences that grow bolder and more ambitious with every release.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="word-from-our-founder" class="relative py-4 px-4">
+                <div class="container mx-auto max-w-6xl">
+                    <div class="w-full p-8 md:p-16 opacity-0 animate-on-scroll SectionTheme">
+                        <div class="text-center mb-12 animate-on-scroll opacity-0" style="animation-delay: 0.2s;">
+                            <h2 class="text-3xl md:text-5xl font-black text-white">A Word From <span class='gradient-text-js'>Our Founder</span></h2>
+                            <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">Look for inspiration, lead the vision.</p>
+                        </div>
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <img loading="lazy" src="/assets/imgs/members/amr-elmahdy.webp" alt="Amr Elmahdy" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover flex-shrink-0 border-4 border-slate-700 shadow-lg opacity-0 animate-on-scroll" style="animation-delay: 0.4s;">
+                            <div class="text-lg text-gray-300 text-center md:text-left flex-1 opacity-0 animate-on-scroll" style="animation-delay: 0.5s;">
+                                <blockquote class="italic text-lg text-gray-300">"Many games recently have started relying on tricks to make players come back, rather than focusing on solid game mechanics or good design. That’s what we wanted to change with Orpita, a studio where a team of designers, artists, and of course programmers work together to create fun games without mind tricks or manipulating players."</blockquote>
+                                <p class="text-violet-400 font-bold mt-4">- Amr Elmahdy</p>
+                                <p class="text-gray-500 text-base">Founder & CEO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="meet-our-team" class="relative py-4 px-4">
+                <div class="container mx-auto max-w-6xl">
+                    <div class="w-full p-4 md:p-16 opacity-0 animate-on-scroll SectionTheme">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl md:text-5xl font-black text-white opacity-0 animate-on-scroll" style="animation-delay: 0.2s;">Meet <span class='gradient-text-js'>Our Team</span></h2>
+                            <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto opacity-0 animate-on-scroll" style="animation-delay: 0.4s;">Meet the board behind it all</p>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12 text-center">
+                            <div class="p-6 bg-slate-800/50 rounded-2xl border border-slate-700 opacity-0 animate-on-scroll" style="animation-delay: 0.1s;">
+                                <img loading="lazy" src="/assets/imgs/members/amr-elmahdy.webp" alt="Amr Elmahdy" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-slate-700">
+                                <h3 class="text-xl font-bold text-white">Amr Elmahdy</h3>
+                                <p class="text-violet-400">Founder & CEO</p>
+                            </div>
+                            <div class="p-6 bg-slate-800/50 rounded-2xl border border-slate-700 opacity-0 animate-on-scroll" style="animation-delay: 0.2s;">
+                                <img loading="lazy" src="/assets/imgs/members/norhan-amr.webp" alt="Norhan Amr" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-slate-700">
+                                <h3 class="text-xl font-bold text-white">Norhan Amr</h3>
+                                <p class="text-violet-400">Head of game design</p>
+                            </div>
+                            <div class="p-6 bg-slate-800/50 rounded-2xl border border-slate-700 opacity-0 animate-on-scroll" style="animation-delay: 0.3s;">
+                                <img loading="lazy" src="/assets/imgs/members/mark-asaad.webp" alt="Mark Asaad" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-slate-700">
+                                <h3 class="text-xl font-bold text-white">Mark Asaad</h3>
+                                <p class="text-violet-400">Head of game dev</p>
+                            </div>
+                            <div class="p-6 bg-slate-800/50 rounded-2xl border border-slate-700 opacity-0 animate-on-scroll" style="animation-delay: 0.4s;">
+                                <img loading="lazy" src="/assets/imgs/members/esraa-adel.webp" alt="Esraa Adel" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-slate-700">
+                                <h3 class="text-xl font-bold text-white">Esraa Adel</h3>
+                                <p class="text-violet-400">Head of game art</p>
+                            </div>
+                            <div class="p-6 bg-slate-800/50 rounded-2xl border border-slate-700 opacity-0 animate-on-scroll" style="animation-delay: 0.5s;">
+                                <img loading="lazy" src="/assets/imgs/members/omar-mohamed.webp" alt="Omar Mohamed" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-slate-700">
+                                <h3 class="text-xl font-bold text-white">Omar Mohamed</h3>
+                                <p class="text-violet-400">Head of HR</p>
+                            </div>
+                            <div class="p-6 bg-slate-800/50 rounded-2xl border border-slate-700 opacity-0 animate-on-scroll" style="animation-delay: 0.6s;">
+                                <img loading="lazy" src="/assets/imgs/members/menna-mostafa.webp" alt="Menna Mostafa" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-slate-700">
+                                <h3 class="text-xl font-bold text-white">Menna Mostafa</h3>
+                                <p class="text-violet-400">Head of media</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="relative py-4 px-4">
+                <div class="container mx-auto max-w-6xl">
+                    <div class="w-full p-8 md:p-16 opacity-0 animate-on-scroll SectionTheme text-center">
+                        <h2 class="text-3xl md:text-5xl font-black text-white opacity-0 animate-on-scroll" style="animation-delay: 0.2s;">
+                            Contact & <span class='gradient-text-js'>collaboration</span>
+                        </h2>
+                        <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto opacity-0 animate-on-scroll" style="animation-delay: 0.3s;">
+                            Have a question or a bold idea? We’re always looking for the next great collaboration.
+                        </p>
+                        
+                        <div class="social-links-container flex flex-wrap justify-center items-center gap-6 mt-8"></div>  
+
+                        <div class="mt-10 flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4">
+                            <a href="./join-us" class="w-fit sm:w-auto bg-violet-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-violet-700 transition-all transform hover:scale-105 shadow-lg animate-pulse-glow opacity-0 animate-on-scroll" style="animation-delay: 0.4s;">Join Our Team</a>
+                            <a href="mailto:OrpitaStudios@Gmail.com?subject=Business Inquiry" class="w-fit sm:w-auto bg-gray-700 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-600 transition-all transform hover:scale-105 shadow-lg opacity-0 animate-on-scroll" style="animation-delay: 0.5s;">Business Inquiries</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+
+    <script src="/assets/js/ts-particles.js" defer></script>
+    <script src="/assets/js/load.js" defer></script>
+    <script src="/assets/js/header.js" defer></script>
+    <script src="/assets/js/footer.js" defer></script>
+    <script src="/assets/js/social-links.js" defer></script>
+    <script src="/assets/js/animate-on-scroll.js" defer></script>
+
+    <script src="/assets/js/cookie/cookie-core.js"></script>
+    <script src="/assets/js/cookie/cookie-banner.js" defer></script>
+    <script src="/assets/js/cookie/survey-manager.js" defer></script>
+</body>
+</html>
+
+<footer class="relative bg-[#0b0f1a] pt-16 pb-8 overflow-hidden border-t border-white/5">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent opacity-50"></div>
+
+    <div class="container mx-auto px-6 max-w-7xl">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+            
+            <div class="md:col-span-4 space-y-6">
+                <a href="/" data-lang-link="home" class="inline-block transition-transform hover:scale-105">
+                    <img src="/assets/imgs/lg-full-logo-trans.webp" alt="Orpita Logo" class="h-14 w-auto">
+                </a>
+                <p class="text-gray-400 text-sm leading-relaxed max-w-sm" data-i18n="footer_desc">
+                    Crafting immersive worlds and unforgettable experiences. Join us on our journey to redefine gaming boundaries.
+                </p>
+                <div class="flex gap-3">
+                    <a href="https://www.facebook.com/OrpitaStudio" target="_blank" class="p-2.5 bg-white/5 hover:bg-violet-600/20 border border-white/10 rounded-lg text-gray-400 hover:text-violet-400 transition-all">
+                        <svg class="w-5 h-5 fill-current"><use href="/assets/svg/icons-sprite.svg#icon-facebook"></use></svg>
+                    </a>
+                    <a href="https://www.instagram.com/orpitastudio" target="_blank" class="p-2.5 bg-white/5 hover:bg-violet-600/20 border border-white/10 rounded-lg text-gray-400 hover:text-violet-400 transition-all">
+                        <svg class="w-5 h-5 fill-current"><use href="/assets/svg/icons-sprite.svg#icon-instagram"></use></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@OrpitaStudio" target="_blank" class="p-2.5 bg-white/5 hover:bg-violet-600/20 border border-white/10 rounded-lg text-gray-400 hover:text-violet-400 transition-all">
+                        <svg class="w-5 h-5 fill-current"><use href="/assets/svg/icons-sprite.svg#icon-youtube"></use></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/orpita-game-studio/" target="_blank" class="p-2.5 bg-white/5 hover:bg-violet-600/20 border border-white/10 rounded-lg text-gray-400 hover:text-violet-400 transition-all">
+                        <svg class="w-5 h-5 fill-current"><use href="/assets/svg/icons-sprite.svg#icon-linkedin"></use></svg>
+                    </a>
+                    <a href="https://orpita-studio.itch.io/" target="_blank" class="p-2.5 bg-white/5 hover:bg-violet-600/20 border border-white/10 rounded-lg text-gray-400 hover:text-violet-400 transition-all">
+                        <svg class="w-5 h-5 fill-current"><use href="/assets/svg/icons-sprite.svg#icon-itchio"></use></svg>
+                    </a>
+                    <a href="https://wa.me/201203075900" target="_blank" class="p-2.5 bg-white/5 hover:bg-violet-600/20 border border-white/10 rounded-lg text-gray-400 hover:text-violet-400 transition-all">
+                        <svg class="w-5 h-5 fill-current"><use href="/assets/svg/icons-sprite.svg#icon-whatsapp"></use></svg>
+                    </a>
+                </div>
+                
+                
+            </div>
+
+            <div class="md:col-span-4 grid grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-widest" data-i18n="footer_explore">Explore</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" data-lang-link="home" data-i18n="nav_home" class="hover:text-violet-400 transition-colors">Home</a></li>
+                        <li><a href="#" data-lang-link="games" data-i18n="nav_games" class="hover:text-violet-400 transition-colors">Our Games</a></li>
+                        <li><a href="#" data-lang-link="news" data-i18n="nav_news" class="hover:text-violet-400 transition-colors">News</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-widest" data-i18n="footer_studio">Studio</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" data-lang-link="about" data-i18n="nav_about" class="hover:text-violet-400 transition-colors">About Us</a></li>
+                        <li><a href="#" data-lang-link="about/join-us" data-i18n="nav_contact" class="hover:text-violet-400 transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="md:col-span-4 space-y-4">
+                <h4 class="text-white font-bold text-sm uppercase tracking-widest" data-i18n="footer_lang">Language</h4>
+                <div class="flex items-center gap-4 bg-white/5 p-1 rounded-xl border border-white/10 w-fit">
+                    <a href="#" data-lang-target="ar" class="px-4 py-1.5 rounded-lg text-xs font-bold transition-all" data-i18n="lang_ar">العربية</a>
+                    <a href="#" data-lang-target="en" class="px-4 py-1.5 rounded-lg text-xs font-bold transition-all" data-i18n="lang_en">English</a>
+                </div>
+                <p class="text-xs text-gray-500 pt-2" data-i18n="footer_lang_note">Choose your preferred language for the best experience.</p>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+            <p>&copy; 2025-<span id="current-year"></span> Orpita Game Studio. <span data-i18n="copyright_text">All Rights Reserved.</span></p>
+            <div class="flex gap-6">
+                <a href="/terms-privacy/" class="hover:text-white transition-colors" data-i18n="terms_text">Terms & Privacy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-md border-b border-white/5">
+    <div class="w-full px-6 lg:px-12 py-4 flex items-center justify-between">
+        
+        <div class="flex-shrink-0">
+            <a href="/" class="group flex items-center">
+                <img src="/assets/imgs/lg-small-logo-trans.webp" alt="Orpita Logo" class="h-10 w-auto transition-transform duration-300 group-hover:scale-105">
+            </a>
+        </div>
+        
+        <nav id="main-nav" class="hidden lg:flex items-center gap-8"></nav>
+        
+        <div class="flex items-center gap-4">
+            <div class="hidden md:flex items-center bg-white/5 rounded-full px-4 py-1.5 border border-white/10">
+                <button id="lang-en" class="text-xs font-bold transition-colors">EN</button>
+                <span class="mx-2 text-white/20">|</span>
+                <button id="lang-ar" class="text-xs font-bold transition-colors">AR</button>
+            </div>
+            
+            <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 bg-violet-600/10 rounded-lg border border-violet-500/20">
+                <span class="w-5 h-0.5 bg-violet-400 rounded-full transition-all duration-300"></span>
+                <span class="w-5 h-0.5 bg-violet-400 rounded-full transition-all duration-300"></span>
+                <span class="w-5 h-0.5 bg-violet-400 rounded-full transition-all duration-300"></span>
+            </button>
+        </div>
+        
+    </div>
+    
+    <div id="mobile-dropdown" class="absolute top-[calc(100%+0.5rem)] right-6 w-64 bg-slate-900/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl p-4 opacity-0 invisible translate-y-[-10px] transition-all duration-300 lg:hidden pointer-events-none">
+        <nav class="flex flex-col gap-4">
+        </nav>
+    </div>
+</header>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>404 - Page Not Found | Orpita Studio</title>
+    <meta name="description" content="The page you requested was not found. Please navigate back to the homepage.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/style.css"> 
+    
+    <style>
+        /* تعريف الألوان (متغيرات CSS) */
+        :root {
+            --c01: #ef4444; /* Red-500 */
+            --c02: #8b5cf6; /* Violet-500 (لون Orpita الأساسي) */
+            --c03: #22c55e; /* Green-500 */
+            --main-text-color: #f3f4f6; /* Gray-100 */
+            --bg-color: #020617; /* Slate-950 */
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--main-text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Glitch Effect - أساس التأثير */
+        .glitch-text {
+            font-family: 'Audiowide', cursive;
+            font-size: 8em;
+            color: var(--c02); 
+            position: relative;
+            animation: glitch 2s steps(1) infinite; 
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+            content: none !important; 
+        }
+
+        /* Keyframes لتأثير Text-Shadow Glitch (التي اخترتها) */
+        @keyframes glitch {
+            0%, 1%, 2%, 3%, 4%, 51%, 52%, 53%, 54%, 55%, 73%, 74%, 75%, 76% { text-shadow: 1px 0 0 var(--c01), -3px 0 0 var(--c02); }
+            10%, 5%, 56%, 57%, 58%, 59%, 6%, 60%, 67%, 68%, 69%, 7%, 70%, 77%, 78%, 79%, 8%, 80%, 9% { text-shadow: -1px 0 0 var(--c01), 1px 0 0 var(--c02); }
+            11%, 12%, 13%, 14%, 15%, 43%, 44%, 45%, 46%, 81%, 82%, 83%, 84%, 85% { text-shadow: 0.5px 0 0 var(--c01), -0.5px 0 0 var(--c03); }
+            16%, 17%, 18%, 19%, 20%, 47%, 48%, 49%, 50%, 86%, 87%, 88%, 89%, 90% { text-shadow: -1px 0 0 var(--c01), 1px 0 0 var(--c02); }
+            21%, 22%, 23%, 24%, 25%, 26%, 27%, 28%, 29%, 30%, 92%, 93%, 94%, 95% { text-shadow: .7px 0 0 var(--c02), -8px 0 0 var(--c03); }
+            100%, 31%, 32%, 33%, 34%, 35%, 36%, 37%, 38%, 39%, 40%, 96%, 97%, 98%, 99% { text-shadow: -1px 0 0 var(--c02), 1px 0 0 var(--c03); }
+            41% { text-shadow: 50px 0 0 var(--c02), -50px 0 0 var(--c03); }
+            42% { text-shadow: 0 0 0 var(--c02), 0 0 0 var(--c03); }
+            61% { text-shadow: 30px 0 0 var(--c01), -30px 0 0 var(--c03); }
+            62% { text-shadow: 0 0 0 var(--c01), 0 0 0 var(--c03); }
+            63%, 64%, 65%, 66% { text-shadow: .5px 0 0 var(--c01), -7px 0 0 var(--c02); }
+            71% { text-shadow: 70px 0 0 var(--c01), -70px 0 0 var(--c02); }
+            72% { text-shadow: 0 0 0 var(--c01), 0 0 0 var(--c02); }
+            91% { text-shadow: 60px 0 0 var(--c03), -60px 0 0 var(--c02); }
+        }
+
+    </style>
+</head>
+<body class="bg-slate-950 text-gray-200 flex flex-col min-h-screen">
+
+    <main class="flex-1 flex items-center justify-center p-8">
+        <div class="text-center max-w-2xl">
+            
+            <h1 
+                class="glitch-text text-8xl sm:text-9xl font-black mb-8"
+            >
+                404
+            </h1>
+            
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+                <span class="text-violet-400">Error:</span> Page Not Found
+            </h2>
+            
+            <p class="text-lg text-gray-400 mb-10 mx-auto max-w-xl">
+                The URL you requested could not be located on our server. The link may be broken, or the page may have been moved.
+            </p>
+
+            <div class="space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="/en/" class="bg-violet-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-violet-700 transition-all duration-300 transform hover:scale-105 shadow-lg whitespace-nowrap">
+                    Go to Homepage
+                </a>
+                
+                <a 
+                    id="report-issue-btn"
+                    href="mailto:orpitastudios@gmail.com" 
+                    class="text-violet-400 border border-violet-400 font-bold py-3 px-8 rounded-full text-lg hover:bg-violet-900 hover:text-white transition-all duration-300 whitespace-nowrap"
+                >
+                    Report an Issue
+                </a>
+            </div>
+            
+            <p class="mt-12 text-sm text-gray-500">
+                Contact the webmaster for assistance.
+            </p>
+
+        </div>
+    </main>
+
+    <footer class="w-full py-8 border-t border-slate-800 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm text-gray-500">© 2025 Orpita Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const reportButton = document.getElementById('report-issue-btn');
+            
+            if (reportButton) {
+                // 1. جمع البيانات المطلوبة
+                const currentURL = window.location.href; // رابط الصفحة الذي أدى للخطأ
+                const userAgent = navigator.userAgent; // معلومات المتصفح
+                const screenRes = `${window.screen.width}x${window.screen.height}`; // دقة الشاشة
+
+                // 2. بناء جسم رسالة البريد الإلكتروني (Body)
+                // يجب ترميز النصوص (encodeURIComponent) لتجنب كسر الرابط
+                const bodyContent = `
+Page Not Found (404) Report:
+
+---
+DETAILS:
+---
+1. Broken URL: ${currentURL}
+2. Browser/OS: ${userAgent}
+3. Screen Res: ${screenRes}
+4. Time of Error: ${new Date().toLocaleString()}
+
+---
+USER MESSAGE:
+(Please describe the issue or what you were trying to do)
+---
+
+`;
+
+                // 3. بناء رابط mailto النهائي
+                const subject = encodeURIComponent('Critical 404 Error Report');
+                const body = encodeURIComponent(bodyContent.trim());
+                const mailtoLink = `mailto:orpitastudios@gmail.com?subject=${subject}&body=${body}`;
+
+                // 4. تعيين الرابط للزر
+                reportButton.href = mailtoLink;
+            }
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orpita Game Studio | Loading...</title>
+    
+    <meta name="description" content="Orpita Game Studio | Independent game studio bringing fresh ideas to life. At Orpita, we design games with heart, creativity, and a passion for unique player experiences.">
+    <meta name="author" content="Orpita Studio">
+    <meta name="theme-color" content="#7c3aed">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://orpita-studio.web.app/">
+    <meta property="og:title" content="Orpita Game Studio">
+    <meta property="og:description" content="Independent game studio bringing fresh ideas to life. Designing games with heart and creativity.">
+    <meta property="og:image" content="https://orpita-studio.web.app/assets/imgs/og-cover.webp">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orpita Game Studio">
+    <meta name="twitter:description" content="Independent game studio bringing fresh ideas to life.">
+    <meta name="twitter:image" content="https://orpita-studio.web.app/assets/imgs/og-cover.webp">
+
+    <link rel="icon" href="/assets/imgs/sm-small-logo.webp">
+    <link rel="canonical" href="https://orpita-studio.web.app/">
+
+    <link rel="preload" as="image" href="./assets/imgs/SLogo.webp">
+    <link rel="preload" href="/assets/fonts/orbitron/Orbitron-Bold.woff2" as="font" type="font/ttf" crossorigin>
+
+    <style>
+        /* Reset & Basics */
+        :root {
+            --primary: #7c3aed; /* Orpita Purple */
+            --bg-color: #020617; /* Slate 950 essentially */
+            --text-color: #e2e8f0;
+        }
+        
+        @font-face {
+            font-family: 'Orbitron';
+            src: url('/assets/fonts/orbitron/Orbitron-Bold.woff2') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Container */
+        .loader-container {
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Logo Styling */
+        .logo {
+            width: 140px;
+            height: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 15px rgba(124, 58, 237, 0.4));
+            animation: breathe 3s infinite ease-in-out;
+        }
+
+        /* Text Styling */
+        h1 {
+            font-family: 'Orbitron', sans-serif; /* Gaming Font */
+            font-size: 1.25rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #fff, #a78bfa, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 3s linear infinite;
+        }
+
+        /* Progress Bar */
+        .progress-wrapper {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            animation: loadProgress 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        /* Fallback Links (Hidden initially) */
+        .fallback-nav {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #64748b;
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none; /* disabled until visible */
+        }
+        .fallback-nav.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .fallback-nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .fallback-nav a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes breathe { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.9; } }
+        @keyframes shine { to { background-position: 200% center; } }
+        @keyframes loadProgress { 0% { width: 0%; } 40% { width: 70%; } 100% { width: 100%; } }
+
+    </style>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Orpita Studio",
+            "url": "https://orpita-studio.web.app/",
+            "logo": "https://orpita-studio.web.app/assets/imgs/og-cover.webp",
+            "email": "orpitastudios@gmail.com",
+            "description": "Orpita Game Studio | Independent game studio bringing fresh ideas to life.",
+            "address": { "@type": "PostalAddress", "addressCountry": "EG", "addressLocality": "Alexandria" },
+            "sameAs": [
+                "https://www.linkedin.com/company/orpita-game-studio/",
+                "https://www.youtube.com/@OrpitaStudio",
+                "https://www.facebook.com/OrpitaStudio",
+                "https://www.instagram.com/orpitastudio"
+            ]
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="loader-container">
+        <img src="/assets/imgs/lg-small-logo-trans.webp" alt="Orpita Studio Logo" class="logo" 
+             width="140" height="46" loading="eager" decoding="async"
+             onerror="this.src='./assets/imgs/sm-small-logo.webp'"> <h1 id="status-text">Initializing...</h1>
+
+        <div class="progress-wrapper">
+            <div class="progress-bar"></div>
+        </div>
+
+        <div id="fallback" class="fallback-nav">
+            <p>Select Language:</p>
+            <div>
+                <a href="/en/">English</a>
+                <span>|</span>
+                <a href="/ar/">العربية</a>
+            </div>
+        </div>
+    </div>
+
+    <noscript>
+        <div style="text-align:center; margin-top:20px; color:#fff;">
+            <p>Please enable JavaScript or select a language:</p>
+            <a href="/en/" style="color:#a78bfa; margin-right:10px;">English</a>
+            <a href="/ar/" style="color:#a78bfa;">العربية</a>
+        </div>
+    </noscript>
+
+    <script>
+        /**
+         * Orpita Game Studio - Smart Redirect Logic
+         * Handles language detection and smooth redirection.
+         */
+        (function() {
+            const CONFIG = {
+                defaultLang: 'en',
+                supportedLangs: { 'ar': 'ar/', 'en': 'en/' },
+                redirectDelay: 1200, // Slightly less than animation to feel snappy
+                fallbackTimeout: 3000
+            };
+
+            function getRedirectPath() {
+                // 1. Check if user already has a saved preference (optional feature)
+                const savedLang = localStorage.getItem('orpita-lang');
+                if (savedLang && CONFIG.supportedLangs[savedLang]) {
+                    return CONFIG.supportedLangs[savedLang];
+                }
+
+                // 2. Check Browser Language
+                const userLang = (navigator.language || navigator.userLanguage).toLowerCase().substring(0, 2);
+                return CONFIG.supportedLangs[userLang] || CONFIG.supportedLangs[CONFIG.defaultLang];
+            }
+
+            function redirect() {
+                const path = getRedirectPath();
+                const targetUrl = window.location.origin + '/' + path;
+                
+                // Update status text just before jumping
+                const statusEl = document.getElementById('status-text');
+                if(statusEl) statusEl.innerText = "Ready";
+
+                window.location.replace(targetUrl);
+            }
+
+            // Start the sequence
+            window.addEventListener('load', () => {
+                setTimeout(redirect, CONFIG.redirectDelay);
+            });
+
+            // Fallback safety net: If redirect fails for any reason, show links
+            setTimeout(() => {
+                const fallback = document.getElementById('fallback');
+                const progressBar = document.querySelector('.progress-wrapper');
+                const statusEl = document.getElementById('status-text');
+                
+                if (fallback) fallback.classList.add('visible');
+                if (progressBar) progressBar.style.opacity = '0.5';
+                if (statusEl) statusEl.innerText = "Select Language";
+            }, CONFIG.fallbackTimeout);
+
+        })();
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>404 - Page Not Found | Orpita Studio</title>
+    <meta name="description" content="The page you requested was not found. Please navigate back to the homepage.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/style.css"> 
+    
+    <style>
+        /* تعريف الألوان (متغيرات CSS) */
+        :root {
+            --c01: #ef4444; /* Red-500 */
+            --c02: #8b5cf6; /* Violet-500 (لون Orpita الأساسي) */
+            --c03: #22c55e; /* Green-500 */
+            --main-text-color: #f3f4f6; /* Gray-100 */
+            --bg-color: #020617; /* Slate-950 */
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--main-text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Glitch Effect - أساس التأثير */
+        .glitch-text {
+            font-family: 'Audiowide', cursive;
+            font-size: 8em;
+            color: var(--c02); 
+            position: relative;
+            animation: glitch 2s steps(1) infinite; 
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+            content: none !important; 
+        }
+
+        /* Keyframes لتأثير Text-Shadow Glitch (التي اخترتها) */
+        @keyframes glitch {
+            0%, 1%, 2%, 3%, 4%, 51%, 52%, 53%, 54%, 55%, 73%, 74%, 75%, 76% { text-shadow: 1px 0 0 var(--c01), -3px 0 0 var(--c02); }
+            10%, 5%, 56%, 57%, 58%, 59%, 6%, 60%, 67%, 68%, 69%, 7%, 70%, 77%, 78%, 79%, 8%, 80%, 9% { text-shadow: -1px 0 0 var(--c01), 1px 0 0 var(--c02); }
+            11%, 12%, 13%, 14%, 15%, 43%, 44%, 45%, 46%, 81%, 82%, 83%, 84%, 85% { text-shadow: 0.5px 0 0 var(--c01), -0.5px 0 0 var(--c03); }
+            16%, 17%, 18%, 19%, 20%, 47%, 48%, 49%, 50%, 86%, 87%, 88%, 89%, 90% { text-shadow: -1px 0 0 var(--c01), 1px 0 0 var(--c02); }
+            21%, 22%, 23%, 24%, 25%, 26%, 27%, 28%, 29%, 30%, 92%, 93%, 94%, 95% { text-shadow: .7px 0 0 var(--c02), -8px 0 0 var(--c03); }
+            100%, 31%, 32%, 33%, 34%, 35%, 36%, 37%, 38%, 39%, 40%, 96%, 97%, 98%, 99% { text-shadow: -1px 0 0 var(--c02), 1px 0 0 var(--c03); }
+            41% { text-shadow: 50px 0 0 var(--c02), -50px 0 0 var(--c03); }
+            42% { text-shadow: 0 0 0 var(--c02), 0 0 0 var(--c03); }
+            61% { text-shadow: 30px 0 0 var(--c01), -30px 0 0 var(--c03); }
+            62% { text-shadow: 0 0 0 var(--c01), 0 0 0 var(--c03); }
+            63%, 64%, 65%, 66% { text-shadow: .5px 0 0 var(--c01), -7px 0 0 var(--c02); }
+            71% { text-shadow: 70px 0 0 var(--c01), -70px 0 0 var(--c02); }
+            72% { text-shadow: 0 0 0 var(--c01), 0 0 0 var(--c02); }
+            91% { text-shadow: 60px 0 0 var(--c03), -60px 0 0 var(--c02); }
+        }
+
+    </style>
+</head>
+<body class="bg-slate-950 text-gray-200 flex flex-col min-h-screen">
+
+    <main class="flex-1 flex items-center justify-center p-8">
+        <div class="text-center max-w-2xl">
+            
+            <h1 
+                class="glitch-text text-8xl sm:text-9xl font-black mb-8"
+            >
+                404
+            </h1>
+            
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+                <span class="text-violet-400">Error:</span> Page Not Found
+            </h2>
+            
+            <p class="text-lg text-gray-400 mb-10 mx-auto max-w-xl">
+                The URL you requested could not be located on our server. The link may be broken, or the page may have been moved.
+            </p>
+
+            <div class="space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="/en/" class="bg-violet-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-violet-700 transition-all duration-300 transform hover:scale-105 shadow-lg whitespace-nowrap">
+                    Go to Homepage
+                </a>
+                
+                <a 
+                    id="report-issue-btn"
+                    href="mailto:orpitastudios@gmail.com" 
+                    class="text-violet-400 border border-violet-400 font-bold py-3 px-8 rounded-full text-lg hover:bg-violet-900 hover:text-white transition-all duration-300 whitespace-nowrap"
+                >
+                    Report an Issue
+                </a>
+            </div>
+            
+            <p class="mt-12 text-sm text-gray-500">
+                Contact the webmaster for assistance.
+            </p>
+
+        </div>
+    </main>
+
+    <footer class="w-full py-8 border-t border-slate-800 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm text-gray-500">© 2025 Orpita Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const reportButton = document.getElementById('report-issue-btn');
+            
+            if (reportButton) {
+                // 1. جمع البيانات المطلوبة
+                const currentURL = window.location.href; // رابط الصفحة الذي أدى للخطأ
+                const userAgent = navigator.userAgent; // معلومات المتصفح
+                const screenRes = `${window.screen.width}x${window.screen.height}`; // دقة الشاشة
+
+                // 2. بناء جسم رسالة البريد الإلكتروني (Body)
+                // يجب ترميز النصوص (encodeURIComponent) لتجنب كسر الرابط
+                const bodyContent = `
+Page Not Found (404) Report:
+
+---
+DETAILS:
+---
+1. Broken URL: ${currentURL}
+2. Browser/OS: ${userAgent}
+3. Screen Res: ${screenRes}
+4. Time of Error: ${new Date().toLocaleString()}
+
+---
+USER MESSAGE:
+(Please describe the issue or what you were trying to do)
+---
+
+`;
+
+                // 3. بناء رابط mailto النهائي
+                const subject = encodeURIComponent('Critical 404 Error Report');
+                const body = encodeURIComponent(bodyContent.trim());
+                const mailtoLink = `mailto:orpitastudios@gmail.com?subject=${subject}&body=${body}`;
+
+                // 4. تعيين الرابط للزر
+                reportButton.href = mailtoLink;
+            }
+        });
+    </script>
+</body>
+</html>
+// 1. قاموس البيانات الموحد (Translations)
+const pageTranslations = {
+    en: {
+        steps: [
+            { title: "Apply", desc: "Browse our open positions and submit your application.", icon: "form-edit.svg" },
+            { title: "Application Received", desc: "You'll receive an email confirmation once we've received your application successfully.", icon: "gmail.svg" },
+            { title: "Initial Review", desc: "Our HR team will review your application carefully. We'll reach out via WhatsApp within 3-7 business days.", icon: "whatsapp.svg" },
+            { title: "Virtual Interview", desc: "Join us for a conversation on Google Meet. Please ensure a stable connection.", icon: "google-meet.svg" },
+            { title: "Welcome Aboard", desc: "Congratulations! If selected, you'll receive an offer via WhatsApp and a detailed onboarding email.", icon: "done.svg" }
+        ],
+        jobs: [
+            
+        ],
+        ui: {
+            readMore: "Read More ▼",
+            readLess: "Read Less ▲",
+            applyBtn: "Apply for this Role",
+            askBtn: "Ask about this role",
+            waMsg: "Hello Orpita Studio! I'm interested in the ",
+            noJobs: "No positions available at the moment",
+            followUs: "Follow us on social media for updates"
+        }
+    },
+    ar: {
+        steps: [
+            { title: "قدّم الآن", desc: "تصفح الوظائف المتاحة وقدم طلبك بسهولة من خلال الموقع.", icon: "form-edit.svg" },
+            { title: "تم الاستلام", desc: "ستصلك رسالة تأكيد عبر البريد الإلكتروني فور استلام طلبك بنجاح.", icon: "gmail.svg" },
+            { title: "مراجعة أولية", desc: "سيقوم فريق الموارد البشرية بمراجعة طلبك. إذا كنت مناسباً، سنتواصل معك عبر واتساب خلال 3-7 أيام.", icon: "whatsapp.svg" },
+            { title: "مقابلة افتراضية", desc: "انضم إلينا في محادثة عبر Google Meet. يرجى التأكد من استقرار الإنترنت.", icon: "google-meet.svg" },
+            { title: "مرحباً بك", desc: "مبروك! في حال قبولك، ستصلك رسالة العرض عبر واتساب وإيميل تفصيلي للبدء.", icon: "done.svg" }
+        ],
+        jobs: [
+            {
+                title: "مطور ألعاب يونيتي",
+                type: "تطوير ألعاب • عن بعد",
+                icon: "/assets/svg/unity.svg",
+                description: "أهلاً بك، نحن نبحث عن مطور يونيتي شغوف للانضمام إلى فريقنا.",
+                requirements: ["مطورين يونيتي فقط", "خبرة جيدة في لغة C#", "مهارة حل المشكلات"],
+                delay: "0.2s"
+            },
+            {
+                title: "رسام ألعاب 2D",
+                type: "فنون • عن بعد",
+                icon: "/assets/svg/digital-artist.svg",
+                description: "مطلوب رسام مبدع لتطوير الهوية البصرية لألعابنا الفريدة.",
+                requirements: ["إتقان Photoshop/Illustrator", "خبرة في التحريك ثنائي الأبعاد"],
+                delay: "0.4s"
+            }
+        ],
+        ui: {
+            readMore: "اقرأ المزيد ▼",
+            readLess: "اقرأ أقل ▲",
+            applyBtn: "قدم على هذه الوظيفة",
+            askBtn: "اسأل عن الوظيفة",
+            waMsg: "أهلاً Orpita Studio! أنا مهتم بوظيفة ",
+            noJobs: "لا توجد وظائف متاحة حالياً",
+            followUs: "تابعنا على وسائل التواصل للتحديثات"
+        }
+    }
+};
+
+// --- وظائف البناء (Generators) ---
+
+function renderHiringSteps(langData, isAr) {
+    const container = document.getElementById('hiring-steps-container');
+    if (!container) return;
+    
+    container.style.direction = isAr ? 'rtl' : 'ltr';
+    container.className = "grid grid-cols-1 md:grid-cols-[repeat(54,minmax(0,1fr))] items-start gap-y-5 md:gap-y-0 w-full";
+    
+    container.innerHTML = langData.steps.map((step, index) => {
+        const isLast = index === langData.steps.length - 1;
+        return `
+            <div class="md:col-span-10 flex flex-row md:flex-col items-start md:items-center ${isAr ? 'text-right' : 'text-left'} md:text-center group gap-2 md:gap-0">
+                <div class="shrink-0 w-16 h-16 md:w-20 md:h-20 bg-slate-800 border-2 border-purple-500/30 rounded-full flex items-center justify-center md:mb-2 group-hover:border-purple-500 transition-all duration-300 shadow-lg">
+                    <img src="/assets/svg/${step.icon}" class="w-6 h-6 md:w-8 md:h-8" alt="${step.title}">
+                </div>
+                <div class="flex flex-col">
+                    <h4 class="text-white font-bold text-lg md:text-lg md:mb-3 leading-tight">${step.title}</h4>
+                    <p class="text-gray-400 text-xs md:text-sm p-2">${step.desc}</p>
+                </div>
+            </div>
+
+            ${!isLast ? `
+                <div class="md:col-span-1 flex items-center justify-center md:h-20 ${isAr ? 'md:rotate-180 rotate-90' : 'rotate-90 md:rotate-0'} opacity-50 self-start md:self-auto">
+                    <img src="/assets/svg/right-arrow.svg" class="w-9 h-9" alt="arrow">
+                </div>
+            ` : ''}
+        `;
+    }).join('');
+}
+
+function createJobCard(job, ui, isAr) {
+    return `
+        <div class="border bg-slate-800/50 rounded-2xl border-slate-700 p-6 overflow-hidden opacity-0 animate-on-scroll ${isAr ? 'text-right' : 'text-left'}" style="animation-delay: ${job.delay};">
+            <div class="flex flex-col md:flex-row ${isAr ? 'md:flex-row-reverse' : ''} items-start gap-6">
+                <div class="flex-shrink-0 w-16 h-16 bg-purple-900/20 rounded-xl flex items-center justify-center border border-purple-500/30">
+                    <img src="${job.icon}" class="w-10 h-10 object-contain" alt="${job.title}" onerror="this.style.opacity='0.3'">
+                </div>
+                <div class="flex-grow w-full">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-1">${job.title}</h3>
+                            <p class="text-gray-400 text-sm font-medium">${job.type}</p>
+                        </div>
+                        <button onclick="toggleDetails(this, '${ui.readMore}', '${ui.readLess}')" class="text-sm font-semibold text-purple-400 hover:text-purple-300 transition-colors">
+                            ${ui.readMore}
+                        </button>
+                    </div>
+                    <div class="max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out detail-content">
+                        <div class="pt-6 mt-6 border-t border-gray-800 text-gray-300 text-sm leading-relaxed">
+                            <p class="mb-4">${job.description}</p>
+                            <ul class="list-disc ${isAr ? 'list-inside pr-4' : 'list-inside pl-4'} space-y-2">
+                                ${job.requirements.map(req => `<li>${req}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="mt-6 flex flex-wrap items-center gap-4 ${isAr ? 'justify-start' : ''}">
+                            <button onclick="toggleModal()" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-3xl transition-all">
+                                ${ui.applyBtn}
+                            </button>
+                            <a href="https://wa.me/201203075900?text=${encodeURIComponent(ui.waMsg + job.title)}"
+                               target="_blank"
+                               class="border-2 border-slate-700 text-slate-300 font-bold py-2 px-6 rounded-3xl hover:bg-slate-700 transition-all flex items-center justify-center gap-2">
+                                ${ui.askBtn}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+}
+
+// --- التحكم في الصفحة (Logic) ---
+
+function toggleDetails(btn, readMoreTxt, readLessTxt) {
+    const cardContent = btn.closest('.flex-grow').querySelector('.detail-content');
+    const isExpanded = cardContent.classList.contains('expanded');
+    
+    if (isExpanded) {
+        cardContent.style.maxHeight = '0px';
+        cardContent.style.opacity = '0';
+        cardContent.classList.remove('expanded');
+        btn.innerText = readMoreTxt;
+    } else {
+        cardContent.style.maxHeight = cardContent.scrollHeight + 'px';
+        cardContent.style.opacity = '1';
+        cardContent.classList.add('expanded');
+        btn.innerText = readLessTxt;
+    }
+}
+
+function toggleModal() {
+    const modal = document.getElementById('jobModal');
+    const content = document.getElementById('modalContent');
+    if (!modal) return;
+    
+    const isHidden = modal.classList.contains('hidden');
+    modal.classList.toggle('hidden');
+    
+    if (!isHidden) {
+        content.classList.add('animate-fade-in-up');
+        document.addEventListener('keydown', closeModalOnEsc);
+    } else {
+        document.removeEventListener('keydown', closeModalOnEsc);
+    }
+}
+
+function closeModalOnEsc(e) {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('jobModal');
+        if (modal && !modal.classList.contains('hidden')) {
+            toggleModal();
+        }
+    }
+}
+
+// تشغيل الوظائف عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', () => {
+    const currentLang = window.location.pathname.includes('/ar') ? 'ar' : 'en';
+    const isAr = currentLang === 'ar';
+    const langData = pageTranslations[currentLang];
+
+    renderHiringSteps(langData, isAr);
+
+    const positionsContainer = document.getElementById('positions-container');
+    if (positionsContainer) {
+        positionsContainer.style.direction = isAr ? 'rtl' : 'ltr';
+        
+        if (langData.jobs.length === 0) {
+            positionsContainer.innerHTML = `
+                <div class="text-center py-12 text-gray-400">
+                    <p class="text-xl mb-2">${langData.ui.noJobs}</p>
+                    <p class="text-sm">${langData.ui.followUs}</p>
+                </div>
+            `;
+        } else {
+            positionsContainer.innerHTML = langData.jobs.map(job => createJobCard(job, langData.ui, isAr)).join('');
+        }
+    }
+});
+        <div class="opacity-0 animate-on-scroll flex-shrink-0 md:shrink w-[65vw] md:w-full" style="animation-delay: ${0.2 * index}s;">
+            <div class="bg-slate-800/50 rounded-2xl flex flex-col gap-6 h-full w-full border-2 border-slate-700 overflow-hidden shadow-xl transition-all duration-300 hover:border-violet-500/50 group">
+                
+                <div class="relative w-full h-48 overflow-hidden flex-shrink-0">
+                    <img src="${game.image}" alt="${game.title}" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                         style="mask-image: linear-gradient(to bottom, black 75%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);">
+                </div>
+
+                <div class="relative z-10 -mt-12 flex-1 flex flex-col justify-between h-full w-full ${isAr ? 'text-right' : 'text-left'}">
+                    <div class="px-6 pb-6">
+                        <h3 class="text-xl font-bold text-white group-hover:text-violet-200 transition-colors">${game.title}</h3>
+                        <p class="text-sm ${game.statusColor} font-medium mt-1">${game.status}</p>
+                        <p class="text-gray-400 mt-3 text-sm leading-relaxed line-clamp-3">
+                            ${game.description}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-6 pb-6 mt-auto ${isAr ? 'text-right' : 'text-left'}">
+                    ${game.showButton ? `
+                        <a href="${game.link}" 
+                           aria-label="${game.buttonText || 'View Details'} regarding ${game.title}"
+                           class="inline-block bg-slate-700 hover:bg-violet-600 text-white text-sm font-medium py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+                           ${game.buttonText || 'View Details'}
+                        </a>
+                    ` : `
+                        <span class="text-xs text-gray-500 italic">
+                            ${isAr ? 'ترقبوا الإطلاق' : 'Stay tuned for launch'}
+                        </span>
+                    `}
+                </div>
+            </div>
+        </div>
+        
+                <div class="swiper-slide h-auto">
+            <div class="bg-slate-800/50 rounded-2xl flex flex-col gap-6 h-full w-full border-2 border-slate-700 overflow-hidden shadow-xl hover:border-violet-500/50 group transition-all duration-300">
+                
+                <div class="overflow-hidden">
+                    <img src="${game.image}" alt="${game.title}" 
+                         class="w-full h-48 object-cover flex-shrink-0 group-hover:scale-110 transition-transform duration-500" 
+                         style="mask-image: linear-gradient(to bottom, black 75%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);">
+                </div>
+                
+
+<div class="relative z-10 -mt-12 flex-1 flex flex-col px-6 pb-2 ${isAr ? 'text-right' : 'text-left'}">
+                    <h4 class="text-xl font-bold text-white group-hover:text-violet-200 transition-colors">${game.title}</h4>
+                    <p class="text-sm ${game.statusColor} font-medium mt-1">${game.status}</p>
+                    <p class="text-gray-400 mt-3 text-sm leading-relaxed line-clamp-3">
+                        ${game.description}
+                    </p>
+                </div>
+
+
+<div class="px-6 pb-6 mt-auto ${isAr ? 'text-right' : 'text-left'}">
+                    ${game.showButton ? `
+                        <a href="${game.link}" 
+                           aria-label="${game.buttonText || 'View Details'} regarding ${game.title}"
+                           class="inline-block bg-slate-700 hover:bg-violet-600 text-white text-sm font-medium py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+                           ${game.buttonText || 'View Details'}
+                        </a>
+                    ` : ''}
+                </div>
+            </div>
+        </div>
+        /* =============================================================
+   ORPITA HEADER LOGIC - REFACTORED
+   ============================================================= */
+
+// --- SECTION 1: CONFIGURATION & DATA ---
+// Defines the navigation structure and current language context
+const OrpitaNav = {
+    lang: window.location.pathname.includes('/ar/') ? 'ar' : 'en',
+    menu: [
+        {
+            title: { en: 'Games', ar: 'الألعاب' },
+            links: [
+                { name: { en: 'All games', ar: 'كل الألعاب' }, url: '/games/' },
+                { name: { en: 'One more day', ar: 'يوم واحد آخر' }, url: '/games/one-more-day/' }
+            ]
+        },
+        {
+            title: { en: 'About', ar: 'من نحن' },
+            links: [
+                { name: { en: 'About us', ar: 'من نحن' }, url: '/about' },
+                { name: { en: 'Join the Team', ar: 'انضم إلى الفريق' }, url: '/about/join-us' }
+            ]
+        },
+        { title: { en: 'News', ar: 'الأخبار' }, url: '/news', isLink: true }
+    ],
+
+    // --- SECTION 2: RENDER ENGINE ---
+    // Injects HTML into Desktop and Mobile containers
+    render() {
+        const nav = document.getElementById('main-nav'), mobile = document.querySelector('#mobile-dropdown nav');
+        if (!nav || !mobile) return;
+
+        const getUrl = (path) => `/${this.lang}${path}`;
+        
+        // Desktop Generation
+        nav.innerHTML = this.menu.map(item => {
+            const label = item.title[this.lang];
+            if (item.isLink) return `<a href="${getUrl(item.url)}" class="text-gray-300 hover:text-violet-400 font-medium transition-colors">${label}</a>`;
+            return `
+                <div class="relative dropdown-container">
+                    <button class="dropdown-btn flex items-center gap-1 text-gray-300 hover:text-violet-400 font-medium py-2">
+                        ${label}<span class="dropdown-icon transition-transform duration-300"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-52 opacity-0 invisible translate-y-2 transition-all duration-300 z-50">
+                        <div class="bg-slate-800/95 backdrop-blur-xl border border-white/10 rounded-xl p-2 shadow-2xl">
+                            ${item.links.map(l => `<a href="${getUrl(l.url)}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-violet-600/20 hover:text-violet-400 rounded-lg">${l.name[this.lang]}</a>`).join('')}
+                        </div>
+                    </div>
+                </div>`;
+        }).join('');
+
+        // Mobile Generation
+        mobile.innerHTML = `<a href="${getUrl('/')}" class="text-white font-medium border-b border-white/5 pb-2">${this.lang === 'ar' ? 'الرئيسية' : 'Home'}</a>` + 
+        this.menu.map(item => {
+            const label = item.title[this.lang];
+            if (item.isLink) return `<a href="${getUrl(item.url)}" class="text-white font-medium">${label}</a>`;
+            return `<div class="flex flex-col gap-2"><span class="text-xs font-bold text-violet-400 uppercase tracking-widest pt-2">${label}</span>${item.links.map(l => `<a href="${getUrl(l.url)}" class="pl-4 text-sm text-gray-400">${l.name[this.lang]}</a>`).join('')}</div>`;
+        }).join('');
+
+        this.initEvents();
+        setupLanguageSwitcher(); 
+        updateCurrentYear();
+    },
+
+    // --- SECTION 3: INTERACTION LOGIC ---
+    // Manages dropdown toggles and outside clicks
+    initEvents() {
+        const closeAll = () => {
+            document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('opacity-0', 'invisible', 'translate-y-2'));
+            document.querySelectorAll('.dropdown-icon').forEach(i => i.classList.remove('rotate-180'));
+            document.getElementById('mobile-dropdown')?.classList.add('opacity-0', 'invisible');
+        };
+
+        document.querySelectorAll('.dropdown-container').forEach(c => {
+            const btn = c.querySelector('.dropdown-btn'), menu = c.querySelector('.dropdown-menu');
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = !menu.classList.contains('opacity-0');
+                closeAll();
+                if (!isOpen) { 
+                    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2'); 
+                    btn.querySelector('.dropdown-icon').classList.add('rotate-180'); 
+                }
+            });
+        });
+
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const dd = document.getElementById('mobile-dropdown');
+            dd.classList.toggle('opacity-0'); dd.classList.toggle('invisible');
+        });
+
+        document.addEventListener('click', closeAll);
+    }
+};
+
+// --- SECTION 4: UTILITIES ---
+// Helper functions for Language Switcher and Date
+function setupLanguageSwitcher() {
+    const btnEn = document.getElementById('lang-en'), btnAr = document.getElementById('lang-ar');
+    if (!btnEn || !btnAr) return;
+    
+    const path = window.location.pathname, isAr = path.includes('/ar/');
+    const active = "text-xs font-bold text-violet-400 transition-colors";
+    const inactive = "text-xs font-bold text-gray-500 hover:text-white transition-colors";
+
+    btnAr.className = isAr ? active : inactive;
+    btnEn.className = !isAr ? active : inactive;
+    
+    btnEn.onclick = (e) => { e.preventDefault(); if (isAr) window.location.href = path.replace('/ar/', '/en/'); };
+    btnAr.onclick = (e) => { 
+        e.preventDefault(); 
+        if (!isAr) window.location.href = path.includes('/en/') ? path.replace('/en/', '/ar/') : '/ar' + path; 
+    };
+}
+
+// --- SECTION 5: INITIALIZATION ---
+// Safe startup ensuring DOM elements exist
+function initOrpitaHeader() {
+    if (!document.getElementById('main-nav')) { setTimeout(initOrpitaHeader, 50); return; }
+    OrpitaNav.render();
+}
+
+document.readyState === 'complete' ? initOrpitaHeader() : window.addEventListener('load', initOrpitaHeader);
+ <div class="opacity-0 animate-on-scroll flex-shrink-0 md:shrink w-[65vw] md:w-full" style="animation-delay: ${0.2 * index}s;">
+        <div class="bg-slate-800/50 rounded-2xl flex flex-col gap-6 h-full w-full border-2 border-slate-700 overflow-hidden shadow-xl transition-all duration-300 hover:border-violet-500/50 group">
+            
+            <div class="relative w-full h-48 overflow-hidden flex-shrink-0">
+                <img src="${article.img}" alt="${article.title}" 
+                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                     style="mask-image: linear-gradient(to bottom, black 75%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);">
+            </div>
+
+            <div class="relative z-10 -mt-12 flex-1 flex flex-col justify-between h-full w-full ${isAr ? 'text-right' : 'text-left'}">
+                <div class="px-6 pb-6">
+                    <h3 class="text-xl font-bold text-white group-hover:text-violet-200 transition-colors">${article.title}</h3>
+                    <p class="text-xs text-violet-400 font-medium mt-1 uppercase tracking-wider">${article.subtitle}</p>
+                    <p class="text-gray-400 mt-3 text-sm leading-relaxed line-clamp-3">
+                        ${article.text}
+                    </p>
+                </div>
+            </div>
+
+            <div class="px-6 pb-6 mt-auto ${isAr ? 'text-right' : 'text-left'}">
+                ${article.showButton ? `
+                    <a href="${article.link}" 
+                       aria-label="${article.buttonText || 'View Details'} regarding ${article.title}"
+                       class="inline-block bg-slate-700 hover:bg-violet-600 text-white text-sm font-medium py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+                       ${article.buttonText}
+                    </a>
+                ` : `
+                    <span class="text-xs text-gray-500 italic">
+                        ${isAr ? 'ترقبوا الإطلاق' : 'Stay tuned for launch'}
+                    </span>
+                `}
+            </div>
+        </div>
+    </div>
+    {
+  const container = document.getElementById('news-grid');
+  if (!container) return;
+  
+  const currentLang = window.location.pathname.includes('/ar') ? 'ar' : 'en';
+  const newsArticles = newsTranslations[currentLang];
+  const isAr = currentLang === 'ar';
+  
+  // ضبط اتجاه الشبكة (Grid) بالكامل
+  container.style.direction = isAr ? 'rtl' : 'ltr';
+  
+  container.innerHTML = newsArticles.map((article, index) => `
+    <div class="opacity-0 animate-on-scroll flex-shrink-0 md:shrink w-[65vw] md:w-full" style="animation-delay: ${0.2 * index}s;">
+        <div class="bg-slate-800/50 rounded-2xl flex flex-col gap-6 h-full w-full border-2 border-slate-700 overflow-hidden shadow-xl transition-all duration-300 hover:border-violet-500/50 group">
+            
+            <div class="relative w-full h-48 overflow-hidden flex-shrink-0">
+                <img src="${article.img}" alt="${article.title}" 
+                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                     style="mask-image: linear-gradient(to bottom, black 75%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);">
+            </div>
+
+            <div class="relative z-10 -mt-12 flex-1 flex flex-col justify-between h-full w-full ${isAr ? 'text-right' : 'text-left'}">
+                <div class="px-6 pb-6">
+                    <h3 class="text-xl font-bold text-white group-hover:text-violet-200 transition-colors">${article.title}</h3>
+                    <p class="text-xs text-violet-400 font-medium mt-1 uppercase tracking-wider">${article.subtitle}</p>
+                    <p class="text-gray-400 mt-3 text-sm leading-relaxed line-clamp-3">
+                        ${article.text}
+                    </p>
+                </div>
+            </div>
+
+            <div class="px-6 pb-6 mt-auto ${isAr ? 'text-right' : 'text-left'}">
+                ${article.showButton ? `
+                    <a href="${article.link}" 
+                       aria-label="${article.buttonText || 'View Details'} regarding ${article.title}"
+                       class="inline-block bg-slate-700 hover:bg-violet-600 text-white text-sm font-medium py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+                       ${article.buttonText}
+                    </a>
+                ` : `
+                    <span class="text-xs text-gray-500 italic">
+                        ${isAr ? 'ترقبوا الإطلاق' : 'Stay tuned for launch'}
+                    </span>
+                `}
+            </div>
+        </div>
+    </div>
+  `).join('');
+}
+        <a href="${link.url}" 
+           aria-label="${link.name}" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="text-gray-400 hover:text-violet-400 transform hover:scale-125 transition-all duration-200 opacity-0 animate-on-scroll" 
+           style="animation-delay: ${link.delay};">
+            <svg class="w-7 h-7 fill-current">
+                <use xlink:href="/assets/svg/icons-sprite.svg#icon-${link.icon}"></use>
+            </svg>
+        </a>
+        <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Privacy | Orpita Game Studio</title>
+    <meta name="description" content="Read the official Terms of Service and Privacy Policy for Orpita Game Studio. Learn about our commitment to data protection, intellectual property, and fair play.">
+    <meta name="author" content="Orpita Studio">
+    <link rel="icon" href="/assets/imgs/sm-small-logo.webp" type="image/webp">
+    <link rel="canonical" href="https://orpita-studio.web.app/en/privacy/">
+    
+    <meta property="og:title" content="Terms of Service & Privacy Policy | Orpita Studio">
+    <meta property="og:description" content="Understand your rights and our policies. Orpita Game Studio's guide to user conduct, intellectual property, and how we protect your information.">
+    <meta property="og:image" content="https://orpita-studio.web.app/assets/imgs/og-cover.webp">
+    <meta property="og:url" content="https://orpita-studio.web.app/en/privacy/">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Terms & Privacy | Orpita Game Studio">
+    <meta name="twitter:description" content="The legal framework for Orpita Game Studio projects and community. Ensuring a safe and creative environment.">
+    <meta name="twitter:image" content="https://orpita-studio.web.app/assets/imgs/og-cover.webp">
+    <meta name="theme-color" content="#7c3aed">
+    
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Terms of Service and Privacy Policy",
+            "description": "The legal terms and privacy protections for users and contributors of Orpita Game Studio.",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Orpita Studio",
+                "url": "https://orpita-studio.web.app/",
+                "logo": "https://orpita-studio.web.app/assets/imgs/sm-small-logo.webp",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer service",
+                    "email": "orpitastudios@gmail.com"
+                }
+            },
+            "mainEntity": {
+                "@type": "LegalService",
+                "name": "Orpita Game Studio Terms",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "EG",
+                    "addressLocality": "Alexandria"
+                }
+            }
+        }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <div id="header-placeholder"></div>
+
+    <main class="flex-1">
+        <section id="page-hero" class="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
+            <div class="container mx-auto px-4 z-10 relative text-center">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
+                    Orpita terms & privacy
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 mt-6 max-w-2xl mx-auto">
+                    Everything you need to know about your privacy and our terms of service at Orpita Studio.
+                </p>
+            </div>
+        </section>
+        
+        <section class="pb-24 px-4">
+            <div class="container mx-auto max-w-4xl">
+                
+                <div class="w-full p-8 md:p-16 SectionTheme border border-white/5">
+                    
+                    <div id="privacy-policy">
+                            
+                                <h3 class="text-xl font-bold text-white mb-2">Orpita Game Studio – Terms of Service & Privacy Policy</h3>
+                                <p class="text-sm text-violet-400 font-medium mb-4">Effective Date:  13 jan 2026</p>
+                                <p class="text-slate-300 leading-relaxed">
+                                    Welcome to Orpita Game Studio. By accessing our website, playing our games, or contributing to our projects, you agree to the following terms. We aim to create a creative and respectful environment, and these rules help protect both our work and our community.
+                                </p>
+                        
+                        
+                        <div class="space-y-8">
+                            
+                            <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-violet-500/30 transition-colors">
+                                <h4 class="text-lg font-bold text-white mb-4">1. Intellectual Property & Ownership</h4>
+                                <ul class="space-y-3 text-slate-400 leading-relaxed">
+                                    <li>
+                                        <strong class="text-violet-300">Studio Ownership:</strong> All content associated with Orpita Game Studio—including source codes, art assets, storylines, logos, and software—is the exclusive property of Orpita Game Studio.
+                                    </li>
+                                    <li>
+                                        <strong class="text-violet-300">Protection:</strong> Unauthorized copying, modification, reverse-engineering, or redistribution of our games or assets is strictly prohibited unless explicitly designated as "Open Source."
+                                    </li>
+                                    <li>
+                                        <strong class="text-violet-300">Commercial Use:</strong> Our content is for personal, non-commercial use only. You may not sell or exploit our assets for profit without prior written consent from the management.
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-violet-500/30 transition-colors">
+                                <h4 class="text-lg font-bold text-white mb-4">2. Contributor & Team Policy</h4>
+                                <ul class="space-y-3 text-slate-400 leading-relaxed">
+                                    <li>
+                                        <strong class="text-violet-300">Rights Assignment:</strong> To ensure the stability of our projects, contributors acknowledge that all work created for the Studio belongs to Orpita Game Studio. This allows us to freely use, modify, and publish the work without future obstruction.
+                                    </li>
+                                    <li>
+                                        <strong class="text-violet-300">Portfolio Usage:</strong> We are proud of our team's work. Current and former members may showcase their contributions in personal portfolios after the official release of the project.
+                                    </li>
+                                    <li>
+                                        <strong class="text-violet-300">Note:</strong> For unreleased projects, please obtain written permission before sharing.
+                                    </li>
+                                    <li>
+                                        <strong class="text-violet-300">Credit:</strong> When showcasing work, please credit "Orpita Game Studio" and list any co-creators to ensure fair recognition.
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-violet-500/30 transition-colors">
+                                <h4 class="text-lg font-bold text-white mb-4">3. User Conduct & Security</h4>
+                                <ul class="space-y-3 text-slate-400 leading-relaxed">
+                                    <li>
+                                        <strong class="text-violet-300">Fair Play:</strong> Users must not attempt to hack, decompile, or disrupt the Studio’s software or website infrastructure.
+                                    </li>
+                                    <li>
+                                        <strong class="text-violet-300">Impersonation:</strong> Impersonating Studio representatives or using our brand in a misleading or offensive manner is prohibited.
+                                    </li>
+                                    <li>
+                                        <strong class="text-violet-300">Official Channels:</strong> The Studio is only responsible for software downloaded from our official accounts. We are not responsible for versions found on unauthorized personal repositories.
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-violet-500/30 transition-colors">
+                                <h4 class="text-lg font-bold text-white mb-4">4. Ideas & Feedback</h4>
+                                <p class="text-slate-400 leading-relaxed">
+                                    We love hearing from you! However, please note that any ideas, suggestions, or feedback submitted to the Studio are considered voluntary. By submitting them, you grant us the right to use or implement these ideas without financial compensation or obligation. If we use a significant idea, we may, at our discretion, credit you in our "Special Thanks" section.
+                                </p>
+                            </div>
+                            
+                            <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-violet-500/30 transition-colors">
+                                <h4 class="text-lg font-bold text-white mb-4">5. Disclaimers & Limitation of Liability</h4>
+                                <ul class="space-y-3 text-slate-400 leading-relaxed">
+                                    <li>
+                                        <strong class="text-violet-300">"As Is" Basis:</strong> Our games and services are provided "as is" and "as available." As an indie studio, we strive for quality but cannot guarantee that our software is entirely free of bugs or errors.
+                                    </li>
+                                    <li>
+                                        <strong class="text-violet-300">Hardware Safety:</strong> Users are responsible for ensuring their hardware meets the system requirements. Orpita Game Studio is not liable for any direct or indirect damages to hardware or data resulting from the use of our software.
+                                    </li>
+                                    <li>
+                                        <strong class="text-violet-300">Third-Party Links:</strong> Our services may contain links to external sites (e.g., social media, stores). We are not responsible for the content or privacy practices of these third parties.
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-violet-500/30 transition-colors">
+                                <h4 class="text-lg font-bold text-white mb-4">6. Privacy Policy</h4>
+                                <ul class="space-y-3 text-slate-400 leading-relaxed">
+                                    <li>
+                                        <strong class="text-violet-300">Data Protection:</strong> We respect your privacy. We do not sell or trade your personal information. Any data collected is used solely to improve our games and services.
+                                    </li>
+                                    <li>
+                                        <strong class="text-violet-300">Cookies:</strong> Our website may use cookies to enhance your experience. These are stored locally on your device, and you can manage them via your browser settings.
+                                    </li>
+                                    <li>
+                                        <strong class="text-violet-300">External Forms:</strong> If you voluntarily provide data (e.g., via Google Forms) for surveys or testing, we pledge to use it only for the stated purpose.
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-violet-500/30 transition-colors">
+                                <h4 class="text-lg font-bold text-white mb-4">7. Updates & Jurisdiction</h4>
+                                <ul class="space-y-3 text-slate-400 leading-relaxed">
+                                    <li>
+                                        <strong class="text-violet-300">Changes:</strong> We reserve the right to update these terms at any time. Continued use of our services constitutes acceptance of the modified terms.
+                                    </li>
+                                    <li>
+                                        <strong class="text-violet-300">Governing Law:</strong> These terms are governed by the laws of the Arab Republic of Egypt. Any disputes shall be subject to the exclusive jurisdiction of the competent courts in Alexandria, Egypt.
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script async src="https://tally.so/widgets/embed.js"></script>
+
+    <script src="/assets/js/ts-particles.js" defer></script>
+    <script src="/assets/js/load.js" defer></script>
+    <script src="/assets/js/header.js" defer></script>
+    <script src="/assets/js/footer.js" defer></script>
+    <script src="/assets/js/social-links.js" defer></script>
+    <script src="/assets/js/animate-on-scroll.js" defer></script>
+
+    <script src="/assets/js/cookie/cookie-core.js"></script>
+    <script src="/assets/js/cookie/cookie-banner.js" defer></script>
+    <script src="/assets/js/cookie/survey-manager.js" defer></script>
+</body>
+</html>
+(function() {
+const { utils, KEYS } = window.Orpita;
+if (utils.getCookie(KEYS.CONSENT)) return;
+
+const banner = document.createElement('div');
+banner.id = 'orpita-cookie-banner';
+banner.className = "fixed w-[350px] bg-slate-950/90 backdrop-blur-md border-2 border-violet-600 rounded-2xl p-6 z-[1000] shadow-[0_0_20px_rgba(124,58,237,0.3)] hidden flex-col gap-5 animate-fade-in-up";
+banner.style.bottom = "24px"; banner.style.right = "24px"; banner.style.position = "fixed";
+
+banner.innerHTML = `
+<div class="flex items-start gap-4">
+    <div class="flex-shrink-0 w-10 h-10 bg-violet-600/10 border border-violet-500/50 rounded-3xl p-1 flex items-center justify-center">
+        <img src="/assets/svg/cookie.svg" class="w-7 h-7 object-contain">
+    </div>
+    <div class="flex flex-col gap-1">
+        <h4 class="text-white font-bold text-base uppercase font-['Orbitron']">Cookies</h4>
+        <p class="text-slate-400 text-xs">Improve your experience in Orpita. Agree?</p>
+    </div>
+</div>
+<div class="flex gap-3">
+    <button id="o-accept" class="flex-1 bg-violet-600 text-white text-[11px] font-black py-3 rounded-lg uppercase tracking-widest active:scale-95">Accept All</button>
+    <button id="o-decline" class="flex-1 border border-slate-700 text-slate-400 text-[11px] font-black py-3 rounded-lg uppercase tracking-widest active:scale-95">Later</button>
+</div>`;
+
+document.body.appendChild(banner);
+setTimeout(() => { banner.classList.remove('hidden'); banner.classList.add('flex'); }, 1000);
+
+document.getElementById('o-accept').onclick = () => {
+utils.setCookie(KEYS.CONSENT, 'accepted', 365);
+banner.remove();
+location.reload(); // لإعادة تشغيل السكريبتات اللي مستنية الموافقة
+};
+
+document.getElementById('o-decline').onclick = () => {
+utils.setCookie(KEYS.CONSENT, 'declined', 7);
+banner.remove();
+};
+})();
+(function() {
+const { utils, KEYS } = window.Orpita;
+
+// 1. حاجز الأمان: لو مفيش موافقة، اخرج
+if (utils.getCookie(KEYS.CONSENT) !== 'accepted') return;
+
+// 2. تحديث عداد الزيارات
+let visits = parseInt(utils.getCookie(KEYS.VISITS)) || 0;
+visits++;
+utils.setCookie(KEYS.VISITS, visits, 365);
+
+// 3. وظيفة فتح Tally الموحدة
+const openTally = (id, isPopup = false) => {
+if (typeof Tally !== 'undefined') {
+Tally.openPopup(id, {
+// لو هو Popup خليه يظهر في الركن، لو مش Popup خليه Modal في النص
+layout: isPopup ? 'popup' : 'modal',
+position: isPopup ? 'right' : 'center',
+width: isPopup ? 350 : 450,
+hideTitle: true
+});
+} else {
+window.open(`https://tally.so/r/${id}`, '_blank');
+}
+};
+
+// --- المنطق الأول: Popup الاستبيان (تحت شمال) بعد 10 ثواني ---
+if (!utils.getCookie(KEYS.SURVEY_INVITE)) {
+setTimeout(() => {
+const surveyBanner = document.createElement('div');
+surveyBanner.className = "fixed w-[350px] bg-slate-950/90 backdrop-blur-md border-2 border-violet-600 rounded-2xl p-6 z-[1001] shadow-[0_0_20px_rgba(124,58,237,0.3)] flex flex-col gap-5 animate-fade-in-up";
+surveyBanner.style.bottom = "24px"; surveyBanner.style.left = "24px"; surveyBanner.style.position = "fixed";
+
+surveyBanner.innerHTML = `
+<div class="flex items-start gap-4">
+    <div class="flex-shrink-0 w-10 h-10 bg-violet-600/10 border border-violet-500/50 rounded-3xl p-1 flex items-center justify-center">
+        <img src="/assets/svg/survey-icon.svg" class="w-7 h-7 object-contain">
+    </div>
+    <div class="flex flex-col gap-1">
+        <h4 class="text-white font-bold text-base uppercase font-['Orbitron']">Feedback</h4>
+        <p class="text-slate-400 text-xs">Help shape Orpita's future!</p>
+    </div>
+</div>
+<div class="flex gap-3">
+    <button id="s-accept" class="flex-1 bg-violet-600 text-white text-[10px] font-bold py-3 rounded-lg uppercase">Yes, Sure</button>
+    <button id="s-decline" class="flex-1 border border-slate-700 text-slate-400 text-[10px] font-bold py-3 rounded-lg uppercase">Later</button>
+</div>`;
+
+document.body.appendChild(surveyBanner);
+
+document.getElementById('s-accept').onclick = () => {
+openTally('yP2LX8',false);
+utils.setCookie(KEYS.SURVEY_INVITE, 'done', 30);
+surveyBanner.remove();
+};
+document.getElementById('s-decline').onclick = () => {
+utils.setCookie(KEYS.SURVEY_INVITE, 'refused', 7);
+surveyBanner.remove();
+};
+}, 10000);
+}
+
+// --- المنطق الثاني: الـ API التلقائي بعد 3 زيارات أو أسبوع ---
+let lastShown = utils.getCookie(KEYS.LAST_API);
+let shouldTriggerAuto = false;
+
+if (!lastShown && visits >= 3) shouldTriggerAuto = true;
+else if (lastShown && (Date.now() - parseInt(lastShown)) / (1000*60*60*24) >= 7) shouldTriggerAuto = true;
+
+if (shouldTriggerAuto) {
+setTimeout(() => {
+openTally('68jqbN',true);
+utils.setCookie(KEYS.LAST_API, Date.now(), 365);
+}, 2000);
+}
+})();
+
+// 1. قاموس البيانات الموحد (Translations)
+const pageTranslations = {
+    en: {
+        steps: [
+            { title: "Apply", desc: "Browse our open positions and submit your application.", icon: "form-edit.svg" },
+            { title: "Application Received", desc: "You'll receive an email confirmation once we've received your application successfully.", icon: "gmail.svg" },
+            { title: "Initial Review", desc: "Our HR team will review your application carefully. We'll reach out via WhatsApp within 3-7 business days.", icon: "whatsapp.svg" },
+            { title: "Virtual Interview", desc: "Join us for a conversation on Google Meet. Please ensure a stable connection.", icon: "google-meet.svg" },
+            { title: "Welcome Aboard", desc: "Congratulations! If selected, you'll receive an offer via WhatsApp and a detailed onboarding email.", icon: "done.svg" }
+        ],
+        jobs: [
+            
+        ],
+        ui: {
+            readMore: "Read More ▼",
+            readLess: "Read Less ▲",
+            applyBtn: "Apply for this Role",
+            askBtn: "Ask about this role",
+            waMsg: "Hello Orpita Studio! I'm interested in the ",
+            noJobs: "No positions available at the moment",
+            followUs: "Follow us on social media for updates"
+        }
+    },
+    ar: {
+        steps: [
+            { title: "قدّم الآن", desc: "تصفح الوظائف المتاحة وقدم طلبك بسهولة من خلال الموقع.", icon: "form-edit.svg" },
+            { title: "تم الاستلام", desc: "ستصلك رسالة تأكيد عبر البريد الإلكتروني فور استلام طلبك بنجاح.", icon: "gmail.svg" },
+            { title: "مراجعة أولية", desc: "سيقوم فريق الموارد البشرية بمراجعة طلبك. إذا كنت مناسباً، سنتواصل معك عبر واتساب خلال 3-7 أيام.", icon: "whatsapp.svg" },
+            { title: "مقابلة افتراضية", desc: "انضم إلينا في محادثة عبر Google Meet. يرجى التأكد من استقرار الإنترنت.", icon: "google-meet.svg" },
+            { title: "مرحباً بك", desc: "مبروك! في حال قبولك، ستصلك رسالة العرض عبر واتساب وإيميل تفصيلي للبدء.", icon: "done.svg" }
+        ],
+        jobs: [
+            {
+                title: "مطور ألعاب يونيتي",
+                type: "تطوير ألعاب • عن بعد",
+                icon: "/assets/svg/unity.svg",
+                description: "أهلاً بك، نحن نبحث عن مطور يونيتي شغوف للانضمام إلى فريقنا.",
+                requirements: ["مطورين يونيتي فقط", "خبرة جيدة في لغة C#", "مهارة حل المشكلات"],
+                delay: "0.2s"
+            },
+            {
+                title: "رسام ألعاب 2D",
+                type: "فنون • عن بعد",
+                icon: "/assets/svg/digital-artist.svg",
+                description: "مطلوب رسام مبدع لتطوير الهوية البصرية لألعابنا الفريدة.",
+                requirements: ["إتقان Photoshop/Illustrator", "خبرة في التحريك ثنائي الأبعاد"],
+                delay: "0.4s"
+            }
+        ],
+        ui: {
+            readMore: "اقرأ المزيد ▼",
+            readLess: "اقرأ أقل ▲",
+            applyBtn: "قدم على هذه الوظيفة",
+            askBtn: "اسأل عن الوظيفة",
+            waMsg: "أهلاً Orpita Studio! أنا مهتم بوظيفة ",
+            noJobs: "لا توجد وظائف متاحة حالياً",
+            followUs: "تابعنا على وسائل التواصل للتحديثات"
+        }
+    }
+};
+
+// --- وظائف البناء (Generators) ---
+
+function renderHiringSteps(langData, isAr) {
+    const container = document.getElementById('hiring-steps-container');
+    if (!container) return;
+    
+    container.style.direction = isAr ? 'rtl' : 'ltr';
+    container.className = "grid grid-cols-1 md:grid-cols-[repeat(54,minmax(0,1fr))] items-start gap-y-5 md:gap-y-0 w-full";
+    
+    container.innerHTML = langData.steps.map((step, index) => {
+        const isLast = index === langData.steps.length - 1;
+        return `
+            <div class="md:col-span-10 flex flex-row md:flex-col items-start md:items-center ${isAr ? 'text-right' : 'text-left'} md:text-center group gap-2 md:gap-0">
+                <div class="shrink-0 w-16 h-16 md:w-20 md:h-20 bg-slate-800 border-2 border-purple-500/30 rounded-full flex items-center justify-center md:mb-2 group-hover:border-purple-500 transition-all duration-300 shadow-lg">
+                    <img src="/assets/svg/${step.icon}" class="w-6 h-6 md:w-8 md:h-8" alt="${step.title}">
+                </div>
+                <div class="flex flex-col">
+                    <h4 class="text-white font-bold text-lg md:text-lg md:mb-3 leading-tight">${step.title}</h4>
+                    <p class="text-gray-400 text-xs md:text-sm p-2">${step.desc}</p>
+                </div>
+            </div>
+
+            ${!isLast ? `
+                <div class="md:col-span-1 flex items-center justify-center md:h-20 ${isAr ? 'md:rotate-180 rotate-90' : 'rotate-90 md:rotate-0'} opacity-50 self-start md:self-auto">
+                    <img src="/assets/svg/right-arrow.svg" class="w-9 h-9" alt="arrow">
+                </div>
+            ` : ''}
+        `;
+    }).join('');
+}
+
+function createJobCard(job, ui, isAr) {
+    return `
+        <div class="border bg-slate-800/50 rounded-2xl border-slate-700 p-6 overflow-hidden opacity-0 animate-on-scroll ${isAr ? 'text-right' : 'text-left'}" style="animation-delay: ${job.delay};">
+            <div class="flex flex-col md:flex-row ${isAr ? 'md:flex-row-reverse' : ''} items-start gap-6">
+                <div class="flex-shrink-0 w-16 h-16 bg-purple-900/20 rounded-xl flex items-center justify-center border border-purple-500/30">
+                    <img src="${job.icon}" class="w-10 h-10 object-contain" alt="${job.title}" onerror="this.style.opacity='0.3'">
+                </div>
+                <div class="flex-grow w-full">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-1">${job.title}</h3>
+                            <p class="text-gray-400 text-sm font-medium">${job.type}</p>
+                        </div>
+                        <button onclick="toggleDetails(this, '${ui.readMore}', '${ui.readLess}')" class="text-sm font-semibold text-purple-400 hover:text-purple-300 transition-colors">
+                            ${ui.readMore}
+                        </button>
+                    </div>
+                    <div class="max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out detail-content">
+                        <div class="pt-6 mt-6 border-t border-gray-800 text-gray-300 text-sm leading-relaxed">
+                            <p class="mb-4">${job.description}</p>
+                            <ul class="list-disc ${isAr ? 'list-inside pr-4' : 'list-inside pl-4'} space-y-2">
+                                ${job.requirements.map(req => `<li>${req}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="mt-6 flex flex-wrap items-center gap-4 ${isAr ? 'justify-start' : ''}">
+                            <button onclick="toggleModal()" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-3xl transition-all">
+                                ${ui.applyBtn}
+                            </button>
+                            <a href="https://wa.me/201203075900?text=${encodeURIComponent(ui.waMsg + job.title)}"
+                               target="_blank"
+                               class="border-2 border-slate-700 text-slate-300 font-bold py-2 px-6 rounded-3xl hover:bg-slate-700 transition-all flex items-center justify-center gap-2">
+                                ${ui.askBtn}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+}
+
+// --- التحكم في الصفحة (Logic) ---
+
+function toggleDetails(btn, readMoreTxt, readLessTxt) {
+    const cardContent = btn.closest('.flex-grow').querySelector('.detail-content');
+    const isExpanded = cardContent.classList.contains('expanded');
+    
+    if (isExpanded) {
+        cardContent.style.maxHeight = '0px';
+        cardContent.style.opacity = '0';
+        cardContent.classList.remove('expanded');
+        btn.innerText = readMoreTxt;
+    } else {
+        cardContent.style.maxHeight = cardContent.scrollHeight + 'px';
+        cardContent.style.opacity = '1';
+        cardContent.classList.add('expanded');
+        btn.innerText = readLessTxt;
+    }
+}
+
+function toggleModal() {
+    const modal = document.getElementById('jobModal');
+    const content = document.getElementById('modalContent');
+    if (!modal) return;
+    
+    const isHidden = modal.classList.contains('hidden');
+    modal.classList.toggle('hidden');
+    
+    if (!isHidden) {
+        content.classList.add('animate-fade-in-up');
+        document.addEventListener('keydown', closeModalOnEsc);
+    } else {
+        document.removeEventListener('keydown', closeModalOnEsc);
+    }
+}
+
+function closeModalOnEsc(e) {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('jobModal');
+        if (modal && !modal.classList.contains('hidden')) {
+            toggleModal();
+        }
+    }
+}
+
+// تشغيل الوظائف عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', () => {
+    const currentLang = window.location.pathname.includes('/ar') ? 'ar' : 'en';
+    const isAr = currentLang === 'ar';
+    const langData = pageTranslations[currentLang];
+
+    renderHiringSteps(langData, isAr);
+
+    const positionsContainer = document.getElementById('positions-container');
+    if (positionsContainer) {
+        positionsContainer.style.direction = isAr ? 'rtl' : 'ltr';
+        
+        if (langData.jobs.length === 0) {
+            positionsContainer.innerHTML = `
+                <div class="text-center py-12 text-gray-400">
+                    <p class="text-xl mb-2">${langData.ui.noJobs}</p>
+                    <p class="text-sm">${langData.ui.followUs}</p>
+                </div>
+            `;
+        } else {
+            positionsContainer.innerHTML = langData.jobs.map(job => createJobCard(job, langData.ui, isAr)).join('');
+        }
+    }
+});
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join us | Orpita game studio</title>
+    <meta name="description" content="Join Orpita Game Studio! We're looking for passionate artists, developers, and storytellers to help shape the future of indie gaming. View open positions.">
+    <meta name="author" content="Orpita Studio">
+    <link rel="icon" href="/assets/imgs/sm-small-logo.webp" type="image/png">
+    <link rel="canonical" href="https://orpita-studio.web.app/en/about/join-us/">
+    
+    <meta property="og:title" content="About Orpita studio">
+    <meta property="og:description" content="Ready to build something meaningful? Join our growing team of creators and help us craft games that players will love. Check out our open positions.">
+    <meta property="og:image" content="https://orpita-studio.web.app//assets/imgs/og-cover.webp">
+    <meta property="og:url" content="https://orpita-studio.web.app/en/about/join-us/">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orpita Game Studio">
+    <meta name="twitter:description" content="Orpita Game Studio | Independent game studio bringing fresh ideas to life. At Orpita, we design games with heart, creativity, and a passion for unique player experiences.">
+    <meta name="twitter:image" content="https://orpita-studio.web.app//assets/imgs/og-cover.webp">
+    
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Orpita Studio",
+            "url": "https://orpita-studio.web.app/en/about/join-us/",
+            "logo": "https://orpita-studio.web.app/assets/imgs/sm-small-logo.webp",
+            "email": "orpitastudios@gmail.com",
+            "description": "Orpita Game Studio is hiring! We're seeking talented game developers, 2D artists, and creative minds to join our remote-first team. Be part of building unique gaming experiences from the ground up.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "EG",
+                "addressLocality": "Alexandria"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "email": "orpitastudios@gmail.com"
+            },
+            "sameAs": [
+                "https://www.linkedin.com/company/orpita-game-studio/",
+                "https://www.youtube.com/@OrpitaStudio",
+                "https://www.facebook.com/OrpitaStudio",
+                "https://www.instagram.com/orpitastudio"
+            ]
+        }
+    </script>
+    
+    <link rel="stylesheet" href="/assets/css/tailwind-built.css">
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body class="flex flex-col min-h-screen">
+    
+    <div id="tsparticles" class="fixed inset-0 -z-10"></div>
+    <div id="header-placeholder"></div>
+    
+    <main class="flex-1">
+        <section id="page-hero" class="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
+            <div class="container mx-auto px-4 z-10">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight opacity-0 animate-on-scroll" style="animation-delay: 0.0s;">
+                        Join <span class="gradient-text-js">Orpita Studio</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 mt-6 max-w-2xl mx-auto opacity-0 animate-on-scroll" style="animation-delay: 0.2s;">
+                        Ready for new journey with our team?
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="SectionContentWrapper">
+            
+            <section id="hiring-process" class="relative py-4 px-4">
+                <div class="container mx-auto max-w-6xl">
+                    <div class="w-full p-8 md:p-12 opacity-0 animate-on-scroll SectionTheme" style="animation-delay: 0.4s;">
+                        
+                        <div class="text-center mb-12 animate-on-scroll opacity-0" style="animation-delay: 0.6s;">
+                            <h2 class="text-3xl md:text-5xl font-black text-white">
+                                Apply <span class='gradient-text-js'>steps</span>.
+                            </h2>
+                        </div>
+                        <div id="hiring-steps-container" class="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-4 relative">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <section id="open-position" class="relative py-4 px-4">
+                <div class="container mx-auto max-w-6xl">
+                    <div class="w-full p-8 md:p-12 opacity-0 animate-on-scroll SectionTheme" style="animation-delay: 0.4s;">
+                        
+                        <div class="text-center mb-12 animate-on-scroll opacity-0" style="animation-delay: 0.6s;">
+                            <h2 class="text-3xl md:text-5xl font-black text-white">
+                                Open <span class='gradient-text-js'>positions</span>.
+                            </h2>
+                        </div>
+                        <div id="positions-container" class="flex flex-col gap-6"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <div id="jobModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        
+        <div class="absolute inset-0 bg-slate-950/60" onclick="toggleModal()"></div>
+        
+        <div id="modalContent" class="relative bg-slate-900/80 border border-purple-500/20 w-full max-w-lg rounded-3xl p-7 md:p-10 overflow-y-auto max-h-[90vh] ring-1 ring-white/10">
+            
+            <h3 class="text-2xl font-extrabold text-white mb-2 tracking-tight">Before You Apply...</h3>
+            <p class="text-slate-400 text-sm mb-8">Let's be transparent about where we are and what we're looking for.</p>
+            
+            <div class="space-y-6">
+                <div class="flex items-start gap-3 group">
+                    <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
+                    <p class="text-slate-200 text-sm md:text-base leading-relaxed">
+                        <span class="text-purple-400 font-semibold">Early-stage startup:</span> We're building something from the ground up. Currently, positions are <span class="text-purple-400">unpaid/voluntary</span> until we reach stable revenue. If you're looking for immediate income, we completely understand—this might not be the right timing.
+                    </p>
+                </div>
+                
+                <div class="flex items-start gap-3 group">
+                    <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
+                    <p class="text-slate-200 text-sm md:text-base leading-relaxed">
+                        <span class="text-purple-400 font-semibold">Respect everyone's time:</span> Interviews are scheduled individually. Please <span class="text-purple-400">be punctual</span> and confirm your attendance. Repeated no-shows may affect future opportunities with us.
+                    </p>
+                </div>
+                
+                <div class="flex items-start gap-3 group">
+                    <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
+                    <p class="text-slate-200 text-sm md:text-base leading-relaxed">
+                        <span class="text-purple-400 font-semibold">Remote-first culture:</span> No physical office yet—work is <span class="text-purple-400">100% remote</span>. If you're based in <span class="text-purple-400">Alexandria</span>, we occasionally organize in-person meetups.
+                    </p>
+                </div>
+                
+                <div class="flex items-start gap-3 group mt-8 pt-6 border-t border-purple-500/10">
+                    <p class="text-slate-200 text-base md:text-lg leading-relaxed">
+                        If you're passionate about building something meaningful from scratch and this aligns with your current goals, <span class="text-purple-400 font-semibold">we'd love to connect</span>.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                <a href="#tally-open=Ekd5V2&tally-layout=modal&tally-auto-close=1000" onclick="toggleModal()" class="flex-[2] bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 rounded-2xl text-center transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/50">
+                    I'm Ready to Apply
+                </a>
+                <button onclick="toggleModal()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3 rounded-2xl text-center transition-all duration-200">
+                    Not Right Now
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer-placeholder"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    
+    <script src="/assets/js/application.js" defer></script>
+    
+    <script src="/assets/js/ts-particles.js" defer></script>
+    <script src="/assets/js/load.js" defer></script>
+    <script src="/assets/js/header.js" defer></script>
+    <script src="/assets/js/footer.js" defer></script>
+    <script src="/assets/js/social-links.js" defer></script>
+    <script src="/assets/js/animate-on-scroll.js" defer></script>
+    
+    <script src="/assets/js/cookie/cookie-core.js"></script>
+    <script src="/assets/js/cookie/cookie-banner.js" defer></script>
+    <script src="/assets/js/cookie/survey-manager.js" defer></script>
+</body>
+
+</html>
