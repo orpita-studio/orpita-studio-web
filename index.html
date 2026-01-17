@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orpita Studio - Gradient Tool</title>
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --bg: #1e1e2e;
+            --surface: #2d2d44;
+            --text: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 { margin-bottom: 10px; color: var(--primary); }
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .controls {
+            background: var(--surface);
+            padding: 20px;
+            border-radius: 12px;
+            width: 300px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            height: fit-content;
+        }
+        .canvas-area {
+            background: #ffffff; /* Checkered pattern for transparency */
+            background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), 
+                              linear-gradient(-45deg, #ccc 25%, transparent 25%), 
+                              linear-gradient(45deg, transparent 75%, #ccc 75%), 
+                              linear-gradient(-45deg, transparent 75%, #ccc 75%);
+            background-size: 30px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        canvas {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #555;
+        }
+        .control-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 0.9em; }
+        input[type="range"], select { width: 100%; cursor: pointer; }
+        
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        .btn:hover { background: #5649c0; }
+        .btn-upload { background: #444; border: 1px dashed #888; }
+        .btn-upload:hover { background: #555; }
+        input[type="file"] { display: none; }
+    </style>
+</head>
+<body>
+
+    <h2>Orpita Gradient Tool 🎨</h2>
+    <p>أداة صناعة الشفافية المتدرجة الخاصة بالاستوديو</p>
+
+    <div class="container">
+        <div class="controls">
+            <div class="control-group">
+                <button class="btn btn-upload" onclick="document.getElementById('fileInput').click()">📂 ارفع الصورة</button>
+                <input type="file" id="fileInput" accept="image/*">
+            </div>
+
+            <div class="control-group">
+                <label>اتجاه التلاشي (Direction)</label>
+                <select id="direction">
+                    <option value="bottom">من فوق لتحت (Bottom Fade)</option>
+                    <option value="top">من تحت لفوق (Top Fade)</option>
+                    <option value="left">من اليمين لليسار (Left Fade)</option>
+                    <option value="right">من اليسار لليمين (Right Fade)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>بداية التدرج (Start Point)</label>
+                <input type="range" id="startPoint" min="0" max="1" step="0.05" value="0">
+            </div>
+
+            <div class="control-group">
+                <label>نهاية التدرج (End Point)</label>
+                <input type="range" id="endPoint" min="0" max="1" step="0.05" value="1">
+            </div>
+
+            <button class="btn" id="downloadBtn">⬇️ تحميل الصورة (PNG)</button>
+        </div>
+
+        <div class="canvas-area">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const directionSelect = document.getElementById('direction');
+        const startPointSlider = document.getElementById('startPoint');
+        const endPointSlider = document.getElementById('endPoint');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        let img = new Image();
+
+        // Load Image
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    img.src = event.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        img.onload = () => {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            draw();
+        }
+
+        // Main Draw Function
+        function draw() {
+            if (!img.src) return;
+
+            // Clear Canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // 1. Draw Original Image
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.drawImage(img, 0, 0);
+
+            // 2. Create Gradient Mask
+            // mode: destination-in (keeps content only where the mask is opaque)
+            ctx.globalCompositeOperation = 'destination-in';
+            
+            let gradient;
+            const w = canvas.width;
+            const h = canvas.height;
+            const dir = directionSelect.value;
+            const start = parseFloat(startPointSlider.value);
+            const end = parseFloat(endPointSlider.value);
+
+            if (dir === 'bottom') { // Top to Bottom fade (Bottom becomes transparent)
+                gradient = ctx.createLinearGradient(0, h * start, 0, h * end);
+            } else if (dir === 'top') { // Bottom to Top fade
+                gradient = ctx.createLinearGradient(0, h * (1 - start), 0, h * (1 - end));
+            } else if (dir === 'left') { // Right to Left
+                gradient = ctx.createLinearGradient(w * (1 - start), 0, w * (1 - end), 0);
+            } else if (dir === 'right') { // Left to Right
+                gradient = ctx.createLinearGradient(w * start, 0, w * end, 0);
+            }
+
+            // Define Transparency: Black = Visible, Transparent = Invisible (in mask mode)
+            // But for 'destination-in':
+            // Opaque color = Keep image
+            // Transparent color = Remove image
+            gradient.addColorStop(0, 'rgba(0,0,0,1)'); // Fully visible part
+            gradient.addColorStop(1, 'rgba(0,0,0,0)'); // Transparent part
+
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, w, h);
+
+            // Reset composite operation
+            ctx.globalCompositeOperation = 'source-over';
+        }
+
+        // Add Event Listeners for real-time update
+        [directionSelect, startPointSlider, endPointSlider].forEach(el => {
+            el.addEventListener('input', draw);
+        });
+
+        // Download Function
+        downloadBtn.addEventListener('click', () => {
+            if (!img.src) return alert("الرجاء رفع صورة أولاً!");
+            const link = document.createElement('a');
+            link.download = 'orpita-gradient-edit.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        });
+
+    </script>
+</body>
+</html>
