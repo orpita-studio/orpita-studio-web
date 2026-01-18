@@ -61,9 +61,9 @@ const newsTranslations = {
     {
       title: "Orpita Joined GMTK 2025",
       subtitle: "Taking the Plunge. Accepting the Challenge.",
-      img: "/assets/imgs/ourstory/orpita-joined-gmtk2025/orpita-joined-gmtk2025.webp",
+      img: "/assets/imgs/ourstory/orpita-joined-gmtk2025/sm-orpita-joined-gmtk2025.webp",
       text: "We're participating in GMTK Game Jam 2025, one of the world's largest game jams. Follow our journey as we create something special in just 96 hours.",
-      link: "/en/news/sm-orpita-joined-gmtk2025/",
+      link: "/en/news/orpita-joined-gmtk2025/",
       showButton: true,
       buttonText: "Read Article"
     },
@@ -90,9 +90,9 @@ const newsTranslations = {
     {
       title: "Orpita تنضم لـ GMTK 2025",
       subtitle: "نخوض التحدي. نقبل المغامرة.",
-      img: "/assets/imgs/ourstory/orpita-joined-gmtk2025/orpita-joined-gmtk2025.webp",
+      img: "/assets/imgs/ourstory/orpita-joined-gmtk2025/sm-orpita-joined-gmtk2025.webp",
       text: "نشارك في GMTK Game Jam 2025، أحد أكبر منافسات صناعة الألعاب في العالم. تابع رحلتنا ونحن نصنع شيئاً مميزاً في 96 ساعة فقط.",
-      link: "/ar/news/sm-orpita-joined-gmtk2025/",
+      link: "/ar/news/orpita-joined-gmtk2025/",
       showButton: true,
       buttonText: "اقرأ المقال"
     },

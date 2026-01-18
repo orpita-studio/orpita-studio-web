@@ -52,9 +52,9 @@ const gamesData = {
             title: "One More Day",
             status: "Not Available",
             statusColor: "text-red-400",
-            image: "/assets/imgs/games/one-more-day/one-more-day-cover.webp",
+            image: "/assets/imgs/games/one-more-day/sm-one-more-day-cover.webp",
             description: "One More Day is a narrative-focused game where you step into the shoes of Dr. Zain, facing tense hospital situations.",
-            link: "en/games/sm-one-more-day/",
+            link: "/en/games/one-more-day/",
             showButton: true,
             buttonText: "View Game"
         },
@@ -64,7 +64,7 @@ const gamesData = {
             statusColor: "text-yellow-400",
             image: "/assets/imgs/games/minesetter/sm-minesetter-comming-soon.webp",
             description: "A reversed version of the classic Minesweeper game, but with entirely new rules.",
-            link: "en/games/minesetter/",
+            link: "/en/games/minesetter/",
             showButton: false,
             buttonText: "View Project"
         },
