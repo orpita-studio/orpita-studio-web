@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesetter Level designer tool - Orpita Game Studio</title>
+    
+    <meta name="description" content="Welcome to Orpita Studio, an independent game development studio creating narrative-driven interactive experiences. Discover our games and join our journey.">
+    <meta name="keywords" content="Orpita Studio, Minesetter, Level Design, Reversed Minesweeper">
+    <meta name="author" content="Orpita Studio">
+    <meta property="og:title" content="Orpita Game Studio">
+    <meta property="og:description" content="Independent game development studio creating narrative-driven interactive experiences.">
+    <meta property="og:image" content="./assets/imgs/LinkCover.png">
+    <meta property="og:url" content="https://orpita-studio.web.app/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="./assets/imgs/SLogoBlack.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="app-layout">
+
+    <aside class="sidebar" style="display: flex; flex-direction: column; height: 100vh;">
+        <div class="logo-area">
+            <i class="fas fa-bomb"></i>
+            <div><h1>Minesetter</h1><span class="subtitle">Level Designer V2.4</span></div>
+        </div>
+
+        <div id="ai-mode-toggle" class="panel-header" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; border-bottom: 1px solid var(--border); flex-shrink: 0;">
+            <h2 style="font-size: 1.1em; color: var(--accent-purple); display: flex; align-items: center; margin: 0;">
+                <i class="fas fa-robot" style="margin-right: 8px;"></i> AI Puzzle Builder
+            </h2>
+            <label class="switch-wrapper">
+                <input type="checkbox" id="aiModeSwitch"><span class="slider round"></span>
+            </label>
+        </div>
+
+<div id="dynamic-panel-content" class="panel-container">
+    
+    <div id="manual-mode-content">
+        <div class="scroll-area">
+            <div class="panel-group">
+                <h3><i class="fas fa-ruler-combined"></i> Grid Size</h3>
+                <div class="input-row">
+                    <div class="input-wrapper"><label>Columns</label><input id="gridCols" type="number" min="0" max="12" value="4" /></div>
+                    <div class="input-wrapper"><label>Rows</label><input id="gridRows" type="number" min="0" max="12" value="4" /></div>
+                </div>
+                <button id="build" class="btn-primary full-width" style="margin-top: 10px;">Update Grid</button>
+            </div>
+
+            <div class="panel-group">
+                <h3><i class="fas fa-crosshairs"></i> Bomb Rules</h3>
+                <div class="input-row">
+                    <div class="input-wrapper"><label>Normal (1)</label><input id="bombs1" type="number" min="0" value="2" /></div>
+                    <div class="input-wrapper"><label class="text-gold">Power (2)</label><input id="bombs2" type="number" min="0" value="2" /></div>
+                    <div class="input-wrapper"><label class="text-danger">Negative (-1)</label><input id="bombsNeg" type="number" min="0" value="2" /></div>
+                </div>
+            </div>
+
+            <div class="panel-group">
+                <h3><i class="fas fa-trophy"></i> Target Score</h3>
+                <div class="input-row">
+                    <input id="targetMin" type="number" placeholder="Min" value="-20" /><span class="sep">-</span>
+                    <input id="targetMax" type="number" placeholder="Max" value="30" />
+                </div>
+                <select id="modeTarget" style="margin-top:8px;">
+                    <option value="range" selected>Range Mode</option>
+                    <option value="exact">Exact Value</option>
+                </select>
+            </div>
+
+            <div class="panel-group">
+                <h3><i class="fas fa-star"></i> Star Condition</h3>
+                <div class="star-editor-group" id="star1Group"><h4>★ Star 1</h4><div class="single-condition-container" data-star-id="1"></div></div>
+                <div class="star-editor-group" id="star2Group"><h4>★ Star 2</h4><div class="single-condition-container" data-star-id="2"></div></div>
+                <div class="star-editor-group" id="star3Group"><h4>★ Star 3</h4><div class="single-condition-container" data-star-id="3"></div></div>
+                
+                <template id="conditionRowTemplate">
+                    <div class="condition-row">
+                        <select class="condition-type-select">
+                            <option value="" disabled selected>Select Condition Type</option>
+                            <option value="getScore">Exact Target Value (Sum)</option>
+                            <option value="placeBombAt">Bomb In Specific Cell ID(s)</option>
+                            <option value="anyCellValue">Specific Value In Any Cell</option>
+                            <option value="cellValues">Specific Value In Specific Cell(s)</option>
+                            <option value="emptyCellsCount">Zero-Value Cells Count</option>
+                            <option value="setSwitches">Switch State Requirement</option>
+                        </select>
+                        <div style="display: flex; gap: 5px; width: 100%;">
+                            <div class="condition-value-area" style="flex-grow: 1;">
+                                <span class="small" style="color:var(--text-muted)">Select a type to configure.</span>
+                            </div>
+                            <button class="btn-xs remove-condition-btn" style="display: none;">&times;</button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <div class="panel-group">
+                <h3><i class="fas fa-cogs"></i> Advanced</h3>
+                <div class="control-group">
+                    <label style="font-weight:600; display:block; margin-bottom:5px;">Solver Limits</label>
+                    <div class="input-wrapper" style="margin-bottom: 8px;"><label>Analysis limit:</label><input id="maxAnalysisLimit" type="number" value="1000000" /></div>
+                    <div class="input-wrapper"><label>Display limit:</label><input id="maxSolutionsLimit" type="number" value="1000" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ai-mode-builder-content" class="hidden">
+        <div class="scroll-area">
+            
+            <div class="panel-group">
+                <h3><i class="fas fa-brain"></i> Difficulty (Win Rate %)</h3>
+                <div class="input-row">
+                    <div class="input-wrapper"><label>Min %</label><input id="aiSolMin" type="number" value="0.1" step="0.1" min="0" /></div>
+                    <div class="input-wrapper"><label>Max %</label><input id="aiSolMax" type="number" value="1" step="0.1" min="0" /></div>
+                </div>
+            </div>
+
+            <div class="panel-group">
+                <h3><i class="fas fa-expand-arrows-alt"></i> Grid Size Limits</h3>
+                <div class="input-row" style="margin-bottom: 8px;">
+                    <span class="text-gold" style="width: 20px; font-weight: bold;">X</span>
+                    <input id="aiGridXMin" type="number" placeholder="Min" value="3" /><span class="sep">-</span>
+                    <input id="aiGridXMax" type="number" placeholder="Max" value="6" />
+                </div>
+                <div class="input-row">
+                    <span class="text-gold" style="width: 20px; font-weight: bold;">Y</span>
+                    <input id="aiGridYMin" type="number" placeholder="Min" value="3" /><span class="sep">-</span>
+                    <input id="aiGridYMax" type="number" placeholder="Max" value="6" />
+                </div>
+            </div>
+
+            <div class="panel-group">
+                <h3><i class="fas fa-bomb"></i> Bombs Limits</h3>
+                
+                <div class="element-control-item">
+                    <div class="control-header">
+                        <label><i class="fas fa-bomb"></i> Normal Bombs</label>
+                        <label class="switch-wrapper"><input type="checkbox" id="aiAllowBombs1" checked><span class="slider round"></span></label>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-wrapper"><label>Min</label><input id="aiBombs1Min" type="number" value="1" /></div>
+                        <div class="input-wrapper"><label>Max</label><input id="aiBombs1Max" type="number" value="5" /></div>
+                    </div>
+                </div>
+
+                <div class="element-control-item">
+                    <div class="control-header">
+                        <label><i class="fas fa-bolt"></i> Power Bombs</label>
+                        <label class="switch-wrapper"><input type="checkbox" id="aiAllowBombs2" checked><span class="slider round"></span></label>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-wrapper"><label>Min</label><input id="aiBombs2Min" type="number" value="0" /></div>
+                        <div class="input-wrapper"><label>Max</label><input id="aiBombs2Max" type="number" value="3" /></div>
+                    </div>
+                </div>
+
+                <div class="element-control-item">
+                    <div class="control-header">
+                        <label><i class="fas fa-minus-circle"></i> Negative Bombs</label>
+                        <label class="switch-wrapper"><input type="checkbox" id="aiAllowBombsNeg" checked><span class="slider round"></span></label>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-wrapper"><label>Min</label><input id="aiBombsNegMin" type="number" value="0" /></div>
+                        <div class="input-wrapper"><label>Max</label><input id="aiBombsNegMax" type="number" value="2" /></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-group">
+                <h3><i class="fas fa-th"></i> Grid Elements Limits</h3>
+                
+                <div class="element-control-item">
+                    <div class="control-header">
+                        <label><i class="fas fa-cube"></i> Blocks</label>
+                        <label class="switch-wrapper"><input type="checkbox" id="aiAllowBlocks" checked><span class="slider round"></span></label>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-wrapper"><label>Min</label><input id="aiBlocksMin" type="number" value="0" /></div>
+                        <div class="input-wrapper"><label>Max</label><input id="aiBlocksMax" type="number" value="5" /></div>
+                    </div>
+                </div>
+
+                <div class="element-control-item">
+                    <div class="control-header">
+                        <label><i class="fas fa-toggle-on"></i> Switches</label>
+                        <label class="switch-wrapper"><input type="checkbox" id="aiAllowSwitches"><span class="slider round"></span></label>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-wrapper"><label>Min</label><input id="aiSwitchesMin" type="number" value="0" /></div>
+                        <div class="input-wrapper"><label>Max</label><input id="aiSwitchesMax" type="number" value="3" /></div>
+                    </div>
+                </div>
+
+                <div class="element-control-item">
+                    <div class="control-header">
+                        <label><i class="fas fa-bomb"></i> Must-Bombs</label>
+                        <label class="switch-wrapper"><input type="checkbox" id="aiAllowMustBombs"><span class="slider round"></span></label>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-wrapper"><label>Min</label><input id="aiMustBombsMin" type="number" value="0" /></div>
+                        <div class="input-wrapper"><label>Max</label><input id="aiMustBombsMax" type="number" value="2" /></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-group">
+                <h3><i class="fas fa-bullseye"></i> Target Score Range</h3>
+                <div class="input-row">
+                    <input id="aiScoreMin" type="number" placeholder="Min" value="10" /><span class="sep">-</span>
+                    <input id="aiScoreMax" type="number" placeholder="Max" value="50" />
+                </div>
+            </div>
+
+            <div class="panel-group">
+                <h3><i class="fas fa-tasks"></i> Allowed Star Conditions</h3>
+                <div class="ai-conditions-list">
+                    <div class="setting-item control-header">
+                        <label for="allowCondScore">Exact Target Value</label>
+                        <label class="switch-wrapper"><input type="checkbox" id="allowCondScore" checked><span class="slider round"></span></label>
+                    </div>
+                    <div class="setting-item control-header">
+                        <label for="allowCondBombAt">Bomb in Specific Cell</label>
+                        <label class="switch-wrapper"><input type="checkbox" id="allowCondBombAt" checked><span class="slider round"></span></label>
+                    </div>
+                    <div class="setting-item control-header">
+                        <label for="allowCondAnyVal">Specific Value in Any Cell</label>
+                        <label class="switch-wrapper"><input type="checkbox" id="allowCondAnyVal" checked><span class="slider round"></span></label>
+                    </div>
+                    <div class="setting-item control-header">
+                        <label for="allowCondCellVals">Specific Value in Specific Cell</label>
+                        <label class="switch-wrapper"><input type="checkbox" id="allowCondCellVals"><span class="slider round"></span></label>
+                    </div>
+                    <div class="setting-item control-header">
+                        <label for="allowCondEmpty">Zero-Value Cells Count</label>
+                        <label class="switch-wrapper"><input type="checkbox" id="allowCondEmpty"><span class="slider round"></span></label>
+                    </div>
+                    <div class="setting-item control-header">
+                        <label for="allowCondSwitches">Switch State Requirement</label>
+                        <label class="switch-wrapper"><input type="checkbox" id="allowCondSwitches"><span class="slider round"></span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-group">
+                <h3><i class="fas fa-microchip"></i> Advanced AI</h3>
+                <div class="input-wrapper" style="margin-bottom: 8px;">
+                    <label>Analysis Limit (per try):</label>
+                    <input id="aiAnalysisLimit" type="number" value="500000" />
+                </div>
+                <div class="input-wrapper">
+                    <label>Stop after (N) successes:</label>
+                    <input id="aiStopAfter" type="number" value="1" title="Stop generation once this many valid puzzles are found" />
+                </div>
+            </div>
+
+            <div style="padding-bottom: 30px;">
+                <button id="generateAiPuzzle" class="btn-primary full-width" style="height: 50px; font-weight: bold; font-size: 1.1em;">
+                    <i class="fas fa-magic"></i> START AI GENERATOR
+                </button>
+                <div id="aiGenerationStatus" class="status-message" style="margin-top: 15px; display: none;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div class="sidebar-footer" style="padding: 15px; border-top: 1px solid var(--border); flex-shrink: 0;">
+            <div style="margin-bottom: 8px;">
+                <input type="text" id="exportFileName" placeholder="File Name" value="level_custom" style="margin-bottom:5px; width: 100%;" />
+                <div style="display:flex; gap: 5px; margin-bottom: 5px;">
+                    <button id="exportBtn" class="btn-primary" style="flex-grow: 1;"><i class="fas fa-download"></i> JSON</button>
+                    <button id="copyJsonBtn" class="btn-secondary btn-xs" style="flex-basis: 35px;"><i class="fas fa-copy"></i></button>
+                </div>
+                <div style="display:flex; gap: 5px;">
+                    <button id="importBtn" class="btn-secondary" style="flex-grow: 1;"><i class="fas fa-upload"></i> File</button>
+                    <button id="importTextBtn" class="btn-secondary" style="flex-grow: 1;"><i class="fas fa-paste"></i> Text</button>
+                </div>
+            </div>
+            <textarea id="exportData" readonly style="display:none"></textarea>
+        </div>
+    </aside>
+
+    <main class="workspace">
+        <div class="toolbar-dock">
+            <div class="modes" role="tablist">
+                <button id="modeBlock" class="tool-btn active" title="Block (X)"><i class="fas fa-square"></i> Block</button>
+                <button id="modeSwitch" class="tool-btn switchMode" title="Switch"><i class="fas fa-toggle-on"></i> Switch</button>
+                <button id="modeMustBomb" class="tool-btn mustBombMode" title="Must Bomb"><i class="fas fa-bomb"></i> Must</button>
+                <button id="modeErase" class="tool-btn eraseMode" title="Erase"><i class="fas fa-eraser"></i> Erase</button>
+            </div>
+            <div class="toolbar-divider"></div>
+            <button id="clear" class="tool-btn ghost" title="Clear Map"><i class="fas fa-trash"></i> Clear</button>
+        </div>
+
+        <div class="grid-canvas">
+            <div class="grid-container-scroll"><div id="grid" role="grid"></div></div>
+            <div class="grid-stats">
+                <div class="stat-pill"><i class="fas fa-th"></i> <span id="cellCount">0</span> Cells</div>
+                <div class="stat-pill"><i class="fas fa-square"></i> <span id="blocksCount">0</span> Blocks</div>
+                <div class="stat-pill"><i class="fas fa-toggle-on"></i> <span id="switchesCount">0</span> Switches</div>
+                <div class="stat-pill"><i class="fas fa-bomb"></i> <span id="mustBombsCount">0</span> Must</div>
+            </div>
+            <div id="statusMessage" class="status-message" style="display:none"></div>
+            <div id="warningsContainer" class="warnings-section"></div>
+        </div>
+
+<div class="action-bar-container"> <div class="action-bar">
+        <div class="progress-section">
+            <div class="progress-info">
+                <button id="toggleConsole" class="btn-xs" style="margin-right: 8px; padding: 2px 6px;">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+                
+                <span id="timeInfo">Ready</span>
+                <span style="margin-left: 10px; color: var(--accent-gold);"> Est: <span id="combCount">—</span></span>
+                <span id="progressPct" style="margin-left: auto;">0%</span>
+            </div>
+            <div class="progress"><div id="progressBar" class="progressBar"></div></div>
+        </div>
+        <div class="main-actions">
+            <button id="estimateBtn" class="btn-xs" style="height: 38px; padding: 0 15px;">Estimate</button>
+            <button id="solve" class="btn-solve"><i class="fas fa-play"></i> SOLVE</button>
+            <button id="cancel" class="btn-cancel" disabled><i class="fas fa-stop"></i></button>
+        </div>
+    </div>
+
+    <div id="aiConsole" class="console-drawer">
+        <div id="consoleOutput" class="console-body">
+            <div class="line muted"> Engine ready. Configuration loaded.</div>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <aside class="results-panel">
+        <div class="panel-header">
+            <h2>Analysis & Solutions</h2>
+            <div style="display:flex; gap:5px">
+                <span id="maxStarSeen" style="display:none">0</span>
+                <span id="solutionsCount" class="badge-count">0</span>
+            </div>
+        </div>
+
+        <div class="difficulty-card">
+            <div class="diff-header"><span>Difficulty</span><span id="difficultyLabel">—</span></div>
+            <div class="difficulty-meter"><div id="difficultyFill" class="difficulty-fill"></div></div>
+            <div id="difficultyScore" class="small-text"></div>
+            <div id="difficultyDetails" class="small-text"></div>
+            
+            <div class="control-group" style="padding: 10px 15px; border-bottom: 1px solid var(--border);">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                    <label for="toggleHeatmap" style="font-weight:600; cursor:pointer;">Show Heatmap</label>
+                    <input type="checkbox" id="toggleHeatmap" style="width:auto;"> 
+                </div>
+                <div id="heatmapOptions" style="display: none; margin-top: 10px;">
+                    <label style="font-size:0.8em; color:var(--text-muted); display:block; margin-bottom:5px;">Bomb Type:</label>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="heatmapType" value="all" checked onchange="setHeatmapType(this.value)"><span>All</span></label>
+                        <label class="radio-label"><input type="radio" name="heatmapType" value="normal" onchange="setHeatmapType(this.value)"><span>Normal (+)</span></label>
+                        <label class="radio-label"><input type="radio" name="heatmapType" value="power" onchange="setHeatmapType(this.value)"><span>Power (++)</span></label>
+                        <label class="radio-label"><input type="radio" name="heatmapType" value="negative" onchange="setHeatmapType(this.value)"><span>Neg (-)</span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="filters-area">
+            <h4>Filters</h4>
+            <div id="analysisTargets" class="tags-cloud"></div>
+            <div id="analysisStars" class="tags-cloud"></div>
+            <div id="conditionFiltersContainer" class="cond-filters">
+                <div class="toggle-row"><input type="checkbox" id="filterC1" checked> <label>Cond 1</label></div>
+                <div class="toggle-row"><input type="checkbox" id="filterC2" checked> <label>Cond 2</label></div>
+                <div class="toggle-row"><input type="checkbox" id="filterC3" checked> <label>Cond 3</label></div>
+                <div class="btn-row">
+                    <button id="applyFiltersBtn" class="btn-xs">Apply</button>
+                    <button id="resetFiltersBtn" class="btn-xs">Reset</button>
+                </div>
+            </div>
+            <div id="analysisConditions" class="analysis-box"></div>
+        </div>
+
+        <div class="solutions-list-wrapper">
+            <div class="list-controls">
+                <input id="maxShow" type="number" value="200" title="Limit" />
+                <button id="sortStars" class="btn-xs" title="Sort by Conditions Met"><i class="fas fa-star"></i></button>
+                <button id="filterTopStars" class="btn-xs" title="Solutions meeting all conditions"><i class="fas fa-trophy"></i></button>
+            </div>
+            <div id="solutionsList" class="solutions-container">
+                <div class="empty-state">Hit Solve to see results</div>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<div id="termsOverlay" class="modal-overlay">
+    <div class="modal-box">
+        <div class="modal-header"><i class="fas fa-file-contract"></i><h2>Terms of Service</h2></div>
+        <div class="modal-body">
+            <div class="terms-scroll-area">
+                <p>Welcome to the <strong>Minesetter Level Designer Tool</strong>. This tool is the exclusive property of **Orpita Studio**. By continuing, you agree to the following strict Terms of Service and Intellectual Property guidelines:</p>
+                <h3>1. Intellectual Property Ownership</h3>
+                <p>This tool, its internal logic, all underlying code, and the fundamental concept/logic of the Minesetter game are the exclusive intellectual property of Orpita Studio.</p>
+                <h3>2. Prohibited Use and Scope</h3>
+                <p>Use of this tool is restricted exclusively to designing levels for the <strong>Minesetter game only</strong>. Furthermore, the following actions are strictly forbidden:</p>
+                <ul class="sub-terms-list">
+                    <li>Attempting to extract, use, or reverse engineer any part of the tool's logic, source code, or the Minesetter game logic.</li>
+                    <li>Using the tool or any resulting output (excluding final Minesetter level designs) for any **commercial purpose** or monetary gain without a formal, explicit, and written authorization from Orpita Studio.</li>
+                    <li>Using the tool for any purpose other than designing Minesetter levels.</li>
+                </ul>
+                <h3>3. Disclaimers and Liability</h3>
+                <p>To the maximum extent permitted by law, Orpita Studio provides the following disclaimers:</p>
+                <ul class="sub-terms-list">
+                    <li><strong>Disclaimer of Warranty ("As Is"):</strong> The tool is provided "AS IS" without any warranties, express or implied, regarding accuracy, performance, or fitness for a particular purpose.</li>
+                    <li><strong>Limitation of Liability:</strong> In no event shall Orpita Studio be liable for any direct, indirect, incidental, or consequential damages arising from the use or inability to use the tool.</li>
+                </ul>
+                <p class="small-note" style="color: var(--accent-danger); margin-top: 15px;">Formal, explicit, and written permission from Orpita Studio is required for any use that exceeds these defined boundaries.</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <label class="checkbox-wrapper"><input type="checkbox" id="termsCheckbox"><span>I have read and agree to the Terms of Service.</span></label>
+            <div class="modal-buttons">
+                <button id="btnDeclineTerms" class="btn-secondary btn-danger-hover">Disagree & Exit</button>
+                <button id="btnAcceptTerms" class="btn-primary" disabled>Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="utils.js"></script>
+<script src="state.js"></script>
+<script src="solver.js"></script>
+<script src="ai-builder.js"></script>
+<script src="analysis-viewer.js"></script>
+<script src="ui-core.js"></script>
+
+</body>
+</html>
