@@ -47,14 +47,24 @@
     }
     </script>
 
-<link rel="preload" href="/assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/assets/css/style.css"></noscript>
-    <link rel="preload" href="/assets/css/tailwind-built.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/assets/css/tailwind-built.css"></noscript>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preload" as="image" href="/assets/imgs/logo-lg-trans-sd.webp">
+    <link rel="preload" href="/assets/fonts/orbitron/Orbitron-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter/Inter_18pt-Medium.woff2" as="font" type="font/woff2" crossorigin>
     
-
     <style>
         :root { --violet-600: #7c3aed; --bg-0: #030712; }
+       
+        @font-face {
+            font-family: 'Orbitron';
+            src: url('/assets/fonts/orbitron/Orbitron-Bold.woff2') format('woff2');
+            font-weight: 700; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Inter';
+            src: url('/assets/fonts/inter/Inter_18pt-Medium.woff2') format('woff2');
+            font-weight: 500; font-display: swap;
+        }
         body { background-color: #030712; margin: 0; color: #e6eef8; font-family: sans-serif; }
         body::before {
             content: ""; position: fixed; inset: 0;
@@ -62,26 +72,15 @@
             background: linear-gradient(180deg, #0F0823 0%, #030712 100%);
             z-index: -10;
         }
-        @font-face {
-            font-family: 'Orbitron';
-            src: url('/assets/fonts/orbitron/Orbitron-Bold.woff2') format('truetype');
-            font-weight: 700; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Inter';
-            src: url('/assets/fonts/inter/Inter_18pt-Medium.woff2') format('truetype');
-            font-weight: 500; font-display: swap;
-        }
         .hero-line-container { display: inline-flex; opacity: 0; }
     </style>
-
-    <link rel="preload" as="image" href="/assets/imgs/logo-lg-trans-sd.webp">
-    <link rel="preload" href="/assets/fonts/orbitron/Orbitron-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="" as="font" type="font/woff2" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"></noscript>
+    <link rel="preload" href="/assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/style.css"></noscript>
+    <link rel="preload" href="/assets/css/tailwind-built.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/tailwind-built.css"></noscript>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.css"></noscript>
 </head>
 
 <body class="flex flex-col min-h-screen">
@@ -222,8 +221,8 @@
         <div id="footer-placeholder"></div>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.js" defer></script>
     <script src="https://tally.so/widgets/embed.js" defer></script>
     
     <script src="/assets/js/ts-particles.js" defer></script>
