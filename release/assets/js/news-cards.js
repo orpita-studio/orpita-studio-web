@@ -101,7 +101,7 @@ const newsTranslations = {
       subtitle: "كل رحلة تبدأ بخطوة",
       img: "/assets/imgs/ourstory/sm-call-for-new-members.webp",
       text: "نبحث عن فنانين، مطورين، ورواة قصص شغوفين للانضمام لفريقنا المتنامي. ساعدنا في تشكيل مستقبل الألعاب المستقلة.",
-      link: "/ar/about/join/us/",
+      link: "/ar/about/join-us/",
       showButton: true,
       buttonText: "انضم لـ Orpita"
     }

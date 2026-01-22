@@ -64,7 +64,7 @@ const gamesData = {
             statusColor: "text-yellow-400",
             image: "/assets/imgs/games/minesetter/sm-minesetter-comming-soon.webp",
             description: "A reversed version of the classic Minesweeper game, but with entirely new rules.",
-            link: "/en/games/minesetter/",
+            link: "",
             showButton: false,
             buttonText: "View Project"
         },
@@ -96,7 +96,7 @@ const gamesData = {
             statusColor: "text-yellow-400",
             image: "/assets/imgs/games/minesetter/sm-minesetter-comming-soon.webp",
             description: "نسخة معكوسة من لعبة Minesweeper الكلاسيكية، لكن بقواعد جديدة تماماً.",
-            link: "/ar/games/minesetter/",
+            link: "",
             showButton: false,
             buttonText: "شاهد المشروع"
         },

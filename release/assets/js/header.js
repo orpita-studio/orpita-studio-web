@@ -65,33 +65,61 @@ const OrpitaNav = {
     // --- SECTION 3: INTERACTION LOGIC ---
     // Manages dropdown toggles and outside clicks
     initEvents() {
-        const closeAll = () => {
+    // دالة الإغلاق
+    const closeAll = (e) => {
+        // لو الضغطة داخل حاوية الدروب داون أو داخل المنيو الموبايلي، ما تقفلش
+        if (e && e.target.closest('.dropdown-container, #mobile-dropdown nav')) return;
+        
+        document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('opacity-0', 'invisible', 'translate-y-2'));
+        document.querySelectorAll('.dropdown-icon').forEach(i => i.classList.remove('rotate-180'));
+        document.getElementById('mobile-dropdown')?.classList.add('opacity-0', 'invisible');
+    };
+
+    // مستمع واحد فقط للكل
+    document.addEventListener('click', closeAll);
+       
+    // Desktop Dropdowns
+    document.querySelectorAll('.dropdown-container').forEach(c => {
+        const btn = c.querySelector('.dropdown-btn'), menu = c.querySelector('.dropdown-menu');
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // يمنع وصول الضغطة للـ document عشان ما تقفلش فوراً
+            const isOpen = !menu.classList.contains('opacity-0');
+            
+            // نقفل أي دروب داون تاني مفتوح
             document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('opacity-0', 'invisible', 'translate-y-2'));
-            document.querySelectorAll('.dropdown-icon').forEach(i => i.classList.remove('rotate-180'));
-            document.getElementById('mobile-dropdown')?.classList.add('opacity-0', 'invisible');
-        };
-
-        document.querySelectorAll('.dropdown-container').forEach(c => {
-            const btn = c.querySelector('.dropdown-btn'), menu = c.querySelector('.dropdown-menu');
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isOpen = !menu.classList.contains('opacity-0');
-                closeAll();
-                if (!isOpen) { 
-                    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2'); 
-                    btn.querySelector('.dropdown-icon').classList.add('rotate-180'); 
-                }
-            });
+            
+            if (!isOpen) { 
+                menu.classList.remove('opacity-0', 'invisible', 'translate-y-2'); 
+                btn.querySelector('.dropdown-icon').classList.add('rotate-180'); 
+            }
         });
+    });
 
-        document.getElementById('mobile-menu-btn')?.addEventListener('click', (e) => {
+    // Mobile Burger Button
+    const burgerBtn = document.getElementById('mobile-menu-btn');
+    const mobileDropdown = document.getElementById('mobile-dropdown');
+    
+    if (burgerBtn && mobileDropdown) {
+        burgerBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const dd = document.getElementById('mobile-dropdown');
-            dd.classList.toggle('opacity-0'); dd.classList.toggle('invisible');
+            mobileDropdown.classList.toggle('opacity-0');
+            mobileDropdown.classList.toggle('invisible');
         });
 
-        document.addEventListener('click', closeAll);
+        // منع إغلاق المنيو عند الضغط "داخل" منطقة اللينكات (عشان اللينك يشتغل)
+        mobileDropdown.addEventListener('click', (e) => {
+            // لو اللي اتضغط عليه هو لينك <a>، سيبه يكمل لمساره
+            if (e.target.tagName === 'A') {
+                // اختياري: ممكن تقفل المنيو هنا بعد وقت قصير عشان اليوزر يحس بالاستجابة
+                setTimeout(() => {
+                    mobileDropdown.classList.add('opacity-0', 'invisible');
+                }, 300);
+            } else {
+                e.stopPropagation(); // يمنع إغلاق المنيو لو ضغطت في الفراغ اللي بين اللينكات
+            }
+        });
     }
+}
 };
 
 // --- SECTION 4: UTILITIES ---

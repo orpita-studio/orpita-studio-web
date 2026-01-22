@@ -72,7 +72,7 @@ const newsTranslations = {
       subtitle: "Every Journey Starts With a Step",
       img: "/assets/imgs/ourstory/call-for-new-members.webp",
       text: "We're looking for passionate artists, developers, and storytellers to join our growing team. Help us shape the future of indie gaming.",
-      link: "/en/about/join/us/",
+      link: "/en/about/join-us/",
       showButton: true,
       buttonText: "Join Orpita"
     }
