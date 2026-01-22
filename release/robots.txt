@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /assets/vendor/
+
+Sitemap: https://orpita-studio.web.app/sitemap.xml
