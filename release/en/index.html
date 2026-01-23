@@ -65,7 +65,7 @@
             src: url('/assets/fonts/inter/Inter_18pt-Medium.woff2') format('woff2');
             font-weight: 500; font-display: swap;
         }
-        body { background-color: #030712; margin: 0; color: #e6eef8; font-family: sans-serif; }
+        body { background-color: #030712; margin: 0; color: #e6eef8; font-family: 'Inter', sans-serif; }
         body::before {
             content: ""; position: fixed; inset: 0;
             height: 100vh; width: 100vw;
@@ -124,8 +124,9 @@
                             <a id="hero-btn-join" href="/en/about/join-us/" class="btn-secondary">Join our team</a>
                         </div>
                     </div>
-                    <div class="w-full lg:w-[50%] flex justify-center lg:justify-start items-center relative order-1 lg:order-2 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
-                        <img src="/assets/imgs/logo-lg-trans-sd.webp" alt="Orpita Game Studio Logo" class="w-full max-w-sm md:max-w-md lg:max-w-full object-contain" style="max-height: 80vh; lg:max-height: 100vh;">
+                    <div class="w-full lg:w-[50%] flex justify-center lg:justify-start items-center relative order-1 lg:order-2 animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <img src="/assets/imgs/logo-lg-trans-sd.webp" alt="Orpita Game Studio Logo" width="500" height="200" 
+         fetchpriority="high" class="w-full max-w-sm md:max-w-md lg:max-w-full object-contain" style="max-height: 80vh; lg:max-height: 100vh;">
                     </div>
                 </div>
             </div>
@@ -134,8 +135,8 @@
         <div class="SectionContentWrapper">
             
             <section class="relative py-6 px-4">
-                <div class="animate-on-scroll opacity-0 SectionTheme">
-                    <div class="text-center mb-12 animate-on-scroll opacity-0" style="animation-delay: 0.1s;">
+                <div class="animate-fade-in-up SectionTheme">
+                    <div class="text-center mb-12 animate-fade-in-up" style="animation-delay: 0.1s;">
                         <h2 class="text-3xl md:text-5xl font-black text-white">About <span class='gradient-text-js'>Orpita Studio</span></h2>
                         <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">Forging new realities, one story at a time.</p>
                     </div>
