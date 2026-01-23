@@ -52,354 +52,98 @@
     <link rel="preload" href="/assets/fonts/orbitron/Orbitron-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/inter/Inter_18pt-Medium.woff2" as="font" type="font/woff2" crossorigin>
     
-    <style>
-        :root { --violet-600: #7c3aed; --bg-0: #030712; }
-       
-        @font-face {
-            font-family: 'Orbitron';
-            src: url('/assets/fonts/orbitron/Orbitron-Bold.woff2') format('woff2');
-            font-weight: 700; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Inter';
-            src: url('/assets/fonts/inter/Inter_18pt-Medium.woff2') format('woff2');
-            font-weight: 500; font-display: swap;
-        }
-        body { background-color: #030712; margin: 0; color: #e6eef8; font-family: 'Inter', sans-serif; }
-        body::before {
-            content: ""; position: fixed; inset: 0;
-            height: 100vh; width: 100vw;
-            background: linear-gradient(180deg, #0F0823 0%, #030712 100%);
-            z-index: -10;
-        }
-        .hero-line-container { display: inline-flex; }
+    <<style>
+    /* 1. تعريف الألوان والأساسيات */
+    :root { 
+        --violet-600: #7c3aed; 
+        --bg-0: #030712; 
+        --color-slate-800: #1e293b;
+    }
 
-.fixed {
-  position: fixed;
-}
-.relative {
-  position: relative;
-}
-.inset-0 {
-  inset: calc(var(--spacing) * 0);
-}
-.-z-10 {
-  z-index: calc(10 * -1);
-}
-.order-1 {
-  order: 1;
-}
-.order-2 {
-  order: 2;
-}
-.container {
-  width: 100%;
-  @media (width >= 40rem) {
-    max-width: 40rem;
-  }
-  @media (width >= 48rem) {
-    max-width: 48rem;
-  }
-  @media (width >= 64rem) {
-    max-width: 64rem;
-  }
-  @media (width >= 80rem) {
-    max-width: 80rem;
-  }
-  @media (width >= 96rem) {
-    max-width: 96rem;
-  }
-}
-.mx-auto {
-  margin-inline: auto;
-}
-.mt-4 {
-  margin-top: calc(var(--spacing) * 4);
-}
-.mt-6 {
-  margin-top: calc(var(--spacing) * 6);
-}
-.mt-10 {
-  margin-top: calc(var(--spacing) * 10);
-}
-.mt-16 {
-  margin-top: calc(var(--spacing) * 16);
-}
-.mb-8 {
-  margin-bottom: calc(var(--spacing) * 8);
-}
-.mb-12 {
-  margin-bottom: calc(var(--spacing) * 12);
-}
-.block {
-  display: block;
-}
-.flex {
-  display: flex;
-}
-.h-32 {
-  height: calc(var(--spacing) * 32);
-}
-.min-h-screen {
-  min-height: 100vh;
-}
-.w-32 {
-  width: calc(var(--spacing) * 32);
-}
-.w-full {
-  width: 100%;
-}
-.max-w-2xl {
-  max-width: var(--container-2xl);
-}
-.max-w-sm {
-  max-width: var(--container-sm);
-}
-.flex-1 {
-  flex: 1;
-}
-.flex-shrink-0 {
-  flex-shrink: 0;
-}
-.flex-grow {
-  flex-grow: 1;
-}
-.flex-col {
-  flex-direction: column;
-}
-.flex-wrap {
-  flex-wrap: wrap;
-}
-.items-baseline {
-  align-items: baseline;
-}
-.items-center {
-  align-items: center;
-}
-.items-start {
-  align-items: flex-start;
-}
-.justify-between {
-  justify-content: space-between;
-}
-.justify-center {
-  justify-content: center;
-}
-.gap-4 {
-  gap: calc(var(--spacing) * 4);
-}
-.gap-8 {
-  gap: calc(var(--spacing) * 8);
-}
-.overflow-hidden {
-  overflow: hidden;
-}
-.overflow-visible {
-  overflow: visible;
-}
-.rounded-full {
-  border-radius: calc(infinity * 1px);
-}
-.border-4 {
-  border-style: var(--tw-border-style);
-  border-width: 4px;
-}
-.border-t {
-  border-top-style: var(--tw-border-style);
-  border-top-width: 1px;
-}
-.border-slate-700 {
-  border-color: var(--color-slate-700);
-}
-.border-slate-800 {
-  border-color: var(--color-slate-800);
-}
-.object-contain {
-  object-fit: contain;
-}
-.object-cover {
-  object-fit: cover;
-}
-.px-4 {
-  padding-inline: calc(var(--spacing) * 4);
-}
-.px-12 {
-  padding-inline: calc(var(--spacing) * 12);
-}
-.py-6 {
-  padding-block: calc(var(--spacing) * 6);
-}
-.pt-12 {
-  padding-top: calc(var(--spacing) * 12);
-}
-.pt-24 {
-  padding-top: calc(var(--spacing) * 24);
-}
-.pb-20 {
-  padding-bottom: calc(var(--spacing) * 20);
-}
-.text-center {
-  text-align: center;
-}
-.text-left {
-  text-align: left;
-}
-.text-3xl {
-  font-size: var(--text-3xl);
-  line-height: var(--tw-leading, var(--text-3xl--line-height));
-}
-.text-base {
-  font-size: var(--text-base);
-  line-height: var(--tw-leading, var(--text-base--line-height));
-}
-.text-lg {
-  font-size: var(--text-lg);
-  line-height: var(--tw-leading, var(--text-lg--line-height));
-}
-.leading-none {
-  --tw-leading: 1;
-  line-height: 1;
-}
-.font-black {
-  --tw-font-weight: var(--font-weight-black);
-  font-weight: var(--font-weight-black);
-}
-.font-bold {
-  --tw-font-weight: var(--font-weight-bold);
-  font-weight: var(--font-weight-bold);
-}
-.font-extrabold {
-  --tw-font-weight: var(--font-weight-extrabold);
-  font-weight: var(--font-weight-extrabold);
-}
-.whitespace-nowrap {
-  white-space: nowrap;
-}
-.text-gray-300 {
-  color: var(--color-gray-300);
-}
-.text-gray-400 {
-  color: var(--color-gray-400);
-}
-.text-gray-500 {
-  color: var(--color-gray-500);
-}
-.text-violet-400 {
-  color: var(--color-violet-400);
-}
-.text-white {
-  color: var(--color-white);
-}
-.italic {
-  font-style: italic;
-}
-.opacity-0 {
-  opacity: 0%;
-}
-.shadow-lg {
-  --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-}
-.md\:h-40 {
-  @media (width >= 48rem) {
-    height: calc(var(--spacing) * 40);
-  }
-}
-.md\:w-40 {
-  @media (width >= 48rem) {
-    width: calc(var(--spacing) * 40);
-  }
-}
-.md\:max-w-md {
-  @media (width >= 48rem) {
-    max-width: var(--container-md);
-  }
-}
-.md\:flex-row {
-  @media (width >= 48rem) {
-    flex-direction: row;
-  }
-}
-.md\:gap-16 {
-  @media (width >= 48rem) {
-    gap: calc(var(--spacing) * 16);
-  }
-}
-.md\:pt-40 {
-  @media (width >= 48rem) {
-    padding-top: calc(var(--spacing) * 40);
-  }
-}
-.md\:pb-40 {
-  @media (width >= 48rem) {
-    padding-bottom: calc(var(--spacing) * 40);
-  }
-}
-.md\:text-left {
-  @media (width >= 48rem) {
-    text-align: left;
-  }
-}
-.md\:text-5xl {
-  @media (width >= 48rem) {
-    font-size: var(--text-5xl);
-    line-height: var(--tw-leading, var(--text-5xl--line-height));
-  }
-}
-.md\:text-xl {
-  @media (width >= 48rem) {
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
-  }
-}
-.lg\:order-1 {
-  @media (width >= 64rem) {
-    order: 1;
-  }
-}
-.lg\:order-2 {
-  @media (width >= 64rem) {
-    order: 2;
-  }
-}
-.lg\:w-1\/2 {
-  @media (width >= 64rem) {
-    width: calc(1/2 * 100%);
-  }
-}
-.lg\:w-\[50\%\] {
-  @media (width >= 64rem) {
-    width: 50%;
-  }
-}
-.lg\:max-w-full {
-  @media (width >= 64rem) {
-    max-width: 100%;
-  }
-}
-.lg\:flex-shrink-0 {
-  @media (width >= 64rem) {
-    flex-shrink: 0;
-  }
-}
-.lg\:flex-row {
-  @media (width >= 64rem) {
-    flex-direction: row;
-  }
-}
-.lg\:items-center {
-  @media (width >= 64rem) {
-    align-items: center;
-  }
-}
-.lg\:justify-start {
-  @media (width >= 64rem) {
-    justify-content: flex-start;
-  }
-}
+    /* 2. الخطوط (عشان تظهر فوراً) */
+    @font-face {
+        font-family: 'Orbitron';
+        src: url('/assets/fonts/orbitron/Orbitron-Bold.woff2') format('woff2');
+        font-weight: 700; font-display: swap;
+    }
+    @font-face {
+        font-family: 'Inter';
+        src: url('/assets/fonts/inter/Inter_18pt-Medium.woff2') format('woff2');
+        font-weight: 500; font-display: swap;
+    }
 
+    /* 3. إعدادات الصفحة الأساسية */
+    *, ::after, ::before { box-sizing: border-box; border-width: 0; border-style: solid; }
+    
+    body { 
+        background-color: #030712; 
+        margin: 0; 
+        color: #e6eef8; 
+        font-family: 'Inter', sans-serif; /* الخط يشتغل فوراً */
+        line-height: 1.5;
+    }
 
-    </style>
+    /* الخلفية الجرادينت الثابتة */
+    body::before {
+        content: ""; position: fixed; inset: 0;
+        height: 100vh; width: 100vw;
+        background: linear-gradient(180deg, #0F0823 0%, #030712 100%);
+        z-index: -10;
+    }
+
+    /* 4. الـ Critical CSS للهيرو (مترجم لأرقام ثابتة لسرعة الرسم) */
+    .fixed { position: fixed; }
+    .relative { position: relative; }
+    .inset-0 { inset: 0; }
+    .w-full { width: 100%; }
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .overflow-hidden { overflow: hidden; }
+    
+    /* أبعاد اللوجو والصورة */
+    .object-contain { object-fit: contain; }
+    .max-w-sm { max-width: 24rem; }
+    
+    /* Container Fixed Widths */
+    .container { width: 100%; padding-left: 1rem; padding-right: 1rem; }
+    @media (min-width: 640px) { .container { max-width: 640px; } }
+    @media (min-width: 768px) { .container { max-width: 768px; } }
+    @media (min-width: 1024px) { .container { max-width: 1024px; } }
+    @media (min-width: 1280px) { .container { max-width: 1280px; } }
+
+    /* الهوامش (Spacing) محولة لـ rem مباشرة */
+    .pt-24 { padding-top: 6rem; }
+    .pb-20 { padding-bottom: 5rem; }
+    .mt-6 { margin-top: 1.5rem; }
+    .mt-10 { margin-top: 2.5rem; }
+    .gap-8 { gap: 2rem; }
+
+    /* تحسينات الـ LCP (مهم جداً) */
+    .hero-line-container { display: inline-flex; opacity: 1; } /* غيرتها لـ 1 عشان السرعة */
+    
+    /* Responsive (Tablets & Desktop) */
+    @media (min-width: 768px) {
+        .md\:flex-row { flex-direction: row; }
+        .md\:gap-16 { gap: 4rem; }
+        .md\:pt-40 { padding-top: 10rem; }
+        .md\:pb-40 { padding-bottom: 10rem; }
+        .md\:max-w-md { max-width: 28rem; }
+        .md\:text-left { text-align: left; }
+    }
+
+    @media (min-width: 1024px) {
+        .lg\:w-1\/2 { width: 50%; }
+        .lg\:order-1 { order: 1; }
+        .lg\:order-2 { order: 2; }
+        .lg\:justify-start { justify-content: flex-start; }
+        .lg\:flex-shrink-0 { flex-shrink: 0; }
+        .lg\:max-w-full { max-width: 100%; }
+    }
+</style>
     
     <link rel="preload" href="/assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/css/style.css"></noscript>
@@ -421,7 +165,7 @@
                 <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 md:gap-16">
                     <div class="w-full lg:w-1/2 text-left relative order-2 lg:order-1 lg:flex-shrink-0 mx-auto ">
                         <h1 class="hero-title text-white overflow-visible w-full ">
-                            <span class="hero-line-container">
+                            <span class="hero-line-container animate-fade-in-up" style="animation-delay: 0.2s;">
                                 <span class="fit-text flex items-baseline w-full font-extrabold leading-none ">
                                     <span class="static-hero-text flex-shrink-0 ">We </span>
                                     <span class="dynamic-text-container flex-grow ">
@@ -431,7 +175,7 @@
                                     </span>
                                 </span>
                             </span>
-                            <span class="hero-line-container">
+                            <span class="hero-line-container animate-fade-in-up" style="animation-delay: 0.3s;">
                                 <span class="fit-text flex items-baseline w-full font-extrabold leading-none ">
                                     <span class="static-hero-text flex-shrink-0">We </span>
                                     <span class="dynamic-text-container flex-grow">
@@ -442,15 +186,15 @@
                                 </span>
                             </span>
                         </h1>
-                        <p class="text-base md:text-xl text-gray-400 mt-6 max-w-2xl">
+                        <p class="text-base md:text-xl text-gray-400 mt-6 max-w-2xl animate-fade-in-up" style="animation-delay: 0.4s;">
                             Hi, Welcome to Orpita game studio !!<br>Take a tour, check out our games, and let us know what you think.
                         </p>
-                        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+                        <div class="mt-10 flex flex-wrap items-center justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.5s;">
                             <a id="hero-btn-discover" href="/en/games/" class="btn-primary animate-pulse-glow">Discover Our Games</a>
                             <a id="hero-btn-join" href="/en/about/join-us/" class="btn-secondary">Join our team</a>
                         </div>
                     </div>
-                    <div class="w-full lg:w-[50%] flex justify-center lg:justify-start items-center relative order-1 lg:order-2">
+                    <div class="w-full lg:w-[50%] flex justify-center lg:justify-start items-center relative order-1 lg:order-2 animate-fade-in-up" style="animation-delay: 0.2s;">
                         <img src="/assets/imgs/logo-lg-trans-sd.webp" alt="Orpita Game Studio Logo" width="500" height="200" 
          fetchpriority="high" class="w-full max-w-sm md:max-w-md lg:max-w-full object-contain" style="max-height: 80vh; lg:max-height: 100vh;">
                     </div>
@@ -461,8 +205,8 @@
         <div class="SectionContentWrapper">
             
             <section class="relative py-6 px-4">
-                <div class=" SectionTheme">
-                    <div class="text-center mb-12">
+                <div class="animate-fade-in-up SectionTheme">
+                    <div class="text-center mb-12 animate-fade-in-up" style="animation-delay: 0.1s;">
                         <h2 class="text-3xl md:text-5xl font-black text-white">About <span class='gradient-text-js'>Orpita Studio</span></h2>
                         <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">Forging new realities, one story at a time.</p>
                     </div>
