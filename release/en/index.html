@@ -53,96 +53,25 @@
     <link rel="preload" href="/assets/fonts/inter/Inter_18pt-Medium.woff2" as="font" type="font/woff2" crossorigin>
     
     <<style>
-    /* 1. تعريف الألوان والأساسيات */
-    :root { 
-        --violet-600: #7c3aed; 
-        --bg-0: #030712; 
-        --color-slate-800: #1e293b;
-    }
-
-    /* 2. الخطوط (عشان تظهر فوراً) */
-    @font-face {
-        font-family: 'Orbitron';
-        src: url('/assets/fonts/orbitron/Orbitron-Bold.woff2') format('woff2');
-        font-weight: 700; font-display: swap;
-    }
-    @font-face {
-        font-family: 'Inter';
-        src: url('/assets/fonts/inter/Inter_18pt-Medium.woff2') format('woff2');
-        font-weight: 500; font-display: swap;
-    }
-
-    /* 3. إعدادات الصفحة الأساسية */
-    *, ::after, ::before { box-sizing: border-box; border-width: 0; border-style: solid; }
-    
-    body { 
-        background-color: #030712; 
-        margin: 0; 
-        color: #e6eef8; 
-        font-family: 'Inter', sans-serif; /* الخط يشتغل فوراً */
-        line-height: 1.5;
-    }
-
-    /* الخلفية الجرادينت الثابتة */
-    body::before {
-        content: ""; position: fixed; inset: 0;
-        height: 100vh; width: 100vw;
-        background: linear-gradient(180deg, #0F0823 0%, #030712 100%);
-        z-index: -10;
-    }
-
-    /* 4. الـ Critical CSS للهيرو (مترجم لأرقام ثابتة لسرعة الرسم) */
-    .fixed { position: fixed; }
-    .relative { position: relative; }
-    .inset-0 { inset: 0; }
-    .w-full { width: 100%; }
-    .flex { display: flex; }
-    .flex-col { flex-direction: column; }
-    .items-center { align-items: center; }
-    .justify-center { justify-content: center; }
-    .justify-between { justify-content: space-between; }
-    .mx-auto { margin-left: auto; margin-right: auto; }
-    .overflow-hidden { overflow: hidden; }
-    
-    /* أبعاد اللوجو والصورة */
-    .object-contain { object-fit: contain; }
-    .max-w-sm { max-width: 24rem; }
-    
-    /* Container Fixed Widths */
-    .container { width: 100%; padding-left: 1rem; padding-right: 1rem; }
-    @media (min-width: 640px) { .container { max-width: 640px; } }
-    @media (min-width: 768px) { .container { max-width: 768px; } }
-    @media (min-width: 1024px) { .container { max-width: 1024px; } }
-    @media (min-width: 1280px) { .container { max-width: 1280px; } }
-
-    /* الهوامش (Spacing) محولة لـ rem مباشرة */
-    .pt-24 { padding-top: 6rem; }
-    .pb-20 { padding-bottom: 5rem; }
-    .mt-6 { margin-top: 1.5rem; }
-    .mt-10 { margin-top: 2.5rem; }
-    .gap-8 { gap: 2rem; }
-
-    /* تحسينات الـ LCP (مهم جداً) */
-    .hero-line-container { display: inline-flex; opacity: 1; } /* غيرتها لـ 1 عشان السرعة */
-    
-    /* Responsive (Tablets & Desktop) */
-    @media (min-width: 768px) {
-        .md\:flex-row { flex-direction: row; }
-        .md\:gap-16 { gap: 4rem; }
-        .md\:pt-40 { padding-top: 10rem; }
-        .md\:pb-40 { padding-bottom: 10rem; }
-        .md\:max-w-md { max-width: 28rem; }
-        .md\:text-left { text-align: left; }
-    }
-
-    @media (min-width: 1024px) {
-        .lg\:w-1\/2 { width: 50%; }
-        .lg\:order-1 { order: 1; }
-        .lg\:order-2 { order: 2; }
-        .lg\:justify-start { justify-content: flex-start; }
-        .lg\:flex-shrink-0 { flex-shrink: 0; }
-        .lg\:max-w-full { max-width: 100%; }
-    }
+       :root { --violet-600: #7c3aed; --bg-0: #030712; }
+       
+        @font-face {
+            font-family: 'Orbitron';
+            src: url('/assets/fonts/orbitron/Orbitron-Bold.woff2') format('woff2');
+            font-weight: 700; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Inter';
+            src: url('/assets/fonts/inter/Inter_18pt-Medium.woff2') format('woff2');
+            font-weight: 500; font-display: swap;
+        }
+        body { background-color: #030712; margin: 0; color: #e6eef8; font-family: 'Inter', sans-serif; }
+        body::before {
+            content: ""; position: fixed; inset: 0;
+            height: 100vh; width: 100vw;
+            background: linear-gradient(180deg, #0F0823 0%, #030712 100%);
+            z-index: -10;
+        }
 </style>
     
     <link rel="preload" href="/assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
