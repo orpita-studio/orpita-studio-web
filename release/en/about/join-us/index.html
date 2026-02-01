@@ -60,9 +60,36 @@
         }
     </script>
 
+ <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/assets/css/tailwind-built.css">
-    
     <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+        /* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(168, 85, 247, 0.5);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(168, 85, 247, 0.7);
+}
+
+/* Firefox Scrollbar */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(168, 85, 247, 0.5) rgba(15, 23, 42, 0.3);
+}
+    </style>
 </head>
 
 <body class="flex flex-col min-h-screen">
@@ -117,58 +144,80 @@
             </section>
         </div>
     </main>
-    
 <div id="jobModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
   
   <div class="absolute inset-0 bg-slate-950/60" onclick="toggleModal()"></div>
 
-  <div id="modalContent" class="relative bg-slate-900/80 border border-purple-500/20 w-full max-w-lg rounded-3xl p-7 md:p-10 overflow-y-auto max-h-[90vh] ring-1 ring-white/10">
+  <div id="modalContent" class="relative bg-slate-900/80 border border-purple-500/20 w-full max-w-lg rounded-3xl p-7 md:p-10 ring-1 ring-white/10 text-left flex flex-col max-h-[90vh]">
     
-    <h3 class="text-2xl font-extrabold text-white mb-2 tracking-tight">Before You Apply...</h3>
-    <p class="text-slate-400 text-sm mb-8">Let's be transparent about where we are and what we're looking for.</p>
-    
-    <div class="space-y-6">
-        <div class="flex items-start gap-3 group">
-          <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
-          <p class="text-slate-200 text-sm md:text-base leading-relaxed">
-            <span class="text-purple-400 font-semibold">Early-stage startup:</span> We're building something from the ground up. Currently, positions are <span class="text-purple-400">unpaid/voluntary</span> until we reach stable revenue. If you're looking for immediate income, we completely understand—this might not be the right timing.
-          </p>
-        </div>
-
-        <div class="flex items-start gap-3 group">
-          <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
-          <p class="text-slate-200 text-sm md:text-base leading-relaxed">
-            <span class="text-purple-400 font-semibold">Respect everyone's time:</span> Interviews are scheduled individually. Please <span class="text-purple-400">be punctual</span> and confirm your attendance. Repeated no-shows may affect future opportunities with us.
-          </p>
-        </div>
-
-        <div class="flex items-start gap-3 group">
-          <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
-          <p class="text-slate-200 text-sm md:text-base leading-relaxed">
-            <span class="text-purple-400 font-semibold">Remote-first culture:</span> No physical office yet—work is <span class="text-purple-400">100% remote</span>. If you're based in <span class="text-purple-400">Alexandria</span>, we occasionally organize in-person meetups.
-          </p>
-        </div>
-        
-        <div class="flex items-start gap-3 group mt-8 pt-6 border-t border-purple-500/10">
-            <p class="text-slate-200 text-base md:text-lg leading-relaxed">
-                If you're passionate about building something meaningful from scratch and this aligns with your current goals, <span class="text-purple-400 font-semibold">we'd love to connect</span>.
+    <!-- Scrollable Content Area -->
+    <div class="overflow-y-auto flex-1 -mx-7 md:-mx-10 px-7 md:px-10 custom-scrollbar">
+      <h3 class="text-2xl font-extrabold text-white mb-2 tracking-tight">Before you apply...</h3>
+      <p class="text-slate-400 text-sm mb-8">We want you to know a few things about working with us.</p>
+      
+      <div class="space-y-6">
+          <div class="flex items-start gap-3 group">
+            <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
+            <p class="text-slate-200 text-sm md:text-base leading-relaxed">
+              <span class="text-purple-400 font-semibold">Early-stage studio:</span> We're still building something from scratch. Currently, work is <span class="text-purple-400">voluntary / unpaid</span> until we reach a stable income stage. If you need immediate income, we completely understand and there's no problem at all—this might not be the right timing for you, and that's totally normal.
             </p>
-        </div>
+          </div>
+
+          <div class="flex items-start gap-3 group">
+            <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
+            <p class="text-slate-200 text-sm md:text-base leading-relaxed">
+              <span class="text-purple-400 font-semibold">Your time matters:</span> Interviews are scheduled individually with you. All we ask is that you <span class="text-purple-400">commit to the appointment</span> or let us know beforehand if you can't attend. Repeated absences without excuse will affect your chances with us.
+            </p>
+          </div>
+
+          <div class="flex items-start gap-3 group">
+            <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
+            <p class="text-slate-200 text-sm md:text-base leading-relaxed">
+              <span class="text-purple-400 font-semibold">Fully remote work:</span> There's no physical office currently—all work is <span class="text-purple-400">100% Remote</span> from wherever you're comfortable. If you're from <span class="text-purple-400">Alexandria</span>, we sometimes organize in-person team meetups to get to know each other better.
+            </p>
+          </div>
+          
+          <div class="flex items-start gap-3 group mt-8 pt-6 border-t border-purple-500/10 pb-4">
+              <p class="text-slate-200 text-base md:text-lg leading-relaxed">
+                  If you're passionate about building something with real value and feel this aligns with your current goals and circumstances, <span class="text-purple-400 font-semibold">we'd love to get to know you and see how we can continue this journey together</span>.
+              </p>
+          </div>
+      </div>
     </div>
 
-    <div class="mt-10 flex flex-col sm:flex-row gap-4">
-      <a href="#tally-open=Ekd5V2&tally-layout=modal&tally-auto-close=1000" 
-         onclick="toggleModal()" 
-         class="flex-[2] bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 rounded-2xl text-center transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/50">
-         I'm Ready to Apply
-      </a>
-      <button onclick="toggleModal()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3 rounded-2xl text-center transition-all duration-200">
-        Not Right Now
-      </button>
+    <!-- Fixed Bottom Section -->
+    <div class="pt-6 mt-4 border-t border-purple-500/10 flex-shrink-0">
+      <!-- Help Text -->
+      <div class="mb-5 p-4 bg-slate-800/40 border border-purple-500/10 rounded-xl">
+        <p class="text-slate-300 text-sm leading-relaxed">
+          <span class="text-purple-400 font-semibold">Having trouble applying?</span>
+          <br/>
+          You can fill out the form directly
+          <a href="https://tally.so/r/Ekd5V2" target="_blank" class="text-purple-400 hover:text-purple-300 underline">
+            here
+          </a>
+          or contact us via
+          <a href="https://wa.me/201203075900" target="_blank" class="text-purple-400 hover:text-purple-300 underline">
+            WhatsApp
+          </a>
+          to report any issues.
+        </p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#tally-open=Ekd5V2&tally-layout=modal&tally-auto-close=1000" 
+           onclick="toggleModal()" 
+           class="flex-[2] bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 rounded-2xl text-center transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/50">
+           Ready to apply
+        </a>
+        <button onclick="toggleModal()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3 rounded-2xl text-center transition-all duration-200">
+          Not now
+        </button>
+      </div>
     </div>
   </div>
 </div>
-
     <div id="footer-placeholder"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
