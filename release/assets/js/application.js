@@ -8,11 +8,6 @@ const pageTranslations = {
                 icon: "form-edit.svg" 
             },
             { 
-                title: "We Got It", 
-                desc: "You'll get a confirmation email right away. We read every application!", 
-                icon: "gmail.svg" 
-            },
-            { 
                 title: "Quick Review", 
                 desc: "Our team will review your profile. If it's a match, expect a WhatsApp message within 3-7 days.", 
                 icon: "whatsapp.svg" 
@@ -160,11 +155,6 @@ const pageTranslations = {
                 title: "قدّم الآن", 
                 desc: "اختار الوظيفة اللي تناسبك واضغط قدّم. الموضوع ما ياخدش دقايق!", 
                 icon: "form-edit.svg" 
-            },
-            { 
-                title: "وصلنا طلبك", 
-                desc: "هتوصلك رسالة تأكيد على طول. إحنا بنقرا كل الطلبات!", 
-                icon: "gmail.svg" 
             },
             { 
                 title: "مراجعة سريعة", 
@@ -328,12 +318,12 @@ function renderHiringSteps(langData, isAr) {
     if (!container) return;
     
     container.style.direction = isAr ? 'rtl' : 'ltr';
-    container.className = "grid grid-cols-1 md:grid-cols-29 items-start gap-y-5 md:gap-y-0 w-full";
+    container.className = "grid grid-cols-1 md:grid-cols-11 items-start gap-y-5 md:gap-y-0 w-full";
     
     container.innerHTML = langData.steps.map((step, index) => {
         const isLast = index === langData.steps.length - 1;
         return `
-            <div class="md:col-span-5 flex flex-row md:flex-col items-start md:items-center ${isAr ? 'text-right' : 'text-left'} md:text-center group gap-2 md:gap-0">
+            <div class="md:col-span-2 flex flex-row md:flex-col items-start md:items-center ${isAr ? 'text-right' : 'text-left'} md:text-center group gap-2 md:gap-0">
                 <div class="shrink-0 w-16 h-16 md:w-20 md:h-20 bg-slate-800 border-2 border-purple-500/30 rounded-full flex items-center justify-center md:mb-2 group-hover:border-purple-500 transition-all duration-300 shadow-lg">
                     <img src="/assets/svg/${step.icon}" class="w-6 h-6 md:w-8 md:h-8" alt="${step.title}">
                 </div>
