@@ -1,4 +1,4 @@
-p<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFJ907933V"></script>
@@ -64,12 +64,36 @@ p<!DOCTYPE html>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-
+    
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/assets/css/tailwind-built.css">
     <link rel="stylesheet" href="/assets/css/style.css">
-
     <style>
         body { font-family: 'Cairo', sans-serif; }
+        /* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(168, 85, 247, 0.5);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(168, 85, 247, 0.7);
+}
+
+/* Firefox Scrollbar */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(168, 85, 247, 0.5) rgba(15, 23, 42, 0.3);
+}
     </style>
 </head>
 
@@ -116,7 +140,7 @@ p<!DOCTYPE html>
                         
                         <div class="text-center mb-12 animate-on-scroll opacity-0" style="animation-delay: 0.6s;">
                             <h2 class="text-3xl md:text-5xl font-black text-white">
-                                الادوار <span class='gradient-text-js'>المتاحة</span>.
+                                الوظائف <span class='gradient-text-js'>المتاحة</span>.
                             </h2>
                         </div>
                         <div id="positions-container" class="flex flex-col gap-6"></div>
@@ -130,52 +154,77 @@ p<!DOCTYPE html>
   
   <div class="absolute inset-0 bg-slate-950/60" onclick="toggleModal()"></div>
 
-  <div id="modalContent" class="relative bg-slate-900/80 border border-purple-500/20 w-full max-w-lg rounded-3xl p-7 md:p-10 overflow-y-auto max-h-[90vh] ring-1 ring-white/10 text-right">
+  <div id="modalContent" class="relative bg-slate-900/80 border border-purple-500/20 w-full max-w-lg rounded-3xl p-7 md:p-10 ring-1 ring-white/10 text-right flex flex-col max-h-[90vh]">
     
-    <h3 class="text-2xl font-extrabold text-white mb-2 tracking-tight">قبل أن تُقدم...</h3>
-    <p class="text-slate-400 text-sm mb-8">دعنا نكن واضحين وشفافين تماماً حول وضعنا الحالي وما نبحث عنه.</p>
-    
-    <div class="space-y-6">
-        <div class="flex items-start gap-3 group">
-          <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
-          <p class="text-slate-200 text-sm md:text-base leading-relaxed">
-            <span class="text-purple-400 font-semibold">شركة ناشئة في بدايتها:</span> نحن نبني شيئاً من الصفر. حالياً، الوظائف <span class="text-purple-400">تطوعية / غير مدفوعة</span> حتى نصل لمرحلة الدخل المستقر. إذا كنت تبحث عن دخل فوري حالياً، نحن نتفهم ذلك تماماً—قد لا يكون هذا الوقت المناسب لك.
-          </p>
-        </div>
-
-        <div class="flex items-start gap-3 group">
-          <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
-          <p class="text-slate-200 text-sm md:text-base leading-relaxed">
-            <span class="text-purple-400 font-semibold">نحترم وقت الجميع:</span> المقابلات تُجدول بشكل فردي. يرجى <span class="text-purple-400">الالتزام بالمواعيد</span> وتأكيد الحضور. تكرار الغياب دون عذر قد يؤثر على فرصك المستقبلية معنا.
-          </p>
-        </div>
-
-        <div class="flex items-start gap-3 group">
-          <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
-          <p class="text-slate-200 text-sm md:text-base leading-relaxed">
-            <span class="text-purple-400 font-semibold">ثقافة العمل عن بُعد:</span> لا يوجد مكتب فعلي حالياً—العمل <span class="text-purple-400">عن بُعد بنسبة 100%</span>. إذا كنت من سكان <span class="text-purple-400">الإسكندرية</span>، فنحن ننظم أحياناً لقاءات فعلية للفريق.
-          </p>
-        </div>
-        
-        <div class="flex items-start gap-3 group mt-8 pt-6 border-t border-purple-500/10">
-            <p class="text-slate-200 text-base md:text-lg leading-relaxed">
-                إذا كنت شغوفاً ببناء شيء ذي قيمة حقيقية وتجد أن هذا يتوافق مع أهدافك الحالية، <span class="text-purple-400 font-semibold">يسعدنا جداً التواصل معك</span>.
+    <!-- Scrollable Content Area -->
+    <div class="overflow-y-auto flex-1 -mx-7 md:-mx-10 px-7 md:px-10 custom-scrollbar">
+      <h3 class="text-2xl font-extrabold text-white mb-2 tracking-tight">قبل ما تقدّم...</h3>
+      <p class="text-slate-400 text-sm mb-8">عايزينك تعرف كام معلومة عن الشغل معانا.</p>
+      
+      <div class="space-y-6">
+          <div class="flex items-start gap-3 group">
+            <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
+            <p class="text-slate-200 text-sm md:text-base leading-relaxed">
+              <span class="text-purple-400 font-semibold">استديو في بدايته:</span> احنا لسه بنبني حاجة من الصفر. الوضع الحالي إن الشغل <span class="text-purple-400">تطوعي / مش مدفوع</span> لحد ما نوصل لمرحلة الدخل الثابت. لو محتاج دخل فوري، احنا بنتفهم ده تماماً ومفيش أي مشكلة — ممكن يكون ده مش التوقيت المناسب ليك وده طبيعي جداً.
             </p>
-        </div>
+          </div>
+
+          <div class="flex items-start gap-3 group">
+            <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
+            <p class="text-slate-200 text-sm md:text-base leading-relaxed">
+              <span class="text-purple-400 font-semibold">وقتك يهمنا:</span> المقابلات بنظبطها معاك بشكل فردي. كل اللي نطلبه إنك <span class="text-purple-400">تلتزم بالميعاد</span> أو تعتذر قبلها لو مش هتقدر تحضر. الغياب المتكرر من غير عذر هيأثر على فرصك معانا.
+            </p>
+          </div>
+
+          <div class="flex items-start gap-3 group">
+            <div class="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] flex-shrink-0"></div>
+            <p class="text-slate-200 text-sm md:text-base leading-relaxed">
+              <span class="text-purple-400 font-semibold">شغل عن بُعد بالكامل:</span> مفيش مكتب فعلي حالياً—كل الشغل <span class="text-purple-400">Remote 100%</span> من أي مكان يريحك. لو انت من <span class="text-purple-400">الإسكندرية</span> ممكن نتقابل أحياناً في لقاءات فعلية للفريق ونتعرف على بعض أكتر.
+            </p>
+          </div>
+          
+          <div class="flex items-start gap-3 group mt-8 pt-6 border-t border-purple-500/10 pb-4">
+              <p class="text-slate-200 text-base md:text-lg leading-relaxed">
+                  لو انت شغوف ببناء حاجة ليها قيمة حقيقية وحاسس إن ده بيتوافق مع أهدافك وظروفك الحالية، <span class="text-purple-400 font-semibold">يسعدنا نتعرف عليك ونشوف إزاي ممكن نكمّل الرحلة دي سوا</span>.
+              </p>
+          </div>
+      </div>
     </div>
 
-    <div class="mt-10 flex flex-col sm:flex-row gap-4">
-      <a href="#tally-open=Ekd5V2&tally-layout=modal&tally-auto-close=1000" 
-         onclick="toggleModal()" 
-         class="flex-[2] bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 rounded-2xl text-center transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/50">
-         أنا جاهز للتقديم
-      </a>
-      <button onclick="toggleModal()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3 rounded-2xl text-center transition-all duration-200">
-        ليس الآن
-      </button>
+    <!-- Fixed Bottom Section -->
+    <div class="pt-6 mt-4 border-t border-purple-500/10 flex-shrink-0">
+      <!-- Help Text -->
+<div class="mb-5 p-4 bg-slate-800/40 border border-purple-500/10 rounded-xl">
+  <p class="text-slate-300 text-sm leading-relaxed">
+    <span class="text-purple-400 font-semibold">بتواجه مشكلة في التقديم؟</span>
+    <br/>
+    تقدر تملأ الفورم مباشرة من
+    <a href="https://tally.so/r/Ekd5V2" target="_blank" class="text-purple-400 hover:text-purple-300 underline">
+      هنا
+    </a>
+    أو تتواصل معانا عن طريق
+    <a href="https://wa.me/201203075900" target="_blank" class="text-purple-400 hover:text-purple-300 underline">
+      WhatsApp
+    </a>
+    للإبلاغ عن أي مشاكل.
+  </p>
+</div>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#tally-open=Ekd5V2&tally-layout=modal&tally-auto-close=1000" 
+           onclick="toggleModal()" 
+           class="flex-[2] bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 rounded-2xl text-center transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/50">
+           جاهز أقدّم
+        </a>
+        <button onclick="toggleModal()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3 rounded-2xl text-center transition-all duration-200">
+          مش دلوقتي
+        </button>
+      </div>
     </div>
   </div>
 </div>
+
 
     <div id="footer-placeholder"></div>
 
