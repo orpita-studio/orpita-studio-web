@@ -369,9 +369,9 @@ function createJobCard(job, ui, isAr) {
                             </ul>
                         </div>
                         <div class="mt-6 flex flex-wrap items-center gap-4 ${isAr ? 'justify-start' : ''}">
-                            <button onclick="toggleModal()" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-3xl transition-all">
-                                ${ui.applyBtn}
-                            </button>
+                            <a href="https://tally.so/r/Ekd5V2" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-3xl transition-all inline-block text-center">
+    ${ui.applyBtn}
+</a>
                             <a href="https://wa.me/201203075900?text=${encodeURIComponent(ui.waMsg + job.title)}"
                                target="_blank"
                                class="border-2 border-slate-700 text-slate-300 font-bold py-2 px-6 rounded-3xl hover:bg-slate-700 transition-all flex items-center justify-center gap-2">
