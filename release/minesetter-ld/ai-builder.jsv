@@ -1,9 +1,3 @@
-/**
- * ai-builder.js
- * AI Level Generator (Win Chance Logic & UI Integration)
- * ------------------------------------------------------
- * Core Logic for creating, solving, and validating Minesetter levels.
- */
 
 const AiBuilder = {
     // =========================================================================
@@ -246,8 +240,7 @@ const AiBuilder = {
         if (this.getChecked('allowCondCellVals')) availableTypes.push('cellValues');
         if (this.getChecked('allowCondEmpty')) availableTypes.push('emptyCellsCount');
         if (this.getChecked('allowCondSwitches') && config.switches && config.switches.length > 0) {
-    availableTypes.push('setSwitches');
-}
+            availableTypes.push('setSwitches');}
 
         if (availableTypes.length === 0) return [];
 
@@ -331,58 +324,70 @@ const AiBuilder = {
     },
 
     selectSmartTarget(targetStats, totalCombinations, minWinPct, maxWinPct) {
-        this.log(`> Phase 2: Analyzing ${Object.keys(targetStats).length} potential scores...`, 'info');
-
-        if (!totalCombinations || totalCombinations === 0n) {
-            this.log(`> Analysis failed: Total Combinations is zero.`, 'warning');
+        this.log(`> Phase 2: Double-Loop Range Analysis...`, 'info');
+        
+        if (!totalCombinations || totalCombinations === 0n) return { success: false };
+        
+        // 1. تحويل البيانات لمصفوفة مرتبة عشان نعرف نمشي عليها بالترتيب
+        const sortedData = Object.entries(targetStats)
+            .map(([score, count]) => ({ score: parseInt(score), count: BigInt(count) }))
+            .sort((a, b) => a.score - b.score);
+        
+        const validRanges = [];
+        
+        // 2. اللفتين (Double Loop Logic)
+        // الحلقة الخارجية بتحدد بداية النطاق (tmin)
+        for (let i = 0; i < sortedData.length; i++) {
+            
+            let currentRangeSolutions = 0n; // مجموع الحلول للنطاق الحالي
+            
+            // الحلقة الداخلية بتبدأ من نفس مكان الـ i وتبدأ تزود الـ tmax
+            for (let j = i; j < sortedData.length; j++) {
+                
+                // بنضيف عدد حلول السكور الجديد للمجموع التراكمي للنطاق ده
+                currentRangeSolutions += sortedData[j].count;
+                
+                // حساب نسبة الحل العشوائي للنطاق الحالي [i إلى j]
+                const rangeWinRate = Number((currentRangeSolutions * 10000n) / totalCombinations) / 100;
+                
+                // لو النسبة دخلت في النطاق المطلوب، نخزنه كمطمح (Candidate)
+                if (rangeWinRate >= minWinPct && rangeWinRate <= maxWinPct) {
+                    validRanges.push({
+                        tmin: sortedData[i].score,
+                        tmax: sortedData[j].score,
+                        winRate: rangeWinRate
+                    });
+                }
+                
+                // تحسين أداء (Optimization): لو النسبة عدت الـ max المسموح، 
+                // مفيش داعي نكمل مط في الحلقة الداخلية دي لأن النسبة هتزيد أكتر
+                if (rangeWinRate > maxWinPct) break;
+            }
+        }
+        
+        this.log(`> Found ${validRanges.length} valid range combinations.`, 'muted');
+        
+        if (validRanges.length === 0) {
+            this.log(`> No valid ranges found for the requested win rate.`, 'warning');
             return { success: false };
         }
-
-        // 1. Calculate Win Rate & Filter
-        const validScores = Object.entries(targetStats)
-            .map(([score, count]) => {
-                const winRate = (Number(BigInt(count) * 10000n) / Number(totalCombinations)) / 100;
-                return { score: parseInt(score), count, winRate };
-            })
-            .filter(item => item.winRate >= minWinPct && item.winRate <= maxWinPct)
-            .sort((a, b) => a.score - b.score); // Sort by score ascending
-
-        this.log(`> Found ${validScores.length} scores matching the win rate criteria.`, 'muted');
-
-        if (validScores.length === 0) {
-            this.log(`> No scores found within the ${minWinPct}% - ${maxWinPct}% win rate range.`, 'warning');
-            return { success: false };
-        }
-
-        // 2. Center-Out Selection Logic
-        let tmin, tmax;
-        const midIndex = Math.floor(validScores.length / 2);
         
-        // For simplicity in this first implementation, we'll pick the centermost score.
-        // A more complex implementation could expand the range [tmin, tmax].
-        const bestChoice = validScores[midIndex];
-        tmin = bestChoice.score;
-        tmax = bestChoice.score;
+        // 3. الحركة الصايعة: اختيار النتيجة اللي في نص المصفوفة
+        // دي بتضمن إننا لا نختار أول نطاق متاح (غالباً بيبقى ضيق) 
+        // ولا آخر نطاق (غالباً بيبقى واسع زيادة)، فبناخد الحل المتزن.
+        const midIndex = Math.floor(validRanges.length / 2);
+        const finalChoice = validRanges[midIndex];
         
-        this.log(`> Smart Selection successful. Chosen Target: ${tmin}. (Win Rate: ${bestChoice.winRate.toFixed(4)}%)`, 'success');
-
-        return { success: true, tmin, tmax };
+        this.log(`> Smart Selection Successful: Range [${finalChoice.tmin} to ${finalChoice.tmax}] (${finalChoice.winRate.toFixed(2)}%)`, 'success');
+        
+        return {
+            success: true,
+            tmin: finalChoice.tmin,
+            tmax: finalChoice.tmax
+        };
     },
 
     generateRandomAiConfig() {
-        // --- TEST MODE OVERRIDE ---
-        if (window.JULES_TEST_MODE) {
-            return {
-                rows: 3, cols: 3,
-                blocks: [1], switches: [], mustBombs: [],
-                bombs1: 2, bombs2: 0, bombsNeg: 0,
-                tmin: -Infinity, tmax: Infinity,
-                maxSolutions: 5000, maxAnalysisSolutions: 100000,
-                starConditions: []
-            };
-        }
-        // --- END TEST MODE ---
-
         /* A. Grid Size Definition */
         const cols = this.getRandom(this.getVal('aiGridXMin'), this.getVal('aiGridXMax'));
         const rows = this.getRandom(this.getVal('aiGridYMin'), this.getVal('aiGridYMax'));
@@ -417,23 +422,26 @@ const AiBuilder = {
         const bombs2 = getBombCount('aiAllowBombs2', 'aiBombs2Min', 'aiBombs2Max');
         const bombsNeg = getBombCount('aiAllowBombsNeg', 'aiBombsNegMin', 'aiBombsNegMax');
 
-        /* D. Target Score & Constraints (Phase 1: Base Structure) */
-        // Set wide-open targets and no star conditions to get a full analysis from the solver.
-        
+        /* D. Target Score & Constraints */
+        const userTMin = this.getVal('aiScoreMin');
+        const userTMax = this.getVal('aiScoreMax');
+        const r1 = this.getRandom(userTMin, userTMax);
+        const r2 = this.getRandom(userTMin, userTMax);
+
         // Initial Config Object
         const config = {
             rows, cols,
             blocks, switches, mustBombs,
             bombs1, bombs2, bombsNeg,
-            tmin: -Infinity, // Open target for full scan
-            tmax: Infinity,  // Open target for full scan
+            tmin: -Infinity,
+            tmax: Infinity,
             maxSolutions: 5000,
             maxAnalysisSolutions: this.getVal('aiAnalysisLimit') || 100000000,
-            starConditions: [] // No star conditions in phase 1
+            starConditions: []
         };
 
-        /* E. Attach Star Conditions (Phase 1: SKIPPED) */
-        // This is now handled in Phase 2 after smart target selection.
+        /* E. Attach Star Conditions */
+        config.starConditions = this.generateStarConditions(config);
 
         return config;
     },
@@ -514,40 +522,45 @@ const AiBuilder = {
         let attempts = 0;
         const globalStartTime = performance.now();
 
-        this.log(`>>> TWO-PHASE ENGINE STARTED. Target Win Rate: ${minWinPct}% - ${maxWinPct}% <<<`, "info");
+        this.log(`>>> ENGINE STARTED. Target Win Rate: ${minWinPct}% - ${maxWinPct}% <<<`, "info");
 
-        /* 3. The Main Generation Loop */
+        /* 3. The Infinite Loop (until stopped) */
         while (this.isRunning) {
             attempts++;
-            const attemptStartTime = performance.now();
-            let finalConfig = null;
-            let success = false;
-
-            /* ==========================================================
-               PHASE 1: GENERATE BASE & GET FULL ANALYSIS
-               ========================================================== */
-            this.log(`Attempt #${attempts} - Phase 1: Generating Base Structure...`, "default");
-            const baseConfig = this.generateRandomAiConfig();
+            const config = this.generateRandomAiConfig();
+            this.log(`Attempt #${attempts}`, "default", config);
             
-            // Log base config details for debugging
-            this.log(`> Grid: ${baseConfig.cols}x${baseConfig.rows}`, 'muted');
-            this.log(`> Bombs: ${baseConfig.bombs1}/${baseConfig.bombs2}/${baseConfig.bombsNeg}`, 'muted');
-            this.log(`> Elements: Bl:${baseConfig.blocks.length}, Sw:${baseConfig.switches.length}, Mu:${baseConfig.mustBombs.length}`, 'muted');
+            // --- Log generated config details ---
+            this.log(`> Grid: ${config.cols}x${config.rows} Total = ${config.cols * config.rows}`, 'muted');
+            this.log(`> Bombs: Normal: ${config.bombs1}, Powred: ${config.bombs2}, Negative: ${config.bombsNeg}`, 'muted');
+            this.log(`> Elements: Blocks: ${config.blocks.length} [${config.blocks.join(', ')}], Switches: ${config.switches.length} [${config.switches.join(', ')}], MustBombs: ${config.mustBombs.length} [${config.mustBombs.join(', ')}]`, 'muted');
+            this.log(`> Target Score Range: ${config.tmin} to ${config.tmax}`, 'muted');
+            
+            if (config.starConditions.length > 0) {
+               this.log(`>Stars condition`);
+                config.starConditions.forEach((condArr, i) => {
+                    if (condArr[0]) {
+                        this.log(`>> Star ${i + 1}: ${this.formatStarCondition(condArr[0])}`, 'muted');
+                    }
+                });
+            } else {
+                this.log(`> Star Conditions: Not allowed by user`, 'muted');
+            }
 
-            this.previewLevel(baseConfig);
-            if (statusEl) statusEl.innerHTML = `<i class="fas fa-sync fa-spin"></i> Attempt #${attempts} (Phase 1)...`;
+            // Preview on UI
+            this.previewLevel(config);
+
+            // Small UI Yield
+            await new Promise(r => setTimeout(r, 0));
+
+            if (statusEl) statusEl.innerHTML = `<i class="fas fa-sync fa-spin"></i> Attempt #${attempts}...`;
             if (progressBar) progressBar.style.width = '0%';
-            
-            await new Promise(r => setTimeout(r, 10));
 
             try {
-                // Run solver for full analysis
-                const analysisResult = await this.runAiSolver(baseConfig);
-                const totalCombos = analysisResult.lastTotalCombinations ? BigInt(analysisResult.lastTotalCombinations) : 0n;
-
-                /* ==========================================================
-                   PHASE 2: SMART TARGET SELECTION
-                   ========================================================== */
+                const attemptStartTime = performance.now();
+                let analysisResult = await this.runAiSolver(config);
+                const totalCombos = analysisResult.lastTotalCombinations ? BigInt(analysisResult.lastTotalCombinations) : 1n;
+                /*---------------------------------------------------*/
                 if (totalCombos > 0n && analysisResult.targetStats) {
                     if (statusEl) statusEl.innerHTML = `<i class="fas fa-cogs"></i> Attempt #${attempts} (Phase 2)...`;
 
@@ -555,7 +568,7 @@ const AiBuilder = {
 
                     if (selection.success) {
                         // Found a valid target, now finalize the config
-                        finalConfig = { ...baseConfig, tmin: selection.tmin, tmax: selection.tmax };
+                        finalConfig = { ...config, tmin: selection.tmin, tmax: selection.tmax };
                         finalConfig.starConditions = this.generateStarConditions(finalConfig);
 
                         // Log final details
@@ -570,31 +583,72 @@ const AiBuilder = {
                      this.log(`❌ Attempt Failed: No solutions found in Phase 1.`, "result-update status-error");
                 }
 
-                /* ==========================================================
-                   UI & STATE UPDATE
-                   ========================================================== */
+                this.log(`> Phase 3: Verifying final config...`, 'info');
+                if (statusEl) statusEl.innerHTML = `<i class="fas fa-check-double"></i> Verifying Attempt #${attempts}...`;
+                
+                analysisResult = await this.runAiSolver(finalConfig);
+                /*---------------------------------------------------*/
+                /* 4. Win Chance Calculation */
+              
+                const validSols = BigInt(analysisResult.validSolutionsCountBig || analysisResult.solutions.length || 0);
+                
+                this.log(`> Solver Result: ${validSols} valid solutions / ${totalCombos} total combos`, 'muted');
+
+                let winChance = 0;
+                if (totalCombos > 0n) {
+                    const percentageScaled = (validSols * 10000n) / totalCombos;
+                    winChance = Number(percentageScaled) / 100;
+                }
+
+                this.log(`> winChance: ${winChance}`, 'muted');
+
+                /* 5. Update Global GameState & UI (Centralized) */
                 if (typeof GameState !== 'undefined' && typeof handlePostSolveAnalysis === 'function') {
-                    GameState.results = {
-                        ...GameState.results,
-                        solutions: analysisResult.solutions || [],
-                        workerStats: analysisResult.stats,
-                        targetStats: analysisResult.targetStats,
-                        conditionStats: analysisResult.conditionStats,
-                        lastTotalCombinations: totalCombos,
-                    };
+                    GameState.results.solutions = analysisResult.solutions || [];
+                    GameState.results.workerStats = analysisResult.stats;
+                    GameState.results.targetStats = analysisResult.targetStats;
+                    GameState.results.conditionStats = analysisResult.conditionStats;
+                    GameState.results.lastTotalCombinations = analysisResult.lastTotalCombinations ? BigInt(analysisResult.lastTotalCombinations) : 0n;
+                    GameState.results.validSolutionsCount = BigInt(analysisResult.validSolutionsCountBig || 0);
+                    GameState.results.chanceWinPercentage = winChance;
+                    GameState.results.showHeatmap = true;
+                    GameState.results.abortFlag = false;
+
                     handlePostSolveAnalysis(attemptStartTime);
                 }
 
-                /* ==========================================================
-                   SUCCESS HANDLING
-                   ========================================================== */
-                if (success) {
+                /* 6. Check Criteria */
+                const hasSolutions = validSols > 0n;
+                const isWithinRange = winChance >= minWinPct && winChance <= maxWinPct;
+
+                // Console Header Update
+                if (hasSolutions) {
+                    const statusClass = isWithinRange ? "status-success" : "status-warning";
+                    const icon = isWithinRange ? "✅" : "⚠️";
+                    this.log(`${icon} Win Rate: ${winChance.toFixed(4)}% (Sols: ${validSols})`, `result-update ${statusClass}`);
+                    
+                    if (!isWithinRange) {
+                        this.log(`> Rate mismatch. Required: ${minWinPct}-${maxWinPct}%`, "muted");
+                    }
+                } else {
+                    this.log(`❌ No Solutions`, "result-update status-error");
+                }
+
+                /* 7. Success Handling */
+                if (hasSolutions && isWithinRange) {
+                    this.log(`✅ MATCH FOUND! Puzzle generation successful.`, "success");
                     foundPuzzles++;
+                    
                     if (foundPuzzles >= stopAfter) {
                         this.isRunning = false;
                         const totalTime = ((performance.now() - globalStartTime) / 1000).toFixed(1);
                         if (statusEl) {
-                            statusEl.innerHTML = `<i class="fas fa-check-circle"></i> Done! Found ${foundPuzzles} puzzle(s) in ${totalTime}s.`;
+                              statusEl.innerHTML = `<i class="fas fa-check-circle"></i> Done! Found ${foundPuzzles} puzzle(s) in ${totalTime}s.`;
+                        }
+                        if (progressBar) progressBar.style.width = '100%';
+                        
+                        if (typeof showStatus === 'function') {
+                            showStatus(`AI Generation Complete! Win Chance: ${winChance.toFixed(3)}%`, false);
                         }
                         break;
                     }
@@ -604,7 +658,8 @@ const AiBuilder = {
                 console.error(err);
             }
             
-            await new Promise(r => setTimeout(r, 10)); // Brief delay between attempts
+            // Loop Delay
+            await new Promise(r => setTimeout(r, 00));
         }
     },
 };

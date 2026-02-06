@@ -11,7 +11,7 @@ let activeWorker = null;
 // NOTE: Assumes GameState is defined globally with config and results objects.
 // NOTE: Assumes getStarConditionsFromUI and showStatus are defined in ui-core.js.
 // NOTE: Assumes humanNumberBig is a utility function.
-// NOTE: Assumes Logger is imported and initialized
+
 
 // --- 2. SOLVER LIFECYCLE MANAGEMENT ---
 
@@ -35,15 +35,16 @@ async function solveHandler() {
   
   // Target Score Configuration
   const targetMode = document.getElementById('modeTarget')?.value || 'range';
-  
-  // نقوم بقراءة القيم أولاً
-  let parsedTMin = parseInt(document.getElementById('targetMin').value.trim());
-  let parsedTMax = parseInt(document.getElementById('targetMax').value.trim());
+  // Target Score Configuration
 
-  // نستخدم Number.isFinite لتحديد ما إذا كانت القيمة صالحة (بما في ذلك الصفر).
-  // إذا كانت القيمة غير صالحة (NaN)، نعطيها القيمة الافتراضية (-Infinity أو Infinity)
-  let tminVal = Number.isFinite(parsedTMin) ? parsedTMin : -Infinity;
-  let tmaxVal = Number.isFinite(parsedTMax) ? parsedTMax : Infinity;
+// نقوم بقراءة القيم أولاً
+let parsedTMin = parseInt(document.getElementById('targetMin').value.trim());
+let parsedTMax = parseInt(document.getElementById('targetMax').value.trim());
+
+// نستخدم Number.isFinite لتحديد ما إذا كانت القيمة صالحة (بما في ذلك الصفر).
+// إذا كانت القيمة غير صالحة (NaN)، نعطيها القيمة الافتراضية (-Infinity أو Infinity)
+let tminVal = Number.isFinite(parsedTMin) ? parsedTMin : -Infinity;
+let tmaxVal = Number.isFinite(parsedTMax) ? parsedTMax : Infinity;
 
   if (targetMode === 'exact') tmaxVal = tminVal !== -Infinity ? tminVal : tmaxVal;
   
@@ -96,24 +97,12 @@ async function solveHandler() {
         if (bar) bar.style.width = `${msg.value}%`;
         if (txt) txt.textContent = `${Math.round(msg.value)}%`;
         
-      } else if (msg.type === 'worker-log') {
-        // Forward worker logs to Logger
-        if (typeof logger !== 'undefined' && logger) {
-          logger.log(msg.message, msg.logType || 'default');
-        }
-        
       } else if (msg.type === 'done') {
         // Store results
         GameState.results.solutions = msg.solutions;
         GameState.results.workerStats = msg.stats;
         GameState.results.targetStats = msg.targetStats;
         GameState.results.conditionStats = msg.conditionStats;
-        
-        // 🆕 Store new analytics
-        GameState.results.cellValuesAnalysis = msg.cellValuesAnalysis;
-        GameState.results.numberFrequency = msg.numberFrequency;
-        GameState.results.emptyCellsStats = msg.emptyCellsStats;
-        GameState.results.switchAnalysis = msg.switchAnalysis;
         
         const validSolutionsCountBig = BigInt(msg.validSolutionsCountBig || '0');
         GameState.results.validSolutionsCount = validSolutionsCountBig;
@@ -126,11 +115,6 @@ async function solveHandler() {
           chanceWin = Number(percentageScaled) / 100;
         }
         GameState.results.chanceWinPercentage = chanceWin;
-        
-        // 🆕 Display Analytics using Logger
-        if (msg.analyticsMessages && typeof logger !== 'undefined' && logger) {
-          displayAnalytics(msg.analyticsMessages);
-        }
         
         // Cleanup and resolve
         const totalFound = msg.stats ? msg.stats.totalFound : msg.solutions.length;
@@ -170,40 +154,4 @@ function cancelSolver() {
     }
     if (cancelBtn) cancelBtn.disabled = true;
   }
-}
-
-// --- 3. ANALYTICS DISPLAY FUNCTION ---
-
-/**
- * Display analytics messages using Logger
- * @param {Array} messages - Array of {text, type} objects from worker
- */
-function displayAnalytics(messages) {
-  if (!messages || !Array.isArray(messages)) return;
-  
-  // Check if Logger is available
-  if (typeof logger === 'undefined' || !logger) {
-    console.warn('Logger not available, falling back to console.log');
-    messages.forEach(msg => console.log(msg.text));
-    return;
-  }
-
-  // Open the console drawer automatically
-  const drawer = document.getElementById('aiConsole');
-  const toggleBtn = document.getElementById('toggleConsole');
-  if (drawer && !drawer.classList.contains('open')) {
-      drawer.classList.add('open');
-      if (toggleBtn) toggleBtn.classList.add('active');
-  }
-  
-  // Start a foldable group for the report
-  logger.log(`Manual Analysis Report - ${new Date().toLocaleTimeString()}`, 'group-start');
-
-  // Log each message with appropriate type
-  messages.forEach(msg => {
-    logger.log(msg.text, msg.type || 'default');
-  });
-
-  // Update header with completion status
-  logger.log('Report Generated Successfully', 'result-update status-success');
 }
